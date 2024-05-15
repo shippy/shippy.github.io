@@ -23,7 +23,7 @@ But we can't select on any response-level variable. This means that to limit our
 
 Now, let's look at an example of the inquiry logic. In the abstract, there are three steps: get the response, unzip it, and load it into an appropriate data structure.
 
-```
+```ruby
 # Excerpt from a Sinatra helper function
 response_zip = getResponseFromQualtrics()
 response_string = unzip(response_zip)
@@ -36,7 +36,7 @@ Getting the data is a two-step process. First, I request a CSV file from Qualtri
 
 Instead of implementing the handshake myself, I took advantage of the [`qualtrics_api` Ruby gem](https://github.com/CambridgeEducation/qualtrics_api) made by [Yurui Zhang](https://github.com/pallymore). (There's also [sunkev's `qualtrics` gem](https://github.com/sunkev/qualtrics), which I haven't tried.)
 
-```
+```ruby
 def getResponseFromQualtrics
   start_time = getStartTime(settings.prior_hours)
 
@@ -70,7 +70,7 @@ end
 
 `unzip` is just `rubyzip`; no magic there. There is a bit of a trick to getting a compressed stream to a CSV with headers, though. That's because some of the Ruby `CSV` methods can only deal with files, not streams.
 
-```
+```ruby
 def rawToTable(response_string)
   require 'csv'
   response_csv = CSV.new(response_string, headers: true)

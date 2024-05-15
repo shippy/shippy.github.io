@@ -41,7 +41,7 @@ Alternatively, you can use [any of the other forms of authentication that Octoki
 
 This is the more straightforward part. Download labels, milestones, issues, pull requests, and comments; do so in the order in which they were created. This will make things a little easier later.
 
-```
+```ruby
 require 'octokit'
 require 'json'
 
@@ -85,7 +85,7 @@ This is where things get a little tricky. Here's why.
 
 The order we're going with is labels-milestones-issues-pulls-comments. Don't forget to adjust Octokit configuration for the target GitHub server:
 
-```
+```ruby
 require 'octokit'
 require 'json'
 
@@ -104,7 +104,7 @@ repo = 'YaleDecisionNeuro/PsychTaskFramework'
 
 The main gotcha here is that GitHub has some default labels, which your source repository may or may not be partially using. If it is, we'll upload them, and if it isn't, they shouldn't be there anyway, so let's remove them:
 
-```
+```ruby
 github.labels(repo).each do |l|
   github.delete_label!(repo, l[:name])
 end
@@ -112,7 +112,7 @@ end
 
 In no particular order, read and upload your original labels:
 
-```
+```ruby
 labels = JSON.parse(File.read('labels.json'), {symbolize_names: true})
 labels.each do |l|
   begin
@@ -129,7 +129,7 @@ end
 
 As explained above, GitHub insists on numbering milestones by itself, but also allows milestone deletions. So we just need to pay attention to any milestones that are missing in our original data.
 
-```
+```ruby
 milestones = JSON.parse(File.read('milestones.json'), {symbolize_names: true}).sort_by {|m| m[:number]}
 current_milestone = 0
 fake_milestones = []
@@ -146,7 +146,7 @@ end
 
 After that, it's trivial to remove the placeholders:
 
-```
+```ruby
 fake_milestones.each do |fake|
   github.delete_milestone(repo, fake)
 end
@@ -160,7 +160,7 @@ We'll do all of issues, pull requests and comments in a single loop through the 
 
 First, we'll load the files, extract useful identifiers, and create the issue. Since issues are also auto-numbered but cannot be deleted, we'll also guard against the possibility of duplicating issues we had already added:
 
-```
+```ruby
 issuesAndPRs = JSON.parse(File.read('issuesAndPRs.json'), {symbolize_names: true}).sort_by { |p| p[:number] }
 pulls = JSON.parse(File.read('pulls.json'), {symbolize_names: true}).sort_by { |p| p[:number] }
 comments = JSON.parse(File.read('comments.json'), {symbolize_names: true}).sort_by { |p| p[:id] }
@@ -195,7 +195,7 @@ end
 
 But instead of closing the loop and going to the next issue, we'll do three more things. First, if the original issue was actually a pull request, we'll convert it into a PR or at least note the origin:
 
-```
+```ruby
 if i.key?(:pull_request)
   current_pull = pulls.select { |p| p[:number] == issue_number }[0]
   base = current_pull[:base][:ref]
@@ -217,7 +217,7 @@ end
 
 Second, we'll add the original comments to the issue:
 
-```
+```ruby
 comments.select { |c| c[:issue_url] == issue_url }.each do |c|
   github.add_comment(repo, issue_number, c[:body])
 end
@@ -225,7 +225,7 @@ end
 
 Finally, we'll close the issue if appropriate:
 
-```
+```ruby
 if i[:state] != 'open'
   github.close_issue(repo, issue_number)
 end

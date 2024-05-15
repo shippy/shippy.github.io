@@ -18,7 +18,7 @@ _If you're unfamiliar with Dragonfly, [do read this introduction to basic Dragon
 
 Let's start with a toy grammar. In this grammar, we will have two rules that are not exported: that is to say, you can't invoke them directly. We'll call them simply `RuleA` and `RuleB`. (I will refer to them as "subrules" from here on out.)
 
-```
+```python
 # Rules proper
 class RuleA(MappingRule):
     exported = False
@@ -41,7 +41,7 @@ class RuleB(MappingRule):
 
 We'll call the top-level rule `RuleMain` and include Rules A and B in the extras.
 
-```
+```python
 class RuleMain(MappingRule):
     name = "rule_main"
     exported = True
@@ -63,7 +63,7 @@ This only carries out the `Text("Rule matched: ...")` action defined in the `Mai
 
 Dragonfly's [`Function`](https://dragonfly.readthedocs.io/en/latest/actions.html#function-action) allows arbitrary code execution. However, you can only pass in a function reference, to which `Function` passes the right extras (seemingly) automagically. The caster documentation gives [a useful but incomplete example](https://caster.readthedocs.io/en/latest/caster/doc/readthedocs/examples/rules/Dragonfly%20Rules/#the-function-action):
 
-```
+```python
 def my_fn(my_key):
   '''some custom logic here'''
 
@@ -84,7 +84,7 @@ When you say "press arch", `my_fn` gets called with the value of the `my_key` ex
 
 (If you define `my_fn` with `**kwargs`, it will receive all `extras` in a `dict`, including the default `_node`, `_rule`, and `_grammar`. This does lose the order in which the subrules were invoked, so you can't just pass a general function that invokes all rules unless you're happy with them being invoked alphabetically / in an arbitrary order. That was my first approach:
 
-```
+```python
 def execute_rule(**kwargs): # NOTE: don't use
     defaultKeys = ['_grammar', '_rule', '_node']
     for propName, possibleAction in kwargs.iteritems():
@@ -98,7 +98,7 @@ In this case, Rule A will be executed before Rule B, no matter the optionality o
 
 You could write `executeRuleA(rule_a)` to run `rule_a.execute()`, then add `Function(executeRuleA)` to be executed alongside `Text` when the rule is matched. Unless you want to do different things for different rules, though, it is easiest to define a factory for functions that simply execute whatever `extras` you specify:
 
-```
+```python
 from dragonfly import Function, ActionBase
 
 def _executeRecursive(executable):
@@ -125,7 +125,7 @@ This way, if you want to execute rule B before rule A, you can add `execute_rule
 
 Let's say you want to reuse your subrules in another rule, like so:
 
-```
+```python
 # Note: This doesn't execute the sub-actions at all
 class CompoundMain(CompoundRule):
     spec = "did (<rule_a1> and <rule_b1> | <rule_b1> and <rule_a1>)"
@@ -144,7 +144,7 @@ GrammarError: Two rules with the same name 'RuleA' not allowed.
 
 How did this happen? We even renamed the extras! It turns out that each subrule instantiated in `RuleRef` is registered as a separate rule. By default, each instance will assign `name = SubRule.__name__`. Consequently, you'll have to instantiate the subrules with unique names each time you re-use them. Fun fact: those names don't have to bear any relation to anything else.
 
-```
+```python
     extras = [
         RuleRef(rule = RuleB(name = "Sweeney Todd"), name = "rule_b1"),
         RuleRef(rule = RuleA(name = "Les Miserables"), name = "rule_a1"),
