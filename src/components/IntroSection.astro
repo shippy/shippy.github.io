@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+
+interface Props {
+    header: String,
+    source_collection: String,
+    filter?: CallableFunction
+}
+
+const { header, source_collection, filter } = Astro.props;
+// Load the data from the source file and apply the filter
+const posts = (await getCollection(source_collection, filter)).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+).reverse().slice(0, 5);
+
+---
+<section class="third">
+    <h2>{header}</h2>
+    <ul>
+        {
+            posts.map((post) => (
+                <li>
+                    <a href={`/${source_collection}/${post.slug}/`}>{post.data.title}</a> (<FormattedDate date={post.data.pubDate} />)
+                </li>
+            ))
+        }
+    </ul>
+
+</section>
