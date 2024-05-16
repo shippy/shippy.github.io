@@ -13,5 +13,3 @@ technologies:
   - PyPI
 heroImage: ./images/cover_letter_automation-cli.png
 ---
-
-![CLI](images/cover_letter_automation-cli.png)

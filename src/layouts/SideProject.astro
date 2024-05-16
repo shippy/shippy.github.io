@@ -77,6 +77,16 @@ const { title, description, pubDate, heroImage, githubUrl, projectUrl, blogUrl, 
 							{blogUrl && <li><a href={blogUrl}>Associated blog post.</a></li>}
 						</ul>
 					</div>
+					{technologies && (
+						<div class="technologies">
+							<h2>Technologies Used</h2>
+							<ul>
+								{technologies.map((tech) => (
+									<li>#{tech}</li>
+								))}
+							</ul>
+						</div>
+					)}
 					<slot />
 				</div>
 			</article>
