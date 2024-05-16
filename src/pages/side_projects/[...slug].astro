@@ -1,0 +1,20 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import SideProject from '../../layouts/SideProject.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('side_projects');
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+type Props = CollectionEntry<'side_projects'>;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<SideProject {...post.data}>
+	<Content />
+</SideProject>
