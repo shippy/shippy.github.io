@@ -41,4 +41,16 @@ const side_projects = defineCollection({
 	}),
 });
 
-export const collections = { blog, presentations, side_projects };
+const now = defineCollection({
+	type: 'content',
+	schema: z.object({
+		title: z.string(),
+		pubDate: z.coerce.date(),
+		updatedDate: z.coerce.date().optional(),
+		persistent: z.boolean().optional().default(false),
+		relatedBlogs: z.array(z.string()).optional(),
+		relatedSideProject: z.string().optional(),
+	}),
+});
+
+export const collections = { blog, presentations, side_projects, now };
