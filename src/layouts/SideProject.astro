@@ -72,8 +72,8 @@ const { title, description, pubDate, heroImage, githubUrl, projectUrl, blogUrl, 
 					</div>
 					<div class="links">
 						<ul>
-							<li><a href={githubUrl}>Source code available.</a></li>
-							<li><a href={projectUrl}>Project deployed.</a></li>
+							{githubUrl && <li><a href={githubUrl}>Source code available.</a></li>}
+							{projectUrl && <li><a href={projectUrl}>Project deployed.</a></li>}
 							{blogUrl && <li><a href={blogUrl}>Associated blog post.</a></li>}
 						</ul>
 					</div>

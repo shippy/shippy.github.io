@@ -32,7 +32,7 @@ const side_projects = defineCollection({
 		title: z.string(),
 		description: z.string(),
 		pubDate: z.coerce.date(),
-		githubUrl: z.string(),
+		githubUrl: z.string().optional(),
 		projectUrl: z.string().optional(),
 		blogUrl: z.string().optional(),
 		technologies: z.array(z.string()).optional(),
