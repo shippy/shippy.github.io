@@ -27,6 +27,19 @@ const posts = (
       Math.max(b.data.pubDate.valueOf(), b.data.updatedDate?.valueOf() ?? 0)
   )
   .reverse();
+
+// Render the posts here already so we can use them in the template:
+async function renderPosts() {
+  const renderedPosts = await Promise.all(
+    posts.map(async (post) => {
+      const { Content, headings } = await post.render();
+      return { title: headings, content: Content, post: post };
+    })
+  );
+  return renderedPosts;
+}
+
+const all_posts = await renderPosts();
 ---
 
 <!doctype html>
@@ -57,10 +70,11 @@ const posts = (
         </p>
       </section>
       {
-        posts.map((post) => (
+        all_posts.map((rendered_post) => (
           <section>
-            <h4 class="title">{post.data.title}</h4>
-            <p class="content">{post.body}</p>
+            <h4 class="title">{rendered_post.post.data.title}</h4>
+            <p class="content"><rendered_post.content /></p>
+            <slot />
           </section>
         ))
       }
