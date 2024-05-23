@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { getEntries } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -7,7 +8,8 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'side_projects'>['data'];
 
-const { title, description, pubDate, heroImage, githubUrl, projectUrl, blogUrl, technologies } = Astro.props;
+const { title, description, pubDate, heroImage, githubUrl, projectUrl, blogRef, technologies } = Astro.props;
+const blogs = blogRef ? await getEntries(blogRef) : undefined;
 ---
 
 <html lang="en">
@@ -74,7 +76,11 @@ const { title, description, pubDate, heroImage, githubUrl, projectUrl, blogUrl, 
 						<ul>
 							{githubUrl && <li><a href={githubUrl}>Source code available.</a></li>}
 							{projectUrl && <li><a href={projectUrl}>Project deployed.</a></li>}
-							{blogUrl && <li><a href={blogUrl}>Associated blog post.</a></li>}
+							{blogs && blogs.map(
+								(blog) => <li>
+									Blog: <a href=`/blog/${blog.slug}`>{blog.data.title}</a>
+								</li>
+							)}
 						</ul>
 					</div>
 					{technologies && (

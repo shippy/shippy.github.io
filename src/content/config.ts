@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, reference, z } from 'astro:content';
 
 const blog = defineCollection({
 	type: 'content',
@@ -34,7 +34,7 @@ const side_projects = defineCollection({
 		pubDate: z.coerce.date(),
 		githubUrl: z.string().optional(),
 		projectUrl: z.string().optional(),
-		blogUrl: z.string().optional(),
+		blogRef: z.array(reference('blog')).optional(),
 		technologies: z.array(z.string()).optional(),
 		screenshots: z.array(z.string()).optional(),
 		heroImage: image(),

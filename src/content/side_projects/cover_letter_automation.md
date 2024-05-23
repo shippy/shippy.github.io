@@ -5,6 +5,8 @@ description: >
 pubDate: 2024-05-01
 githubUrl: https://github.com/shippy/cover_letter_automation
 projectUrl: https://pypi.org/project/cover_letter_automation/
+blogRef:
+  - 2024/multi-agent-chats-as-the-step-beyond-chatgpt
 technologies:
   - Python
   - AutoGen
