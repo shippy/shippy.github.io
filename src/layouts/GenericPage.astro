@@ -3,20 +3,12 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-interface Props {
-	frontmatter: {
-		title: string;
-		description: string;
-		heroImage?: string;
-	}
-}
-
-const { frontmatter } = Astro.props;
+const { title, description, heroImage } = Astro.props.frontmatter || Astro.props;
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={frontmatter.title} description={frontmatter.description || ""} />
+		<BaseHead title={title} description={description || ""} />
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -63,13 +55,13 @@ const { frontmatter } = Astro.props;
 		<main>
 			<article>
 				<div class="hero-image">
-					{frontmatter.heroImage && <img width={1020} height={510} src={frontmatter.heroImage} alt="" />}
+					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 				</div>
 
 				<div class="prose">
 					<div class="title">
-						<h1>{frontmatter.title}</h1>
-						{frontmatter.description && <p>{frontmatter.description}</p>}
+						<h1>{title}</h1>
+						{description && <p>{description}</p>}
 						<hr />
 					</div>
 					<slot />
