@@ -5,6 +5,7 @@ categories:
   - "code"
   - "data-viz"
   - "science"
+heroImage: ./images/fighting_charts.png
 ---
 
 Here's the product of that one time when I wanted to try out `ggplot2` on a controversial dataset about prejudice in the EU, got dragged into an argument about methodology, and ended up learning about `sjPlot`/`sjMisc` and `tmap` in the process of writing a couple thousand words in RMarkdown.

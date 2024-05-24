@@ -4,18 +4,19 @@ description: "A reflection on the process of creating multi-agent workflows with
 pubDate: 2024-04-15
 categories: 
   - "llms"
+heroImage: ./images/agents_interacting.png
 ---
 
 This Easter weekend, I forbade myself from working. I half-succeeded: although I made two [AutoGen](https://github.com/microsoft/autogen) projects, none were for my day job! #soproud Here goes: [a cover letter generator](https://github.com/shippy/cover_letter_automation) and a multi-provider therapy session. (A friend needed both and I thought it would be a good distraction for us to convert a human problem into a technical problem. Because that's healthy.)
 
 The concept behind each is simple:
 
-0. Set up a Poetry environment (ideally from a [Copier template](https://github.com/lukin0110/poetry-copier/) that makes the environment immediately pip-installable) and install `pyautogen`.
-1. Create a `UserProxyAgent` as a stand-in for the user. _While by default, the UserProxyAgent prompts for human input every time it's invoked, it does not **need** to, and you can use it just to simulate the opening of the conversation._
-2. Break down the big task into subtask, ideally with a clear input, output, and instruction set.
-3. Create one agent per subtask, with a clear set of instructions, output requirements, _and_ who to pass the baton to under what circumstances.
-4. **If applicable:** Create a set of "allowable speaker transitions", i.e. which agent can speak after this agent is done, and set up the `GroupChat`.
-5. Create a CLI script that will invoke the setup with the right environment variables and flexible input parameters.
+1. Set up a Poetry environment (ideally from a [Copier template](https://github.com/lukin0110/poetry-copier/) that makes the environment immediately pip-installable) and install `pyautogen`.
+2. Create a `UserProxyAgent` as a stand-in for the user. _While by default, the UserProxyAgent prompts for human input every time it's invoked, it does not **need** to, and you can use it just to simulate the opening of the conversation._
+3. Break down the big task into subtask, ideally with a clear input, output, and instruction set.
+4. Create one agent per subtask, with a clear set of instructions, output requirements, _and_ who to pass the baton to under what circumstances.
+5. **If applicable:** Create a set of "allowable speaker transitions", i.e. which agent can speak after this agent is done, and set up the `GroupChat`.
+6. Create a CLI script that will invoke the setup with the right environment variables and flexible input parameters.
 
 ([I should really make a Copier template for this.](https://www.linkedin.com/feed/update/urn:li:activity:7176339756262277120/) Of course, it's a little complicated by the fact that the nature, prompt and setup of each agent is a little different each time, but there's sufficient similarity that it might be worth it.)
 
