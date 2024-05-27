@@ -14,7 +14,7 @@ const { header, source_collection, filter } = Astro.props;
 // This assumes that every collection kind has a `pubDate`, `slug`, and `title` field.
 const posts = (await getCollection(source_collection)).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-).reverse().slice(0, 5);
+).reverse().slice(0, 4);
 
 ---
 <section class="third">
