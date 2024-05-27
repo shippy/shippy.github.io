@@ -1,7 +1,7 @@
 ---
 title: "Hitparáda zemanovské argumentace"
 pubDate: "2015-11-10"
-categories: 
+categories:
   - "bez-kategorie"
 ---
 
@@ -9,7 +9,7 @@ Předloňské vítězství Miloše Zemana přineslo do českých diskuzí čerst
 
 Čestné uznání za mnohé z nových figur patří Jiřímu Ovčáčkovi. Ovčáček je Nick Naylor konzervativní levice: hoďte na něj cokoliv a než se nadějete, bráníte se proti vlastnímu nařčení. Jeho výstupy jsem dlouhodobě fascinován a pevně doufám, že ho bude v jeho biografii hrát Ryan Gosling.
 
-\[caption id="attachment\_268" align="aligncenter" width="660"\][![Ovčáček/Gosling, teenage heartthrobs](images/ovcacek-gosling-1024x558.jpg)](http://simon.podhajsky.net/blog/wp-content/uploads/2015/11/ovcacek-gosling.jpg) Ovčáček/Gosling, teenage heartthrobs\[/caption\]
+\[caption id="attachment_268" align="aligncenter" width="660"\][![Ovčáček/Gosling, teenage heartthrobs](images/ovcacek-gosling-1024x558.jpg)](http://simon.podhajsky.net/blog/wp-content/uploads/2015/11/ovcacek-gosling.jpg) Ovčáček/Gosling, teenage heartthrobs\[/caption\]
 
 Následuje moje osobní hitparáda argumentačních obratů od ledna 2013.
 
@@ -75,7 +75,7 @@ Je mi skoro hloupé Ovčáčkův výrok rozebírat — zarazilo mě už to, že 
 
 Tato figura nemá Ovčáčkovu obvyklou eleganci; je jen nezvykle absurdní. Obsazuje proto ubohé páté místo.
 
-* * *
+---
 
 Tato hitparáda je nekompletní. Je také nepodstatná: zahrnuje především věci, které jsou absurdní, ale v zásadě na nich nesejde. Nakažlivé polopravdy a amorální argumentační východiska, která Miloš Zeman v českém veřejném prostoru pomáhá normalizovat, jsou mnohem závažnější.
 

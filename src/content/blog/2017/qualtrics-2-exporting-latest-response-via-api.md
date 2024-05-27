@@ -1,7 +1,7 @@
 ---
 title: "Adventures with Qualtrics, part 2:  exporting the latest response via API"
 pubDate: "2017-06-05"
-categories: 
+categories:
   - "code"
   - "qualtrics"
   - "science"
@@ -77,7 +77,7 @@ def rawToTable(response_string)
   response_csv = response_csv.read
   response_csv.delete_if do |row|
     # Remove the row with descriptions & internal IDs
-    /^R_/ !~ row['ResponseID'] 
+    /^R_/ !~ row['ResponseID']
   end
   return response_csv
 end

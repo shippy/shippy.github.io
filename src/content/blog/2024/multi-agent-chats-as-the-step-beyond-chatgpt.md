@@ -2,7 +2,7 @@
 title: "Multi-agent chats as the Step Beyond ChatGPT"
 description: "A reflection on the process of creating multi-agent workflows with Autogen."
 pubDate: 2024-04-15
-categories: 
+categories:
   - "llms"
 heroImage: ./images/agents_interacting.png
 ---
@@ -39,11 +39,10 @@ This is the trickiest part to me, as the definition of finite-state machine tran
 
 - **On success**, it's very easy to define the next agent to speak. In the cover letter example, the Critic agent would pass the baton to the Writer agent if the cover letter was good enough. In the therapy session, the UserProxyAgent would pass the baton to any Therapist agent if the user indicated that they were ready to move on.
 - **On failure**, however, things become less clear. If a single-use agent fails, especially if they fail on a tool invocation, it's difficult to define the next agent to speak. But this is, in part because it's **difficult to define what failure is**. Let's use a couple of examples, in decreasing order of clarity:
-    
-    - In the cover letter example, the Job Description Ingester agent could miss an important detail for the cover letter submission (e.g. the company name or the requirement that the hiring agent be addressed by Mr. Banana lest they fail the candidate for not reading the JD closely enough).
-    - Still in the cover letter example, the Critic agent could fail if they had no more criticism to give, didn't call the function to save the cover letter to the target folder, but still terminated the workflow.
-    - Finally, in the cover letter example, the Critic agent could fail if the cover letter was not good enough, yet it didn't pick up on it. But what does "not good enough" mean? Some of that can be defined in structural terms (e.g. no intro), but some of it is inevitably subjective.
-    - Finally, one of the therapy agents could provide bad advice - but what does "bad" therapeutic advice even mean, short of actively instigating harm to self or others?
+  - In the cover letter example, the Job Description Ingester agent could miss an important detail for the cover letter submission (e.g. the company name or the requirement that the hiring agent be addressed by Mr. Banana lest they fail the candidate for not reading the JD closely enough).
+  - Still in the cover letter example, the Critic agent could fail if they had no more criticism to give, didn't call the function to save the cover letter to the target folder, but still terminated the workflow.
+  - Finally, in the cover letter example, the Critic agent could fail if the cover letter was not good enough, yet it didn't pick up on it. But what does "not good enough" mean? Some of that can be defined in structural terms (e.g. no intro), but some of it is inevitably subjective.
+  - Finally, one of the therapy agents could provide bad advice - but what does "bad" therapeutic advice even mean, short of actively instigating harm to self or others?
 
 ### From vibes to [DeepEval](https://docs.confident-ai.com/docs/getting-started) evals
 

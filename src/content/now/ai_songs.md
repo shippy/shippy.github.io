@@ -9,4 +9,4 @@ I've always liked the genre of hyper-specific music that narrowly apply to a giv
 - A Broadway ballad about yak shaving, or
 - A rock song about using Terraform for everything.
 
-I'm intentionally not linking to these songs, because they're terrible. But they're my terrible songs, and I love them. 
+I'm intentionally not linking to these songs, because they're terrible. But they're my terrible songs, and I love them.

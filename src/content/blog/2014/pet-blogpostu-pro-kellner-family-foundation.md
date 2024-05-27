@@ -1,7 +1,7 @@
 ---
 title: "Pět blogpostů pro Kellner Family Foundation"
 pubDate: "2014-09-28"
-categories: 
+categories:
   - "psani-jinde"
   - "studium-v-zahranici"
 ---

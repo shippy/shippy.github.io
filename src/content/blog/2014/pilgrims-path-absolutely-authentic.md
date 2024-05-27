@@ -1,7 +1,7 @@
 ---
 title: "Pilgrim's Path: Absolutely Authentic!"
 pubDate: "2014-08-14"
-categories: 
+categories:
   - "travel-writing"
 ---
 

@@ -8,7 +8,7 @@ githubUrl: https://github.com/PiechZ/greybox_wrapped
 projectUrl: https://github.com/PiechZ/greybox_wrapped
 blogRef:
   - 2023/chatgpt-makes-side-projects-easy-a-case-study
-technologies: 
+technologies:
   - React
   - FastAPI
   - DuckDB

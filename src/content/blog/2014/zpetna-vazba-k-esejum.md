@@ -1,7 +1,7 @@
 ---
 title: "Zpětná vazba k esejům"
 pubDate: "2014-09-06"
-categories: 
+categories:
   - "studium-v-zahranici"
 ---
 

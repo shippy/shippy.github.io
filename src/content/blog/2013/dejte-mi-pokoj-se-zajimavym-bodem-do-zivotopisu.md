@@ -2,7 +2,7 @@
 title: "Dejte mi pokoj se “zajímavým bodem do životopisu”!"
 pubDate: "2013-03-12"
 description: "CV není všechno. A ani hlavní."
-categories: 
+categories:
   - "uncategorized-cs-2"
 ---
 
@@ -14,7 +14,7 @@ Nechápejte mě špatně - získat práci je důležité a zlepšování kvalifi
 
 V dojmu, že něco je špatně, nejsem sám. Článek Yishai Schwartze “Enough with leadership” ([Yale Daily News](http://www.yaledailynews.com/news/2012/feb/28/schwartz-enough-with-leadership/), 28. února 2012) kritizuje obsesi vedoucími pozicemi, které mají dokazovat “leadership skills”, na úkor skutečných výsledků:
 
->  ”We need a fundamental change in culture. We need to move from a valorization of leadership to a celebration of accomplishment. Institutions need to praise the job well done and the part well played, regardless of whether that part is a cog in the machine or the entire mechanism’s inventor.”
+> ”We need a fundamental change in culture. We need to move from a valorization of leadership to a celebration of accomplishment. Institutions need to praise the job well done and the part well played, regardless of whether that part is a cog in the machine or the entire mechanism’s inventor.”
 
 Jinými slovy, soustředění se na životopisnou hodnotu nás rozptyluje od vyhodnocení skutečného významu, který vytváříme. Ten je ale velmi důležitý nejen pro společnost, ale i pro naši osobní spokojenost. Larry Smith v přednášce ["Proč nebudete mít výjimečnou kariéru" na TEDxUW](http://www.ted.com/talks/larry_smith_why_you_will_fail_to_have_a_great_career.html) konferenci University of Waterloo vysvětluje, že opravdu vynikající kariéra je výsledkem ochoty následovat svou lásku i přese s ní spojenou nejistotu. Velké průlomy jsou zřídka výsledkem bezpečných, pro životopis vhodných voleb.
 

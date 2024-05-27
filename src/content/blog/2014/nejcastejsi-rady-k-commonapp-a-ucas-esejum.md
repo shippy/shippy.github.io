@@ -1,7 +1,7 @@
 ---
 title: "Nejčastější rady k CommonApp a UCAS esejům"
 pubDate: "2014-09-27"
-categories: 
+categories:
   - "studium-v-zahranici"
 ---
 

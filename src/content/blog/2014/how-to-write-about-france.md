@@ -1,7 +1,7 @@
 ---
 title: "How To Write About France: A Guide For a Rising Junior English Major from Kentucky"
 pubDate: "2014-07-21"
-categories: 
+categories:
   - "travel-writing"
 ---
 

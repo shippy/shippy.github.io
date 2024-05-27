@@ -1,7 +1,7 @@
 ---
 title: "Don't get into useless internet arguments, kids"
 pubDate: "2017-09-02"
-categories: 
+categories:
   - "code"
   - "data-viz"
   - "science"

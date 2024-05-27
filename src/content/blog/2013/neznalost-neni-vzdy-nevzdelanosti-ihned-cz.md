@@ -2,7 +2,7 @@
 title: "Neznalost není vždy nevzdělaností (iHNed.cz)"
 description: "Ke vzdělanosti vede více cest. Jako společnost potřebujeme upustit od kategorických soudů 'pokud neznáš X, jsi diletant'."
 pubDate: "2013-05-13"
-categories: 
+categories:
   - "psani-jinde"
 ---
 
@@ -16,7 +16,7 @@ Minulý týden prohlásil Jiří Kostečka, předseda Asociace středoškolskýc
 
 Fakta jsou bezesporu důležitá a užitečná. Pokud zná maturant z hlavy jména velkých koncentráků a diplomovaná právnička lhůtu pro odvolání v trestní věci, skvěle. Obzvláště ve společenských vědách a humanitních oborech ale nelze jednoznačně říci, která fakta jsou **tak nepostradatelná**, že by bez jejich znalosti student neměl danou školu absolvovat. Pro absolventy jsou důležité výsledné schopnosti na konci studia — a přestože široký znalostní záběr pomáhá tyto schopnosti získat, žádný jediný správný znalostní výsek neexistuje. To lze elegantně ilustrovat právě na příkladu, který zmiňuje pan Kostečka. Lze si představit navýsost kvalitní maturanty, kteří:
 
-- namísto německých koncentračních táborů Dachau a Buchenwald znají jako ilustraci nacistické nelidskosti vyhlazovací tábory [Treblinka](http://en.wikipedia.org/wiki/Treblinka_extermination_camp) a [Bełżec](http://en.wikipedia.org/wiki/Belzec_extermination_camp), které jsou oproti prvním jmenovaným [zodpovědné za dvoj- až čtyřnásobně větší počet obětí](http://en.wikipedia.org/wiki/List_of_Nazi_concentration_camps); 
+- namísto německých koncentračních táborů Dachau a Buchenwald znají jako ilustraci nacistické nelidskosti vyhlazovací tábory [Treblinka](http://en.wikipedia.org/wiki/Treblinka_extermination_camp) a [Bełżec](http://en.wikipedia.org/wiki/Belzec_extermination_camp), které jsou oproti prvním jmenovaným [zodpovědné za dvoj- až čtyřnásobně větší počet obětí](http://en.wikipedia.org/wiki/List_of_Nazi_concentration_camps);
 - nebo se lekci o totalitním násilí naučili z detailního pokrytí Stalinových gulagů a Pol Potovy Kambodži, ale z druhé světové války se zabývali především [mezinárodněprávními dopady norimberských tribunálů](http://www.roberthjackson.org/the-man/speeches-articles/speeches/speeches-related-to-robert-h-jackson/the-influence-of-the-nuremberg-trial-on-international-criminal-law/) a z nacistických táborů znají jen Terezín;
 - nebo neznají jméno žádného z nacistických ghett či táborů, ale vědí, [že jich bylo na 42.500](http://www.nytimes.com/2013/03/03/sunday-review/the-holocaust-just-got-more-shocking.html?pagewanted=all&_r=0), a díky znalosti [Milgramových poslušnostních experimentů](http://en.wikipedia.org/wiki/Milgram_experiment) chápou některé z psychologických příčin ochoty tolika lidí podílet se na tak zrůdných zločinech.
 

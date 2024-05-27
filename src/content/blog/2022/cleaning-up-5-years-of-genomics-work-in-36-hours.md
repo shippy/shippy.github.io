@@ -2,7 +2,7 @@
 title: "Cleaning up 5 years of genomics work in 36 hours"
 pubDate: "2022-05-02"
 heroImage: ./images/untangling_dna.png
-categories: 
+categories:
   - "code"
   - "data"
 ---
@@ -11,7 +11,7 @@ In September 2021, I spent the last 36 hours on a rollercoaster made of `snakema
 
 ## What we were doing
 
-[@Laura\_Kellman](https://twitter.com/laura_kellman) spent the last couple of years working on a cutting-edge cancer genomics project, accumulating many gigabytes of files and writing tens of RMarkdown notebooks. I volunteered to do a code review and functional replication on another machine.
+[@Laura_Kellman](https://twitter.com/laura_kellman) spent the last couple of years working on a cutting-edge cancer genomics project, accumulating many gigabytes of files and writing tens of RMarkdown notebooks. I volunteered to do a code review and functional replication on another machine.
 
 ## Step 0: Gather everything
 
@@ -47,7 +47,7 @@ _Why not conda?_ The main alternative to `{renv}` was `conda` with `r-forge` and
 
 ## Step 3: Snakemake
 
-For the past several years, I've used `Makefile`s to document my data processing workflows. I've read about Snakemake, but I didn't have time to try it out. Then the time came to help [@Laura\_Kellman](https://twitter.com/laura_kellman) optimize her PhD data processing workflow, so of course I thought now is the time to experiment. (Sorry, Laura.)
+For the past several years, I've used `Makefile`s to document my data processing workflows. I've read about Snakemake, but I didn't have time to try it out. Then the time came to help [@Laura_Kellman](https://twitter.com/laura_kellman) optimize her PhD data processing workflow, so of course I thought now is the time to experiment. (Sorry, Laura.)
 
 To be fair, Snakemake had quite a few features to offer over GNU Make! But I've only ever read the docs and haven't actively deployed it. Rookie mistake.
 

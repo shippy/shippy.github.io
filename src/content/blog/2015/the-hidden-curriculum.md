@@ -1,7 +1,7 @@
 ---
 title: "The Hidden Curriculum"
 pubDate: "2015-06-28"
-categories: 
+categories:
   - "study-abroad"
 ---
 

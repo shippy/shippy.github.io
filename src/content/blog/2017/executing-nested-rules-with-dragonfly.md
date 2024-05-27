@@ -1,7 +1,7 @@
 ---
 title: "Executing nested rules with dragonfly"
 pubDate: "2017-05-10"
-categories: 
+categories:
   - "code"
   - "voice-programming"
 ---

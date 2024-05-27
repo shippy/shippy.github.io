@@ -1,7 +1,7 @@
 ---
 title: "Altruismus 2.0 (iHNed.cz)"
 pubDate: "2015-01-28"
-categories: 
+categories:
   - "psani-jinde"
 ---
 

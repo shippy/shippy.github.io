@@ -1,7 +1,7 @@
 ---
 title: "No David Sedaris"
 pubDate: "2014-08-14"
-categories: 
+categories:
   - "travel-writing"
 ---
 

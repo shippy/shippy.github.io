@@ -1,7 +1,7 @@
 ---
 title: "Slim CI/CD with Bitbucket Pipelines (for dbt)"
 pubDate: "2022-05-19"
-categories: 
+categories:
   - "data"
   - "external"
 heroImage: ./images/untangling_computer.png

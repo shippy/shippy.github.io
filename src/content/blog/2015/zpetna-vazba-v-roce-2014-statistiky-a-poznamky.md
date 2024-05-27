@@ -1,7 +1,7 @@
 ---
 title: "Zpětná vazba v roce 2014: statistiky a poznámky"
 pubDate: "2015-01-23"
-categories: 
+categories:
   - "studium-v-zahranici"
 ---
 
@@ -33,6 +33,6 @@ Co psychologové? Jung a Freud jsou out; bereme si od nich, že podvědomí (tj
 
 Nevím, co za to může. Vysoké zastoupení "psychologů" v "poradnách" "magazínů"? Mizerné pokrytí psychologie v rámci základů společenských věd na gymnáziích? Knihovny házející psychologii a okult na jednu hromadu?
 
-\[caption id="attachment\_205" align="aligncenter" width="225"\][![Kam zařazuje ostravská knihovna psychologii (via Petr Paleček)](images/10898297_10205908034769813_1349510673330359333_n-225x300.jpg)](http://simon.podhajsky.net/blog/wp-content/uploads/2015/01/10898297_10205908034769813_1349510673330359333_n.jpg) Kam zařazuje ostravská knihovna psychologii (via Petr Paleček)\[/caption\]
+\[caption id="attachment_205" align="aligncenter" width="225"\][![Kam zařazuje ostravská knihovna psychologii (via Petr Paleček)](images/10898297_10205908034769813_1349510673330359333_n-225x300.jpg)](http://simon.podhajsky.net/blog/wp-content/uploads/2015/01/10898297_10205908034769813_1349510673330359333_n.jpg) Kam zařazuje ostravská knihovna psychologii (via Petr Paleček)\[/caption\]
 
 **Co dál?** Tento rok určitě plánuji pokračovat. V mezičase napíšu pár článků o tom, co jsem se za poslední čtvrtrok naučil.

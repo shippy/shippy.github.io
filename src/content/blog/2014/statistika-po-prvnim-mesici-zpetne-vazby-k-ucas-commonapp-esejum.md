@@ -1,7 +1,7 @@
 ---
 title: "Statistika po prvním měsíci zpětné vazby k esejům"
 pubDate: "2014-09-27"
-categories: 
+categories:
   - "studium-v-zahranici"
 ---
 
@@ -9,7 +9,7 @@ categories:
 
 (Všechny grafy jsem vyrobil ve vanilla R. Příště už nebudu líný a použiji ggplot, slibuji.)
 
-**Vybrané pozitivní ohlasy** 
+**Vybrané pozitivní ohlasy**
 
 - "It was an excellent feedback, probably the best one I have ever seen."
 - "I have not expected such a thorough feedback."
@@ -38,7 +38,7 @@ Co se spokojenosti týče, ptám se na dvě věci: je respondent obecně spokoje
 
 [![14-09-overall_satisfaction](images/14-09-overall_satisfaction.png)](http://simon.podhajsky.net/blog/wp-content/uploads/2014/09/14-09-overall_satisfaction.png)
 
- 
+
 
 Za dobrou zprávu považuji to, že jsem ve většině případů nebyl první, kdo k danému draftu poskytnul zpětnou vazbu, a že má zpětná vazba není významně lepší než ta z jiných zdrojů. Je dobré vědět, že uchazeči o studium v zahraničí mají i další možnosti, jak získat kvalitní feedback.
 

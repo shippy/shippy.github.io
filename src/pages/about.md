@@ -1,10 +1,11 @@
 ---
-layout: '../layouts/GenericPage.astro'
+layout: "../layouts/GenericPage.astro"
 title: "About Me"
 description: Meet Šimon Podhajský.
 heroImage: /blog-placeholder-about.jpg
 language: en
 ---
+
 - **I know how to evaluate and productionize LLM-based applications.** I understand that integrating standard software engineering and ML best practices is what keeps the modern LLM-based apps from remaining merely a fancy demo.
 - **I know data engineering.** Performant, semantically rich, reproducible: my pipelines are all of the above.
 - **I know data science and data analytics.** (It's more than just averages and sums across the right groups.)
