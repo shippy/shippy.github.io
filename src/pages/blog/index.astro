@@ -6,7 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 import { Image } from 'astro:assets';
-import defaultHeroImage from '/public/blog-placeholder-6.png';
+import defaultHeroImage from '../../assets/default_blog_hero_image.png';
 
 
 const posts = (await getCollection('blog')).sort(
