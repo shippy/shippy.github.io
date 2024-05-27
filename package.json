@@ -1,7 +1,7 @@
 {
   "name": "simon.podhajsky.net",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.9.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,11 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^3.0.0",
-    "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.1.4",
-    "astro": "^4.8.3",
-    "@astrojs/check": "^0.6.0",
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/mdx": "^3.0.1",
+    "@astrojs/rss": "^4.0.6",
+    "@astrojs/sitemap": "^3.1.5",
+    "astro": "^4.9.1",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.14.0"
   }
 }
