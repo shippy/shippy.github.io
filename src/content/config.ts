@@ -7,7 +7,7 @@ const blog = defineCollection({
 		description: z.string().optional(),
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
-		heroImage: image().optional().default("/public/blog-placeholder-6.png"),
+		heroImage: image().optional(), // default is defined in the layout + index files
 		categories: z.array(z.string()).optional(),
 		language: z.enum(['en', 'cs']).optional().default('en')
 	}),
@@ -22,7 +22,7 @@ const presentations = defineCollection({
 		pubDate: z.coerce.date(),
 		presentationUrl: z.string(),
 		videoUrl: z.string().optional(),
-		heroImage: image().optional().default("/public/blog-placeholder-3.jpg"),
+		heroImage: image().optional(), // default is defined in the layout + index files
 	}),
 });
 
@@ -37,7 +37,7 @@ const side_projects = defineCollection({
 		blogRef: z.array(reference('blog')).optional(),
 		technologies: z.array(z.string()).optional(),
 		screenshots: z.array(z.string()).optional(),
-		heroImage: image().optional().default("/public/blog-placeholder-4.jpg"),
+		heroImage: image().optional(), // default is defined in the layout + index files
 	}),
 });
 
