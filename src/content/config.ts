@@ -39,7 +39,7 @@ const side_projects = defineCollection({
       projectUrl: z.string().optional(),
       blogRef: z.array(reference("blog")).optional(),
       technologies: z.array(z.string()).optional(),
-      screenshots: z.array(z.string()).optional(),
+      screenshots: z.array(image()).optional(),
       heroImage: image().optional(), // default is defined in the layout + index files
     }),
 });

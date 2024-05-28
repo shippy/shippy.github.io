@@ -11,7 +11,7 @@ import { Image } from 'astro:assets';
 
 type Props = CollectionEntry<'side_projects'>['data'];
 
-const { title, description, pubDate, heroImage, githubUrl, projectUrl, blogRef, technologies } = Astro.props;
+const { title, description, pubDate, heroImage, githubUrl, projectUrl, blogRef, technologies, screenshots } = Astro.props;
 const blogs = blogRef ? await getEntries(blogRef) : undefined;
 ---
 
@@ -81,7 +81,7 @@ const blogs = blogRef ? await getEntries(blogRef) : undefined;
 							{projectUrl && <li><a href={projectUrl}>Project deployed.</a></li>}
 							{blogs && blogs.map(
 								(blog) => <li>
-									Blog: <a href=`/blog/${blog.slug}`>{blog.data.title}</a>
+									Blog: <a href={`/blog/${blog.slug}`}>{blog.data.title}</a>
 								</li>
 							)}
 						</ul>
@@ -95,6 +95,15 @@ const blogs = blogRef ? await getEntries(blogRef) : undefined;
 								))}
 							</ul>
 						</div>
+					)}
+					{screenshots && (
+						<div class="screenshots">
+							<h2>Screenshots</h2>
+							{screenshots.map((screenshot) => (
+								<Image width={1020} height={510} src={screenshot} alt="" />
+							))}
+						</div>
+					
 					)}
 					<slot />
 				</div>
