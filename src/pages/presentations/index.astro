@@ -10,6 +10,11 @@ import defaultHeroImage from "@assets/default_other_hero_image.png";
 import "@styles/collection_index.css";
 
 const collection = "presentations";
+// Replace `collection` underscores etc. with spaces and capitalize first letter of each word
+const collectionTitle = collection
+  .replace(/[_-]+/g, " ")
+  .replace(/\b\w/g, (char) => char.toUpperCase());
+
 const posts = (await getCollection(collection))
   .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
   .reverse();
@@ -18,7 +23,7 @@ const posts = (await getCollection(collection))
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE + ` | ${collection}`} description={SITE_DESCRIPTION} />
+    <BaseHead title={SITE_TITLE + ` | ${collectionTitle}`} description={SITE_DESCRIPTION} />
   </head>
   <body>
     <Header />
