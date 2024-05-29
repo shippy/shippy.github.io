@@ -6,7 +6,7 @@ heroImage: /blog-placeholder-about.jpg
 language: en
 ---
 
-Hi! I'm Šimon Podhajský[^1]. I graduated Yale in 2015 and have worked in data analytics, data science, and data engineering ever since. Here's what I can do for you:
+Hi! I'm Šimon Podhajský[^1]. I graduated Yale in 2015 and have worked in data analytics, data science, and data engineering ever since. Here's what I do best:
 
 - **I know how to evaluate and productionize LLM-based applications.** I understand that integrating standard software engineering and ML best practices is what keeps the modern LLM-based apps from remaining merely a fancy demo.
 - **I know data engineering.** Performant, semantically rich, reproducible: my pipelines are all of the above.
