@@ -79,10 +79,12 @@ const { title, description, pubDate, heroImage, presentationUrl, videoUrl, place
 							<iframe width="720" height="400" src={videoUrl} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 						</div>
 					}
-					<div class="presentation_iframe">
-						<h2>Slides</h2>
-						<iframe src={presentationUrl} width="720" height="400" allowfullscreen="true"></iframe>
-					</div>
+					{
+						presentationUrl && <div class="presentation_iframe">
+							<h2>Slides</h2>
+							<iframe src={presentationUrl} width="720" height="400" allowfullscreen="true"></iframe>
+						</div>
+					}
 				</div>
 			</article>
 		</main>

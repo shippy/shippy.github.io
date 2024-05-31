@@ -22,7 +22,7 @@ const presentations = defineCollection({
       description: z.string(),
       place: z.string(),
       pubDate: z.coerce.date(),
-      presentationUrl: z.string(),
+      presentationUrl: z.string().optional(),
       videoUrl: z.string().optional(),
       heroImage: image().optional(), // default is defined in the layout + index files
     }),
