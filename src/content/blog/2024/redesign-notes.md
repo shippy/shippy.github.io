@@ -53,7 +53,7 @@ No particular examples here - I haven't encountered anything that looks / should
 
 ### Heavily optional: Gradual underline of links 
 
-- e.g. https://quantum.cosmicthemes.com (+ TOC on blogposts inclusion is neat)
+- e.g. https://quantum.cosmicthemes.com (+ TOC on blogposts inclusion is neat - on that note, the "animation snake" [on this site](https://kld.dev/building-table-of-contents/) is pretty great, too)
 
 
 ## Miscellanea
@@ -73,3 +73,4 @@ No particular examples here - I haven't encountered anything that looks / should
 -  https://rafa.design/ - video integrating into the page + "people I'd like to meet"
 -  https://onepagelove.com/helena-zhang / https://www.helenazhang.com/ - color on hover
 -  https://starklysaid.com/ - copywriting expansion on hover
+-  https://charliepite.com - engaging use of video (although it's really the idea that sells it)
