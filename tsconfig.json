@@ -1,15 +1,30 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "strictNullChecks": true,
     "baseUrl": ".",
+    "target": "es6",
+    "allowJs": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "jsx": "react",
+    "isolatedModules": true,
+    "incremental": true,
+    "allowSyntheticDefaultImports": true,
     "paths": {
-      "~/*": ["./src/*"],
-      "@components/*": ["src/components/*"],
-      "@assets/*": ["src/assets/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@styles/*": ["src/styles/*"],
-      "@utils/*": ["src/components/utils/*"]
+      "@/components/*": ["./src/layouts/components/*"],
+      "@/shortcodes/*": ["./src/layouts/shortcodes/*"],
+      "@/helpers/*": ["./src/layouts/helpers/*"],
+      "@/partials/*": ["./src/layouts/partials/*"],
+      "@/*": ["./src/*"]
     }
-  }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.astro",
+    "src/layouts/shortcodes/Tabs.jsx",
+    "src/layouts/shortcodes/Tab.jsx"
+  ],
+  "exclude": ["node_modules"]
 }

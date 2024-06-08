@@ -1,0 +1,63 @@
+{
+  "site": {
+    "title": "Šimon Podhajský",
+    "base_url": "https://simon.podhajsky.net",
+    "base_path": "/",
+    "trailing_slash": true,
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo.png",
+    "logo_width": "257",
+    "logo_height": "36",
+    "logo_text": "Šimon Podhajský"
+  },
+
+  "settings": {
+    "pagination": 4,
+    "summary_length": 150
+  },
+
+  "params": {
+    "contact_form_action": "#",
+    "career_form_action": "#",
+    "copyright": "Designed & Developed By [Themefisher](https://themefisher.com)"
+  },
+
+  "footer_data": {
+    "description": "Thank you for reading all the way down here!",
+    "email": "simon@podhajsky.net",
+    "location": "Prague, Czech Republic",
+    "contact": ""
+  },
+
+  "call_to_action": {
+    "enable": false,
+    "title": "Helping Teams In The World With Focus",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas <br/> Werat viverra id et aliquet. vulputate egestas sollicitudin.",
+    "button": {
+      "label": "Download Now",
+      "link": "#"
+    }
+  },
+
+  "disqus": {
+    "enable": true,
+    "shortname": "themefisher-template",
+    "settings": {}
+  },
+
+  "metadata": {
+    "meta_author": "Šimon Podhajský",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "This is the personal website, blog, and portfolio of Šimon Podhajský"
+  },
+
+  "email": {
+    "title": "Email Address",
+    "contact": ["simon@podhajsky.net"]
+  },
+
+  "phone": {
+    "title": "Phone",
+    "contact": []
+  }
+}

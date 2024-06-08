@@ -1,59 +1,50 @@
 ---
-import BaseHead from "@components/BaseHead.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
-import { getCollection } from "astro:content";
-import FormattedDate from "@components/FormattedDate.astro";
-import { Image } from "astro:assets";
-import defaultHeroImage from "@assets/default_blog_hero_image.png";
-import "@styles/collection_index.css";
+import Blog from "@/components/Blog.astro";
+import PageHeader from "@/components/PageHeader.astro";
+import Pagination from "@/components/Pagination.astro";
+import config from "@/config/config.json";
+import Base from "@/layouts/Base.astro";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import { sortByDate } from "@/lib/utils/sortFunctions";
+import Cta from "@/partials/Cta.astro";
+import type { CollectionKey } from "astro:content";
+import { getEntry } from "astro:content";
 
-const posts = (await getCollection("blog"))
-  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
-  .reverse();
+const blogs_index = await getEntry("blog", "-index");
+const blogs = await getSinglePage("blog");
+const authors = await getSinglePage("authors");
+const addAuthors = blogs.map((blog: any) => {
+  const author: any = authors.find(
+    (author: any) => author.data.title === blog.data.author,
+  );
+  return {
+    ...blog,
+    data: {
+      ...blog.data,
+      authorImage: author.data.image,
+    },
+  };
+});
+const sortedBlogs = sortByDate(addAuthors);
+const totalPages = Math.ceil(addAuthors.length / config.settings.pagination);
+const currentBlogs = sortedBlogs.slice(0, config.settings.pagination);
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE + " | Blog"} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <section>
-        <ul>
-          {
-            posts.map((post) => (
-              <li>
-                <a href={`/blog/${post.slug}/`}>
-                  {post.data.heroImage ? (
-                    <Image
-                      width={720}
-                      height={360}
-                      src={post.data.heroImage}
-                      alt=""
-                    />
-                  ) : (
-                    <Image
-                      width={720}
-                      height={360}
-                      src={defaultHeroImage}
-                      alt=""
-                    />
-                  )}
-                  <h4 class="title">{post.data.title}</h4>
-                  <p class="date">
-                    <FormattedDate date={post.data.pubDate} />
-                  </p>
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-    </main>
-    <Footer />
-  </body>
-</html>
+<Base title={blogs_index.data.title}>
+  <PageHeader title={blogs_index.data.title} />
+  <section>
+    <div class="container">
+      <div class="row justify-center">
+        {
+          currentBlogs.map((blog, i) => (
+            <div class="col-12 mb-8 md:col-6 lg:col-5">
+              <Blog blog={blog} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <Pagination currentPage={1} totalPages={totalPages} section="blog" />
+  <Cta />
+</Base>
