@@ -1,9 +1,7 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { getCollection } from "astro:content";
+import Base from "@/layouts/Base.astro";
+import Default from "@/layouts/Default.astro";
 
 const posts = (
   await getCollection("now", (post) => {
@@ -42,43 +40,27 @@ async function renderPosts() {
 const all_posts = await renderPosts();
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <style>
-      main {
-        width: 960px;
-      }
-
-      .introduction {
-        padding-left: 1em;
-      }
-    </style>
-  </head>
-  <body>
-    <Header />
-    <main>
-      <section class="introduction">
-        <h2>What Am I Up To?</h2>
-        <p>
-          This page contains my activities added or updated in the past year.
-          Come talk to me about it!
-        </p>
-        <p>
-          This is part of the <a href="https://nownownow.com/about">/now</a> movement.
-        </p>
-      </section>
-      {
-        all_posts.map((rendered_post) => (
-          <section>
-            <h4 class="title">{rendered_post.post.data.title}</h4>
-            <p class="content"><rendered_post.content /></p>
-            <slot />
-          </section>
-        ))
-      }
-    </main>
-    <Footer />
-  </body>
-</html>
+<Base
+ title="Now"
+ description="This page contains my activities added or updated in the past year"
+ >
+  <main class="container">
+    <section class="introduction section">
+      <h2>What Am I Up To?</h2>
+      <p>
+        This page contains my activities added or updated in the past year.
+        Come talk to me about it!
+      </p>
+      <p>
+        This is part of the <a href="https://nownownow.com/about">/now</a> movement.
+      </p>
+    </section>
+    <section class="content">
+    {
+      all_posts.map((rendered_post) => (
+        <Default data={rendered_post.post} />
+      ))
+    }
+    </section>
+  </main>
+</Base>

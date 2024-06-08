@@ -1,6 +1,6 @@
 ---
 title: "Adventures with Qualtrics, part 1: Custom Web Services and Piped Text"
-pubDate: "2017-06-02"
+date: 2017-06-02
 categories:
   - "code"
   - "qualtrics"

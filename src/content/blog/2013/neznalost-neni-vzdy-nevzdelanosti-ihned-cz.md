@@ -1,7 +1,7 @@
 ---
 title: "Neznalost není vždy nevzdělaností (iHNed.cz)"
 description: "Ke vzdělanosti vede více cest. Jako společnost potřebujeme upustit od kategorických soudů 'pokud neznáš X, jsi diletant'."
-pubDate: "2013-05-13"
+date: 2013-05-13
 categories:
   - "psani-jinde"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Cleaning up 5 years of genomics work in 36 hours"
-pubDate: "2022-05-02"
-heroImage: ./images/untangling_dna.png
+date: 2022-05-02
+image: ./images/untangling_dna.png
 categories:
   - "code"
   - "data"

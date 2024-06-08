@@ -1,6 +1,6 @@
 ---
 title: "Rady k oxfordským (a cambridgeským) pohovorům"
-pubDate: "2012-11-13"
+date: 2012-11-13
 description: "Článek o pohovorech na společenskovědní předměty na Oxbridge."
 categories:
   - "psani-jinde"

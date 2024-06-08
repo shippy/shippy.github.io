@@ -1,6 +1,6 @@
 ---
 title: "And yet"
-pubDate: "2014-07-25"
+date: 2014-07-25
 categories:
   - "travel-writing"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Zpětná vazba v roce 2014: statistiky a poznámky"
-pubDate: "2015-01-23"
+date: 2015-01-23
 categories:
   - "studium-v-zahranici"
 ---

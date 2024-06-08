@@ -1,6 +1,6 @@
 ---
 title: "Fotbal, efektivní altruismus a spousta psaní (KFF)"
-pubDate: "2015-01-20"
+date: 2015-01-20
 categories:
   - "psani-jinde"
   - "studium-v-zahranici"

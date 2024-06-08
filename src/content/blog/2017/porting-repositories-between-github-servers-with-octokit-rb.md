@@ -1,6 +1,6 @@
 ---
 title: "Porting repositories between GitHub servers with octokit.rb"
-pubDate: "2017-06-19"
+date: 2017-06-19
 categories:
   - "code"
 ---

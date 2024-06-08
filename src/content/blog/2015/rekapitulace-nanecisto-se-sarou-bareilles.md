@@ -1,6 +1,6 @@
 ---
 title: "Rekapitulace nanečisto se Sarou Bareilles (KFF)"
-pubDate: "2015-08-20"
+date: 2015-08-20
 categories:
   - "psani-jinde"
 ---

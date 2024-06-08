@@ -1,6 +1,7 @@
 ---
 title: "ChatGPT makes side projects easy: a case study"
-pubDate: "2023-04-23"
+image: /public/blog-placeholder-1.jpg
+date: 2023-04-23
 categories:
   - "code"
   - "llms"

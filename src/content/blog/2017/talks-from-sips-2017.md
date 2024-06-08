@@ -1,6 +1,6 @@
 ---
 title: "Talks from SIPS 2017"
-pubDate: "2017-08-05"
+date: 2017-08-05
 categories:
   - "code"
   - "science"

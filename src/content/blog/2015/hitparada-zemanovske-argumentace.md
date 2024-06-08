@@ -1,6 +1,6 @@
 ---
 title: "Hitparáda zemanovské argumentace"
-pubDate: "2015-11-10"
+date: 2015-11-10
 categories:
   - "bez-kategorie"
 ---

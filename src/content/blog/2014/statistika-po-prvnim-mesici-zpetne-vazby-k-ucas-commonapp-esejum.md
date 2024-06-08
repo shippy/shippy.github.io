@@ -1,6 +1,6 @@
 ---
 title: "Statistika po prvním měsíci zpětné vazby k esejům"
-pubDate: "2014-09-27"
+date: 2014-09-27
 categories:
   - "studium-v-zahranici"
 ---

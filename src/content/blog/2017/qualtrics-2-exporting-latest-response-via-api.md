@@ -1,6 +1,6 @@
 ---
 title: "Adventures with Qualtrics, part 2:  exporting the latest response via API"
-pubDate: "2017-06-05"
+date: 2017-06-05
 categories:
   - "code"
   - "qualtrics"

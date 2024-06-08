@@ -1,6 +1,6 @@
 ---
 title: "Things I Left Behind"
-pubDate: "2014-07-30"
+date: 2014-07-30
 categories:
   - "travel-writing"
 ---

@@ -3,7 +3,6 @@ title: My Tech Setup
 description: >
   A list of the tech I use at home, work, and when traveling.
 pubDate: 2024-05-20
-layout: ../layouts/GenericPage.astro
 ---
 
 ## Home

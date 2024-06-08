@@ -1,6 +1,6 @@
 ---
 title: "Rozhovor: Jaké příležitosti nabízí Yale (The Student Times)"
-pubDate: "2012-11-06"
+date: 2012-11-06
 description: "Rozhovor se mnou vyšel v The Student Times."
 categories:
   - "psani-jinde"

@@ -1,6 +1,6 @@
 ---
 title: "Feedback k esejům, beze mě"
-pubDate: "2015-09-26"
+date: 2015-09-26
 categories:
   - "studium-v-zahranici"
 ---

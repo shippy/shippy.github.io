@@ -1,6 +1,6 @@
 ---
 title: "Dejte mi pokoj se “zajímavým bodem do životopisu”!"
-pubDate: "2013-03-12"
+date: 2013-03-12
 description: "CV není všechno. A ani hlavní."
 categories:
   - "uncategorized-cs-2"

@@ -1,6 +1,6 @@
 ---
 title: "Introducing git to scientists who code"
-pubDate: "2017-02-15"
+date: 2017-02-15
 categories:
   - "code"
   - "science"

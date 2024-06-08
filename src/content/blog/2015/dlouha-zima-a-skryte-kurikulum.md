@@ -1,6 +1,6 @@
 ---
 title: "Dlouhá zima a skryté kurikulum"
-pubDate: "2015-06-28"
+date: 2015-06-28
 categories:
   - "studium-v-zahranici"
 ---
