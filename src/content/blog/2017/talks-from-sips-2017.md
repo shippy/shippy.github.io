@@ -4,6 +4,7 @@ date: 2017-08-05
 categories:
   - "code"
   - "science"
+image: ./images/improving_psych.png
 ---
 
 The annual meeting of the Society for the Improvement of Psychological Science was amazing! You should see [the OSF conference page](https://osf.io/jtcu9/) if you missed out on it, and you should see the following presentations if you missed out on me:

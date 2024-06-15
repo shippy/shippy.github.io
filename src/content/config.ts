@@ -9,7 +9,7 @@ const blogsCollection = defineCollection({
       title: z.string(),
       meta_title: z.string().optional(),
       description: z.string().optional(),
-      date: z.date().optional(),  // TODO: Change blogposts
+      date: z.date(),  // TODO: Change blogposts
       image: image().optional(),  // TODO: Change blogposts
       heroImage: image().optional(),  // TODO: Change blogposts
       author: z.string().optional().default("Simon Podhajsky"),

@@ -3,6 +3,7 @@ title: "Feedback k esejům pozastaven"
 date: 2015-09-26
 categories:
   - "studium-v-zahranici"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 **Update, 26. září 2015: [Náhradní systém je stvořen a funguje! Viz článek.](http://simon.podhajsky.net/blog/2015/feedback-k-esejum-beze-me/)**

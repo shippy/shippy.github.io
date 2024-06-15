@@ -2,6 +2,7 @@
 title: "Other people’s problems: NZB application essays"
 description: "A brief look at the 2013 NZB Essay Prompts."
 date: 2013-03-07
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 I just took a look at the [NZB Essay Prompts 2013](http://www.nadacezb.cz/en/essays.html), and, wow. I really had a much easier job than current applicants.

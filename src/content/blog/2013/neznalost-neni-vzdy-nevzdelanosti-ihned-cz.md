@@ -4,6 +4,7 @@ description: "Ke vzdělanosti vede více cest. Jako společnost potřebujeme upu
 date: 2013-05-13
 categories:
   - "psani-jinde"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 **Ke vzdělanosti vede více cest. Jako společnost potřebujeme upustit od kategorických soudů "pokud neznáš X, jsi diletant".**

@@ -3,6 +3,7 @@ title: "Dlouhá zima a skryté kurikulum"
 date: 2015-06-28
 categories:
   - "studium-v-zahranici"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 Tato zima byla delší, než měla sebemenší právo být.

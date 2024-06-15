@@ -3,6 +3,7 @@ title: "How To Write About France: A Guide For a Rising Junior English Major fro
 date: 2014-07-21
 categories:
   - "travel-writing"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 _This essay was a creative-writing assignment in the first week of ENGL S247: Travel Writing._

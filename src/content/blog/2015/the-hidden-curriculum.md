@@ -3,6 +3,7 @@ title: "The Hidden Curriculum"
 date: 2015-06-28
 categories:
   - "study-abroad"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 This winter was longer than it had any right to be.

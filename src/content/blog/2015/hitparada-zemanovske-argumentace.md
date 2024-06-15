@@ -3,6 +3,7 @@ title: "Hitparáda zemanovské argumentace"
 date: 2015-11-10
 categories:
   - "bez-kategorie"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 Předloňské vítězství Miloše Zemana přineslo do českých diskuzí čerstvé argumentační obraty. To, že je na nich něco v nepořádku, víte hned — ale díky kombinaci víceznačnosti a rozdílných předpokladů chvíli trvá, než přijdete na to, co. Je to lepší než sudoku.

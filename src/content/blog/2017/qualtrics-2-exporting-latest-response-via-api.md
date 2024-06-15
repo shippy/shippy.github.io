@@ -5,6 +5,7 @@ categories:
   - "code"
   - "qualtrics"
   - "science"
+image: "/public/blog-placeholder-5.jpg"
 ---
 
 _(In Part 1, [I wrote about the role of Piped Text and building a custom web service that Qualtrics will recognize](http://simon.podhajsky.net/blog/2017/qualtrics-1-custom-web-services-and-piped-text/).)_

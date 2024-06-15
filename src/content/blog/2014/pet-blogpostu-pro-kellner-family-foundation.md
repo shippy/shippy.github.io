@@ -4,6 +4,7 @@ date: 2014-09-28
 categories:
   - "psani-jinde"
   - "studium-v-zahranici"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 KFF na svých stránkách zveřejnila mé blogposty z posledních dvou let! Tady jsou:

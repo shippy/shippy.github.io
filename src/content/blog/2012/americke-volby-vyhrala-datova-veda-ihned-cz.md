@@ -4,6 +4,7 @@ description: "Výhra Baracka Obamy podtrhuje širší trend: sběr a analýza kv
 date: 2012-11-12
 categories:
   - "psani-jinde"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 **Výhra Baracka Obamy podtrhuje širší trend: sběr a analýza kvantitativních dat hrají stále větší roli nejen ve vyhodnocování voleb, nýbrž i ve vedení kampaní.**

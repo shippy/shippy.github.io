@@ -3,6 +3,7 @@ title: "Altruismus 2.0 (iHNed.cz)"
 date: 2015-01-28
 categories:
   - "psani-jinde"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 (Článek, jehož spoluautorem je Aleš Flídr, původně vyšel [v blogu na iHNed.cz](http://blog.ihned.cz/c3-63443760-06b000_d-63443760-06b000_d-63443760-altruismus-2-0).)
