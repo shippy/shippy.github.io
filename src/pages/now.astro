@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "@/layouts/Base.astro";
-import Default from "@/layouts/Default.astro";
+import DefaultItem from "@/layouts/DefaultItem.astro";
 
 const posts = (
   await getCollection("now", (post) => {
@@ -45,8 +45,8 @@ const all_posts = await renderPosts();
  description="This page contains my activities added or updated in the past year"
  >
   <main class="container">
-    <section class="introduction section">
-      <h2>What Am I Up To?</h2>
+    <section class="introduction section content">
+      <h1>What Am I Up To?</h1>
       <p>
         This page contains my activities added or updated in the past year.
         Come talk to me about it!
@@ -58,7 +58,7 @@ const all_posts = await renderPosts();
     <section class="content">
     {
       all_posts.map((rendered_post) => (
-        <Default data={rendered_post.post} />
+        <DefaultItem data={rendered_post.post} />
       ))
     }
     </section>
