@@ -1,5 +1,4 @@
 ---
-layout: "../layouts/GenericPage.astro"
 title: "About Me"
 description: Meet Šimon Podhajský.
 heroImage: /blog-placeholder-about.jpg

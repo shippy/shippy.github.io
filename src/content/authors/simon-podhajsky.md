@@ -9,4 +9,4 @@ social:
   instagram: https://www.instagram.com/sim_pod
 ---
 
-Hic dolor cumque quod quas pariatur modi rerum qui consequatur, iusto inventore necessitatibus. Facilis quisquam magni, autem deleniti nobis repellat excepturi id.
+The proprietor of this personal website. See [the about page](/about/) for more information.
