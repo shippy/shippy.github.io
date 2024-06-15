@@ -24,6 +24,14 @@
         {
           "name": "Tech",
           "url": "/uses/"
+        },
+        {
+          "name": "Side Projects",
+          "url": "/side_projects/"
+        },
+        {
+          "name": "Presentations",
+          "url": "/presentations/"
         }
       ]
     },

@@ -1,93 +1,47 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { Image } from 'astro:assets';
-import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import defaultHeroImage from '../assets/default_blog_hero_image.png';
+import Base from './Base.astro';
 
 type Props = CollectionEntry<'presentations'>['data'];
 
 const { title, description, pubDate, heroImage, presentationUrl, videoUrl, place } = Astro.props;
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description || ""} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage ? <Image width={1020} height={510} src={heroImage} alt="" /> : <Image width={1020} height={510} src={defaultHeroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							{place}, on <FormattedDate date={pubDate} />
-						</div>
-						<h1>{title}</h1>
-						{description && <p>{description}</p>}
-						<hr />
+<Base title={title} description={description || ""}>
+	<main>
+		<article>
+			<div class="hero-image">
+				{heroImage ? <Image width={1020} height={510} src={heroImage} alt="" /> : <Image width={1020} height={510} src={defaultHeroImage} alt="" />}
+			</div>
+			<div class="prose">
+				<div class="title">
+					<div class="date">
+						{place}, on <FormattedDate date={pubDate} />
 					</div>
-					<slot />
-					{
-						videoUrl && <div class="video_iframe">
-							<h2>Recording</h2>
-							<iframe width="720" height="400" src={videoUrl} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-						</div>
-					}
-					{
-						presentationUrl && <div class="presentation_iframe">
-							<h2>Slides</h2>
-							<iframe src={presentationUrl} width="720" height="400" allowfullscreen="true"></iframe>
-						</div>
-					}
+					<h1>{title}</h1>
+					{description && <p>{description}</p>}
+					<hr />
 				</div>
-			</article>
-		</main>
-		<Footer />
-	</body>
-</html>
+				<slot />
+				{
+					videoUrl && <div class="video_iframe">
+						<h2>Recording</h2>
+						<iframe width="720" height="400" src={videoUrl} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+					</div>
+				}
+				{
+					presentationUrl && <div class="presentation_iframe">
+						<h2>Slides</h2>
+						<iframe src={presentationUrl} width="720" height="400" allowfullscreen="true"></iframe>
+					</div>
+				}
+			</div>
+		</article>
+	</main>
+</Base>
