@@ -16,7 +16,7 @@ We recently released the Year 2 version of **greybox Wrapped**, a Spotify Wrappe
 
 Czech high school debate stores its records in a system called Greybox (written by [the inimitable Petr Novák](https://www.linkedin.com/in/9bcfd/) at the turn of the millenium, and working just fine to this day). The database is a MySQL database with a few dozen tables, and it stores information about tournaments, debate rounds, speakers, teams, and more.
 
-This means that the central task of **greybox Wrapped** was transforming this database - twice, actually: once to get the data into a format that would be easy to aggregate into individual achievements, and another time to actually do the achievements. Tell me if this doesn't sound like a job for dbt!
+This means that the central task of **greybox Wrapped** was transforming this database - twice, actually: once to get the data into a format that would be easy to aggregate into individual achievements, and another time to actually make the achievements. Tell me if this doesn't sound like a job for dbt!
 
 (Of course, while dbt was the central piece of the puzzle, it was not the only one. To pull the data transformation pipeline off, we used [Meltano](https://docs.meltano.com) to convert MySQL to DuckDB, then run the dbt transformations, and save the results into another DuckDB file that we then deployed alongside the backend. But this write-up is about dbt and the data modelling that it enabled.)
 
@@ -53,6 +53,36 @@ The separately-attached file was then deployed (read: SFTP'd) alongside the back
 ## Collaboration and tests
 
 I intentionally structured the project like this in order to make it easy for relative newcomers to dbt/SQL to contribute. [YAML anchoring](https://support.atlassian.com/bitbucket-cloud/docs/yaml-anchors/) made it easy to extend previously defined column definitions and tests to the new aggregation logic, making sure that the new achievements didn't violate any assumptions the backend would be making about the data.
+
+```yaml
+models:
+  # Sample definition of an achievement, using agg__
+  # as prefix because it's always an aggregation
+  - name: agg__overruled
+    description: >
+      Judges overruled by a panel of other judges.
+    # Create the reference with the &ANCHOR, e.g.:
+    columns: &STANDARD_ACHIEVEMENT_COLUMNS
+      - name: clovek_id
+        tests:
+          - not_null
+      - name: school_year
+        tests:
+          - not_null
+      - name: achievement_id
+        tests:
+          - unique
+          - not_null
+      # ...potentially more columns
+  - name: agg__gastarbeiter
+    description: >
+      Debaters who shared a team with a debater
+      from another club/school.
+    # Use the reference here as *ANCHOR
+    columns: *STANDARD_ACHIEVEMENT_COLUMNS
+    # The `columns` node now includes the three
+    # columns from above + the associated tests!
+```
 
 This ended up catching a fair amount of errors, and I'm glad we did it. We later ended up codifying the dbt-build presumption into a [dbt-checkpoint](https://github.com/dbt-checkpoint/dbt-checkpoint) pre-commit hook that ran everytime we altered the code in the dbt section of the monorepo.
 
