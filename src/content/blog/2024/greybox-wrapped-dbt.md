@@ -5,7 +5,7 @@ pubDate: 2024-06-15
 categories:
   - "dbt"
 author: "Simon Podhajsky"
-heroImage: "/public/blog-placeholder-4.jpg"
+heroImage: "./images/dbt-in-cloud.png"
 ---
 
 We recently released the Year 2 version of **greybox Wrapped**, a Spotify Wrapped clone for high school debaters. [Last year, I talked about the way ChatGPT helped me write frontend and deploy it](https://www.linkedin.com/pulse/chatgpt-makes-side-projects-easy-case-study-simon-podhajsky). This year, I want to talk about the way we used dbt to structure the central database, and how it helped us collaborate on the project.
