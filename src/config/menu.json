@@ -42,12 +42,34 @@
   ],
   "footer": [
     {
-      "name": "About",
-      "url": "/about/"
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Blog",
+      "url": "/blog/"
+    },
+    {
+      "name": "Side Projects",
+      "url": "/side_projects/"
     },
     {
       "name": "Contact",
       "url": "/contact/"
+    }
+  ],
+  "footerOther": [
+    {
+      "name": "Presentations",
+      "url": "/presentations/"
+    },
+    {
+      "name": "Now",
+      "url": "/now"
+    },
+    {
+      "name": "Tech",
+      "url": "/tech/"
     }
   ]
 }

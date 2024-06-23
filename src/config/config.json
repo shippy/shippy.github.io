@@ -5,7 +5,7 @@
     "base_path": "/",
     "trailing_slash": true,
     "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
+    "logo": "",
     "logo_width": "257",
     "logo_height": "36",
     "logo_text": "Šimon Podhajský"
@@ -19,7 +19,7 @@
   "params": {
     "contact_form_action": "#",
     "career_form_action": "#",
-    "copyright": "Designed & Developed By [Themefisher](https://themefisher.com)"
+    "copyright": "© Šimon Podhajský"
   },
 
   "footer_data": {

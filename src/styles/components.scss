@@ -18,11 +18,11 @@
   li {
     @apply mr-2 inline-block last:mr-0;
     a {
-      @apply flex h-11 w-11 items-center rounded-full border  border-border text-center leading-[2.75];
+      @apply flex h-11 w-11 items-center rounded-full border  border-border text-center leading-[2.75] transition-colors;
       &:hover {
-        @apply hover:border-primary;
+        @apply hover:border-primary bg-primary transition-colors;
         svg {
-          @apply text-primary;
+          @apply text-white transition-colors;
         }
       }
       svg {
