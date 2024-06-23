@@ -1,15 +1,14 @@
 ---
 interface Props {
-  name: string;
   href: string;
   classes?: string;
 }
 
-const { href, name, classes } = Astro.props;
+const { href, classes } = Astro.props;
 ---
 
 <a class:list={["custom-link", classes ? classes : ""]} href={href}>
-  {name}
+  <slot />
 </a>
 
 <style>

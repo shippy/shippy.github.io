@@ -30,12 +30,12 @@
   },
 
   "call_to_action": {
-    "enable": false,
-    "title": "Helping Teams In The World With Focus",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas <br/> Werat viverra id et aliquet. vulputate egestas sollicitudin.",
+    "enable": true,
+    "title": "Feel free to contact me",
+    "content": "If you're looking for a skilled data engineer passionate about transforming <br> data into actionable insights or simply want to have a chat.",
     "button": {
-      "label": "Download Now",
-      "link": "#"
+      "label": "Contact Me",
+      "link": "/contact"
     }
   },
 

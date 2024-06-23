@@ -33,7 +33,9 @@ const { email, description } = config.footer_data;
             class="footer-links list-unstyled mb-6"
           >
             <li>
-              <CustomLink href={`mailto:${email}`} name={email} />
+              <CustomLink href={`mailto:${email}`}>
+                {email}
+              </CustomLink>
             </li>
           </ul>
           {/* social icons */}
@@ -47,7 +49,7 @@ const { email, description } = config.footer_data;
             {
               footer.map((item, i) => (
                 <li class={footer.length - 1 === i ? "mb-0" : "mb-4"}>
-                  <CustomLink href={item.url} name={item.name} />
+                  <CustomLink href={item.url}>{item.name}</CustomLink>
                 </li>
               ))
             }
@@ -61,7 +63,7 @@ const { email, description } = config.footer_data;
             {
               footerOther.map((item, i) => (
                 <li class={footer.length - 1 === i ? "mb-0" : "mb-4"}>
-                  <CustomLink href={item.url} name={item.name} />
+                  <CustomLink href={item.url}>{item.name}</CustomLink>
                 </li>
               ))
             }
