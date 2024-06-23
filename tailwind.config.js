@@ -47,9 +47,10 @@ module.exports = {
       },
       fontSize: {
         base: font_base + "px",
-        h1: h1 + "rem",
-        "h1-md": h1 * 0.95 + "rem",
-        "h1-sm": h1 * 0.8 + "rem",
+        "h1-2xl": "60px",
+        h1: "50px",
+        "h1-md": "48px",
+        "h1-sm": "40px",
         h2: h2 + "rem",
         "h2-sm": h2 * 0.8 + "rem",
         h3: h3 + "rem",

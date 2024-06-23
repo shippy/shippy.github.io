@@ -19,7 +19,7 @@ h6 {
 
 h1,
 .h1 {
-  @apply text-h1-sm md:text-h1;
+  @apply text-h1-sm md:text-h1 2xl:text-h1-2xl;
 }
 
 h2,

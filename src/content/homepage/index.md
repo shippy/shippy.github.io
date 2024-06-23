@@ -1,4 +1,19 @@
 ---
+#hero
+hero:
+  title: Šimon Podhajský is the resident data
+  rolling_texts:
+    - Everything
+    - Something
+    - Anything
+    - Engineer
+  subtitle: Hello
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+  image: /images/about/01.jpg
+  link:
+    label: Contact me
+    href: "/contact/"
+
 banner:
   title: "Šimon Podhajský is the resident data everything"
   image: /images/bannerimage.webp
