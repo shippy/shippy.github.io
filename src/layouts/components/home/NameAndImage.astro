@@ -2,6 +2,7 @@
 import Circle from "@/layouts/components/Circle.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
+import SectionTitle from "../_shared/SectionTitle.astro";
 
 interface Props {
   data: {
@@ -22,24 +23,13 @@ const {
     <div class="row justify-center">
       <div class="lg:col-12"></div>
       <div class="relative z-30 py-20">
-        <div class="section-title" data-aos="fade-up">
-          <!-- <p
-            set:html={markdownify(subtitle)}
-            class="mb-4 text-[0.9rem] uppercase"
-          /> -->
-          <h2 set:html={markdownify(title)} class="title" />
-          <p
-            set:html={markdownify(description)}
-            class="text-[.9rem] text-text max-w-3xl mx-auto"
-          />
-        </div>
-
+        <SectionTitle data={{ title, description }} />
         <Image
           width={700}
           height={300}
           src={image}
           alt={title}
-          class="inline h-[370px] w-[700px] rounded-2xl"
+          class="inline h-[370px] w-[700px] rounded-2xl object-cover"
         />
       </div>
     </div>

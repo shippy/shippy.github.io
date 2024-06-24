@@ -1,0 +1,19 @@
+---
+import FeatureSlider from "@/layouts/jsx-components/FeatureSlider";
+import { markdownify } from "@/lib/utils/textConverter";
+import SectionTitle from "../_shared/SectionTitle.astro";
+const { data } = Astro.props;
+
+const { subtitle, title, description } = data;
+---
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center" data-aos="fed-up">
+        <SectionTitle data={{ title, subtitle, description }} />
+        <FeatureSlider features={data} client:load />
+      </div>
+    </div>
+  </div>
+</section>

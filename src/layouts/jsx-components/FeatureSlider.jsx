@@ -24,6 +24,7 @@ const FeatureSlider = ({ features }) => {
         onSwiper={(swiper) => {
           setSwiper(swiper);
         }}
+        autoplay={true}
         loop={true}
         modules={[Pagination, Autoplay]}
         slidesPerView={1}

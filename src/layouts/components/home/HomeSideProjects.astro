@@ -1,0 +1,45 @@
+---
+import type { CollectionEntry } from "astro:content";
+import ProjectCard from "@/components/_shared/ProjectCard.astro";
+import SectionTitle from "../_shared/SectionTitle.astro";
+
+interface Props {
+  projects: CollectionEntry<"side_projects">[];
+  data: {
+    title: string;
+    subtitle: string;
+    link: {
+      label: string;
+      href: string;
+    };
+  };
+}
+
+const {
+  projects,
+  data: { title, subtitle, link },
+} = Astro.props;
+---
+
+<section class="section">
+  <div class="container">
+    <div class="row justify-center">
+      <div class="col-12">
+        <SectionTitle data={{ title, subtitle }} />
+      </div>
+      {
+        projects.map((project, i) => (
+          <div class="col-12 mb-8 md:col-6 lg:col-4">
+            <ProjectCard project={project} />
+          </div>
+        ))
+      }
+
+      <div class="text-center mt-4">
+        <a href={link.href} class="btn btn-primary">
+          {link.label}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

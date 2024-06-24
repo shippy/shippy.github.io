@@ -1,0 +1,62 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+
+interface Props {
+  data: {
+    title: string;
+    subtitle?: string;
+    description?: string;
+  };
+  left?: boolean;
+}
+
+const {
+  data: { title, subtitle, description },
+  left = false,
+} = Astro.props;
+---
+
+<div class:list={["section-heading", left ? "text-left" : "text-center"]}>
+  {
+    subtitle && (
+      <p
+        set:html={markdownify(subtitle)}
+        class="mb-4 text-[0.9rem] uppercase"
+      />
+    )
+  }
+  <h2
+    set:html={markdownify(title)}
+    class:list={[left ? "heading-left" : "heading"]}
+  />
+  {
+    description && (
+      <p
+        set:html={markdownify(description)}
+        class="text-sm lg:text-base 2xl:text-lg text-text max-w-3xl mx-auto"
+      />
+    )
+  }
+</div>
+
+<style>
+  .section-heading {
+    @apply mb-10;
+
+    .heading {
+      @apply relative mb-10 text-h2-sm font-bold capitalize leading-[1.3];
+
+      &::after {
+        @apply absolute -bottom-5 left-[50%] h-[5px] w-[4.3rem] -translate-x-[50%] rounded-[1.8rem] bg-primary content-[""];
+      }
+    }
+
+    .heading-left {
+      @apply relative mb-10 text-h2-sm font-bold capitalize leading-[1.3];
+
+      &::after {
+        @apply absolute -bottom-5 left-0 h-[5px] w-[4.3rem] -translate-x-0 rounded-[1.8rem] bg-primary content-[""];
+      }
+    }
+  }
+</style>

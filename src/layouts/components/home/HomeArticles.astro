@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import PostCard from "@/components/_shared/PostCard.astro";
 import { markdownify } from "@/lib/utils/textConverter";
+import SectionTitle from "../_shared/SectionTitle.astro";
 
 interface Props {
   posts: CollectionEntry<"blog">[];
@@ -25,13 +26,7 @@ const {
   <div class="container">
     <div class="row justify-center">
       <div class="col-12">
-        <div class="section-title">
-          <p
-            set:html={markdownify(subtitle)}
-            class="mb-4 text-[0.9rem] uppercase"
-          />
-          <h2 set:html={markdownify(title)} class="title" />
-        </div>
+        <SectionTitle data={{ title, subtitle }} />
       </div>
       {
         posts.map((post, i) => (

@@ -6,22 +6,22 @@ import readingTime from "@/lib/utils/readingTime";
 import { plainify, slugify } from "@/lib/utils/textConverter";
 import defaultHeroImage from "@/assets/default_blog_hero_image.png";
 
-const { post } = Astro.props;
+const { project } = Astro.props;
 const { summary_length } = config.settings;
 
 const {
-  data: { title, description, image, author, date },
+  data: { title, description, heroImage, author, date },
   slug,
   body,
-} = post;
+} = project;
 ---
 
 <article class="mt-7 rounded-2xl border-0 shadow bg-body">
   <a href={`/blog/${slug}/`}>
     {
-      image ? (
+      heroImage ? (
         <Image
-          src={image}
+          src={heroImage}
           alt={title}
           class="h-[250px] object-cover max-w-full rounded-t-[18px]"
           width={570}
@@ -44,8 +44,8 @@ const {
     >
       <a href={`/blog/${slug}/`}>{title}</a>
     </h3>
-    <!-- <p class="mb-4 text-text break-words">
+    <p class="mb-4 text-text break-words">
       {description || plainify(body?.slice(0, Number(summary_length)))}...
-    </p> -->
+    </p>
   </div>
 </article>

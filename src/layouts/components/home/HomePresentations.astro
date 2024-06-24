@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+import { markdownify } from "@/lib/utils/textConverter";
+import SectionTitle from "../_shared/SectionTitle.astro";
+import Circle from "../Circle.astro";
+
+const {
+  data: { title, subtitle, description, image, link },
+} = Astro.props;
+---
+
+<section class="section">
+  <div class="container">
+    <div class="row mb-6 items-center justify-center">
+      <div
+        class="mt-4 lg:col-6 lg:mt-0"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <div
+          class="relative"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="1000"
+        >
+          <div class="relative z-10 p-14">
+            <Image
+              src={image}
+              height={436}
+              width={381}
+              alt={title}
+              class="w-full max-w-full rounded-2xl"
+            />
+            <div class="has-circle z-30 h-full w-full">
+              <Circle classes={"bottom-[50%] left-[2.5rem] ratio-20 fill"} />
+              <Circle
+                classes={"bottom-[4.93rem] left-[1.5rem] ratio-47 bg-primary/5 "}
+              />
+            </div>
+          </div>
+          <div class="has-circle h-full w-full">
+            <Circle classes={"top-[0.875rem] left-[0.75rem] ratio-85 fill"} />
+            <Circle classes={"top-[5rem] right-[41px] ratio-37"} />
+            <Circle classes={"bottom-[45%] right-[3.25rem] ratio-20 fill"} />
+            <Circle classes={"bottom-[1.5rem] right-[1.5rem] ratio-85 fill"} />
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-5" data-aos="fade-up">
+        <SectionTitle
+          data={{
+            title,
+            subtitle,
+            description,
+          }}
+          left
+        />
+        <a
+          href={link.href}
+          class="btn btn-primary"
+          href="#"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="1000"
+        >
+          {link.label}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

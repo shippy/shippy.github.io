@@ -31,7 +31,7 @@ const {
               class="mb-4 text-[0.9rem] uppercase"
             />
             <h1
-              class="flex flex-wrap gap-4 leading-none"
+              class="flex flex-wrap gap-2 leading-none lg:gap-4"
               data-aos="fade-up"
               data-aos-anchor-placement="top-bottom"
               data-aos-easing="ease-in-out"
@@ -50,7 +50,7 @@ const {
             </h1>
             <p
               set:html={markdownify(description)}
-              class="text-[.9rem] text-text my-6 lg:mb-8"
+              class="text-base 2xl:text-lg text-text mt-4 mb-8"
               data-aos="fade-down"
               data-aos-anchor-placement="top-bottom"
               data-aos-easing="ease-in-out"
@@ -140,7 +140,7 @@ const {
   }
 
   .dynamic-texts li span::after {
-    @apply absolute   bg-white left-0 w-full h-[60px] md:h-[70px];
+    @apply absolute   bg-body left-0 w-full h-[60px] md:h-[70px];
     content: "";
     animation: typing 1.5s steps(10) infinite;
   }

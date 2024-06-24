@@ -1,46 +1,43 @@
 ---
 import Banner from "@/components/Banner.astro";
 import Brand from "@/components/Brand.astro";
-import Features from "@/components/Features.astro";
+import Features from "@/components/home/Features.astro";
 import Service from "@/components/Service.astro";
 import Testimonial from "@/components/Testimonial.astro";
 import VideoSection from "@/components/VideoSection.astro";
 import HomeIntro from "@/components/home/HomeIntro.astro";
-import Capabilities from "@/components/home/Capabilities.astro";
+import ThingsIDo from "@/components/home/ThingsIDo.astro";
 import NameAndImage from "@/components/home/NameAndImage.astro";
 import Base from "@/layouts/Base.astro";
 import Cta from "@/partials/Cta.astro";
 import { getCollection, getEntry } from "astro:content";
-import { formatBlogPosts } from "@/lib/utils/formatBlogPosts";
-import HomeBlog from "@/components/home/HomeBlog.astro";
+import { formatCollection } from "@/lib/utils/formatCollection";
+import HomeArticles from "@/components/home/HomeArticles.astro";
+import HomeSideProjects from "@/components/home/HomeSideProjects.astro";
+import HomePresentations from "@/components/home/HomePresentations.astro";
 
 const homepage = await getEntry("homepage", "index");
 const {
-  hero,
-  capabilities,
-  home_blog,
-  name_image,
-  banner,
-  brands,
-  features,
-  intro,
-  service,
-  testimonial,
+  homeIntro,
+  thingsIDo,
+  sideProjects,
+  presentations,
+  articles,
+  nameImage,
 } = homepage.data;
 
 const posts = await getCollection("blog");
-const formattedPosts = formatBlogPosts(posts, { limit: 3 });
+const projects = await getCollection("side_projects");
+const formattedPosts = formatCollection(posts, { limit: 3 });
+const formattedProjects = formatCollection(projects, { limit: 3 });
 ---
 
 <Base>
-  <!-- <Banner banner={banner} /> -->
-  <HomeIntro data={hero} />
-  <Capabilities data={capabilities} />
-  <NameAndImage data={name_image} />
-  <HomeBlog data={home_blog} posts={formattedPosts} />
-  <Features features={features} />
-  <VideoSection intro={intro} />
-  <Service service={service} />
-  <Testimonial testimonial={testimonial} />
+  <HomeIntro data={homeIntro} />
+  <ThingsIDo data={thingsIDo} />
+  <HomePresentations data={presentations} />
+  <HomeSideProjects data={sideProjects} projects={formattedProjects} />
+  <NameAndImage data={nameImage} />
+  <HomeArticles data={articles} posts={formattedPosts} />
   <Cta />
 </Base>
