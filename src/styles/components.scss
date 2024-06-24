@@ -139,7 +139,7 @@
 }
 
 .features-card {
-  @apply mx-[0.9rem] my-5 rounded-md border border-solid border-transparent px-[1.875rem] py-[4.3rem] text-center shadow duration-300 ease-[ease] hover:-translate-y-[2px] hover:border-primary/10 hover:shadow-none h-[400px];
+  @apply mx-[0.9rem] my-5 rounded-md border border-solid border-transparent px-[1.875rem] py-[3rem] text-center shadow duration-300 ease-[ease] hover:-translate-y-[2px] hover:border-primary/10 hover:shadow-none h-[400px] flex flex-col justify-start;
 }
 .icon {
   @apply relative z-10 m-auto block h-20 w-20 overflow-hidden rounded-[0.9rem] border border-solid border-primary/10 text-h2 leading-[5rem] duration-150;

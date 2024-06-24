@@ -43,7 +43,7 @@ thingsIDo:
 # SIDE PROJECTS
 sideProjects:
   subtitle: Side Projects
-  title: Sometimes, I... <br> ...work on side projects
+  title: Sometimes, I... <br> work on side projects
   link:
     label: Explore Side Projects
     href: "/side_projects/"
@@ -51,7 +51,7 @@ sideProjects:
 # PRESENTATIONS
 presentations:
   subtitle: Presentations
-  title: Sometimes, I... host talks and presentations
+  title: Sometimes, I...<br> host talks and presentations
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
   image: "/images/home/simon-5.webp"
   link:
@@ -67,7 +67,7 @@ nameImage:
 # ARTICLES
 articles:
   subtitle: Articles
-  title: Sometimes, I... <br> ...write technical articles
+  title: Sometimes, I... <br> write technical articles
   link:
     label: View More Articles
     href: "/blog/"

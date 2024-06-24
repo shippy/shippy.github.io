@@ -33,7 +33,7 @@ const {
     description && (
       <p
         set:html={markdownify(description)}
-        class="text-sm lg:text-base 2xl:text-lg text-text max-w-3xl mx-auto"
+        class="text-sm lg:text-base 2xl:text-lg text-text max-w-3xl mx-auto leading-normal"
       />
     )
   }
@@ -44,7 +44,7 @@ const {
     @apply mb-10;
 
     .heading {
-      @apply relative mb-10 text-h2-sm font-bold capitalize leading-[1.3];
+      @apply relative mb-10  font-bold capitalize;
 
       &::after {
         @apply absolute -bottom-5 left-[50%] h-[5px] w-[4.3rem] -translate-x-[50%] rounded-[1.8rem] bg-primary content-[""];
@@ -52,7 +52,7 @@ const {
     }
 
     .heading-left {
-      @apply relative mb-10 text-h2-sm font-bold capitalize leading-[1.3];
+      @apply relative mb-10 font-bold capitalize;
 
       &::after {
         @apply absolute -bottom-5 left-0 h-[5px] w-[4.3rem] -translate-x-0 rounded-[1.8rem] bg-primary content-[""];
