@@ -16,7 +16,14 @@ const { pathname } = Astro.url;
 const { main }: { main: NavigationLink[] } = menu;
 ---
 
-<header class="header" id="header">
+<header
+  class="header"
+  id="header"
+  data-aos="fade-down"
+  data-aos-anchor-placement="top-bottom"
+  data-aos-easing="ease-in-out"
+  data-aos-duration="1000"
+>
   <nav class="navbar container">
     <!-- logo -->
     <div class="order-0">
@@ -128,7 +135,7 @@ const { main }: { main: NavigationLink[] } = menu;
   var lastScroll = 0;
   const changeNavbarBackground = () => {
     const header = document.getElementById("header");
-    const headerHight = header.clientHeight + 200;
+    const headerHeight = header.clientHeight + 200;
     const scrollY = window.scrollY;
 
     window.onscroll = () => {
@@ -138,7 +145,7 @@ const { main }: { main: NavigationLink[] } = menu;
       } else {
         header.classList.remove("header-sticky-top");
       }
-      if (scrollY > headerHight) {
+      if (scrollY > headerHeight) {
         if (lastScroll > scrollY) {
           header.classList.remove("-translate-y-full");
         } else {

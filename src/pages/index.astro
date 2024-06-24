@@ -6,18 +6,38 @@ import Service from "@/components/Service.astro";
 import Testimonial from "@/components/Testimonial.astro";
 import VideoSection from "@/components/VideoSection.astro";
 import HomeIntro from "@/components/home/HomeIntro.astro";
+import Capabilities from "@/components/home/Capabilities.astro";
+import NameAndImage from "@/components/home/NameAndImage.astro";
 import Base from "@/layouts/Base.astro";
 import Cta from "@/partials/Cta.astro";
-import { getEntry } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
+import { formatBlogPosts } from "@/lib/utils/formatBlogPosts";
+import HomeBlog from "@/components/home/HomeBlog.astro";
 
 const homepage = await getEntry("homepage", "index");
-const { hero, banner, brands, features, intro, service, testimonial } =
-  homepage.data;
+const {
+  hero,
+  capabilities,
+  home_blog,
+  name_image,
+  banner,
+  brands,
+  features,
+  intro,
+  service,
+  testimonial,
+} = homepage.data;
+
+const posts = await getCollection("blog");
+const formattedPosts = formatBlogPosts(posts, { limit: 3 });
 ---
 
 <Base>
-  <HomeIntro hero={hero} />
-  <Banner banner={banner} />
+  <!-- <Banner banner={banner} /> -->
+  <HomeIntro data={hero} />
+  <Capabilities data={capabilities} />
+  <NameAndImage data={name_image} />
+  <HomeBlog data={home_blog} posts={formattedPosts} />
   <Features features={features} />
   <VideoSection intro={intro} />
   <Service service={service} />

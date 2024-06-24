@@ -1,0 +1,51 @@
+---
+import type { CollectionEntry } from "astro:content";
+import PostCard from "@/components/_shared/PostCard.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+
+interface Props {
+  posts: CollectionEntry<"blog">[];
+  data: {
+    title: string;
+    subtitle: string;
+    link: {
+      label: string;
+      href: string;
+    };
+  };
+}
+
+const {
+  posts,
+  data: { title, subtitle, link },
+} = Astro.props;
+---
+
+<section class="section">
+  <div class="container">
+    <div class="row justify-center">
+      <div class="col-12">
+        <div class="section-title">
+          <p
+            set:html={markdownify(subtitle)}
+            class="mb-4 text-[0.9rem] uppercase"
+          />
+          <h2 set:html={markdownify(title)} class="title" />
+        </div>
+      </div>
+      {
+        posts.map((post, i) => (
+          <div class="col-12 mb-8 md:col-6 lg:col-4">
+            <PostCard post={post} />
+          </div>
+        ))
+      }
+
+      <div class="text-center mt-4">
+        <a href={link.href} class="btn btn-primary">
+          {link.label}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

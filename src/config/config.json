@@ -14,7 +14,7 @@
 
   "settings": {
     "pagination": 4,
-    "summary_length": 150
+    "summary_length": 100
   },
 
   "params": {

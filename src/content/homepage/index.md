@@ -1,13 +1,13 @@
 ---
 #hero
 hero:
+  subtitle: Hello
   title: Šimon Podhajský is the resident data
   rolling_texts:
     - Everything
     - Something
     - Anything
     - Engineer
-  subtitle: Hello
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
   image: /images/about/01.jpg
   link:
@@ -22,14 +22,50 @@ banner:
     label: Contact me
     href: "/contact/"
 
-##brands - deleted from index.astro
-brands:
-  - /images/brands/01-colored.png
+# name_image
+name_image:
+  title: My name is Czech.
+  description: The “š” is pronounced like the “sh” in “shoe”, and the “ý” is pronounced like the “ee” in “bee”. So, it’s “SHIH-mon Pot-HIGH-skee”. But you can always call me Simon.
+  image: "/images/videopopup.webp"
+
+## capabilities
+capabilities:
+  subtitle: SPECIAL SKILLS
+  title: Things I Can Do
+  description: My LinkedIn bio used to say I'm a "Data Everything". That wasn't too far off.
+  list:
+    - icon: "lock"
+      title: Evaluate & productionize LLM-based applications
+      content: I understand that integrating standard software engineering and ML best practices is what keeps the modern LLM-based apps from remaining merely a fancy demo.
+    - icon: "wind"
+      title: Data Engineering
+      content: "Performant, semantically rich, reproducible: my pipelines are all of the above."
+    - icon: "shield"
+      title: Data Science and Data Analytics
+      content: (It's more than just averages and sums across the right groups.)
+    - icon: "link"
+      title: Full stack, all the way to deployment.
+      content: Does the project need a frontend to interact with and a cloud infrastructure to host itself in? I'm on it.
+    - icon: "lock"
+      title: Communication and Public Speaking.
+      content: >
+        [I've spoken at local meetups, online events, and big conferences.](/presentations) **Hit me up to speak at any of the above!**
+    - icon: "wind"
+      title: I'm a Generalist.
+      content: ...which just means that I don't stop at a problem's boundary; I see it through wherever it
+
+# home_blog
+home_blog:
+  subtitle: Articles
+  title: Sometimes, I... <br> ...write technical articles
+  link:
+    label: View More
+    href: "/blog/"
 
 #features
 features:
   sub_title: SPECIAL SKILLS
-  title: Things </br> I Can Do
+  title: Things I Can Do
   description: My LinkedIn bio used to say I'm a "Data Everything". That wasn't too far off.
   list:
     - icon: "lock"
@@ -51,6 +87,10 @@ features:
     - icon: "wind"
       title: I'm a generalist.
       content: ...which just means that I don't stop at a problem's boundary; I see it through wherever it needs to go.
+
+##brands - deleted from index.astro
+brands:
+  - /images/brands/01-colored.png
 
 #intro
 intro:

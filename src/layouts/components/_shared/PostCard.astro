@@ -1,0 +1,51 @@
+---
+import { getImage, Image } from "astro:assets";
+import config from "@/config/config.json";
+import dateFormat from "@/lib/utils/dateFormat";
+import readingTime from "@/lib/utils/readingTime";
+import { plainify, slugify } from "@/lib/utils/textConverter";
+import defaultHeroImage from "@/assets/default_blog_hero_image.png";
+
+const { post } = Astro.props;
+const { summary_length } = config.settings;
+
+const {
+  data: { title, description, image, author, date },
+  slug,
+  body,
+} = post;
+---
+
+<article class="mt-7 rounded-2xl border-0 shadow">
+  <a href={`/blog/${slug}/`}>
+    {
+      image ? (
+        <Image
+          src={image}
+          alt={title}
+          class="h-[250px] object-cover max-w-full rounded-t-[18px]"
+          width={570}
+          height={335}
+        />
+      ) : (
+        <Image
+          src={defaultHeroImage}
+          alt={title}
+          class="h-[250px] object-cover max-w-full rounded-t-[18px]"
+          width={570}
+          height={335}
+        />
+      )
+    }</a
+  >
+  <div class="px-[1.875rem] pb-[0.625rem] pt-[2.1rem]">
+    <h3
+      class="card-title text-h5 mb-4 font-semibold hover:text-primary transition-colors"
+    >
+      <a href={`/blog/${slug}/`}>{title}</a>
+    </h3>
+    <!-- <p class="mb-4 text-text break-words">
+      {description || plainify(body?.slice(0, Number(summary_length)))}...
+    </p> -->
+  </div>
+</article>

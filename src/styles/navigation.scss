@@ -12,10 +12,10 @@ input#nav-toggle:checked ~ #nav-menu {
 }
 
 .header {
-  @apply sticky top-0 z-50 bg-white py-7 transition-all duration-150 ease-out;
+  @apply sticky top-0 z-50 bg-white py-7 transition-all duration-150 ease-in-out;
 }
 .header-sticky-top {
-  @apply py-6 shadow-sm;
+  @apply py-1 shadow-sm ease-in-out transition-all;
 }
 
 // navbar items
