@@ -9,7 +9,7 @@ homeIntro:
     - Anything
     - Engineer
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-  image: /images/about/01.jpg
+  image: "/images/home/simon-1.webp"
   link:
     label: Contact me
     href: "/contact/"
@@ -53,7 +53,7 @@ presentations:
   subtitle: Presentations
   title: Sometimes, I... host talks and presentations
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-  image: /images/about/01.jpg
+  image: "/images/home/simon-5.webp"
   link:
     label: Explore Presentations
     href: "/presentations/"
@@ -62,7 +62,7 @@ presentations:
 nameImage:
   title: My name is Czech.
   description: The “š” is pronounced like the “sh” in “shoe”, and the “ý” is pronounced like the “ee” in “bee”. So, it’s “SHIH-mon Pot-HIGH-skee”. But you can always call me Simon.
-  image: "/images/videopopup.webp"
+  image: "/images/home/simon-3.webp"
 
 # ARTICLES
 articles:

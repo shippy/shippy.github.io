@@ -33,7 +33,7 @@
   "call_to_action": {
     "enable": true,
     "title": "Feel free to contact me",
-    "content": "If you're looking for a skilled data engineer passionate about transforming <br> data into actionable insights or simply want to have a chat.",
+    "content": "If you're looking for a skilled data engineer passionate about transforming data into actionable insights or simply want to have a chat.",
     "button": {
       "label": "Contact Me",
       "link": "/contact"
