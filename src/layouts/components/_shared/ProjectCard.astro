@@ -16,14 +16,20 @@ const {
 } = project;
 ---
 
-<article class="mt-7 rounded-2xl border-0 shadow bg-body">
+<article
+  class="mt-7 rounded-2xl border-0 bg-body shadow"
+  data-aos="fade-up"
+  data-aos-easing="ease-in-out"
+  data-aos-duration="1000"
+  data-aos-once="true"
+>
   <a href={`/blog/${slug}/`}>
     {
       heroImage ? (
         <Image
           src={heroImage}
           alt={title}
-          class="h-[250px] object-cover max-w-full rounded-t-[18px]"
+          class="h-[200px] max-w-full rounded-t-[18px] object-cover"
           width={570}
           height={335}
         />
@@ -31,7 +37,7 @@ const {
         <Image
           src={defaultHeroImage}
           alt={title}
-          class="h-[250px] object-cover max-w-full rounded-t-[18px]"
+          class="h-[200px] max-w-full rounded-t-[18px] object-cover"
           width={570}
           height={335}
         />
@@ -40,11 +46,11 @@ const {
   >
   <div class="px-[1.875rem] pb-[0.625rem] pt-[2.1rem]">
     <h3
-      class="card-title text-h5 mb-4 font-semibold hover:text-primary transition-colors"
+      class="card-title mb-4 text-h5 font-semibold transition-colors hover:text-primary"
     >
       <a href={`/blog/${slug}/`}>{title}</a>
     </h3>
-    <p class="mb-4 text-text break-words">
+    <p class="mb-4 break-words text-text">
       {description || plainify(body?.slice(0, Number(summary_length)))}...
     </p>
   </div>

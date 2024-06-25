@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  @apply bg-body font-primary font-normal leading-[1.5] text-text;
+  @apply overflow-x-hidden  bg-body text-sm font-normal leading-[1.5] text-text xl:text-base 2xl:text-lg;
 }
 ::selection {
   @apply bg-primary text-white;
@@ -14,22 +14,22 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-primary font-bold leading-tight text-dark;
+  @apply font-semibold leading-tight text-dark;
 }
 
 h1,
 .h1 {
-  @apply text-h1-sm md:text-h1 2xl:text-h1-2xl;
+  @apply text-h1-sm md:text-h1-md xl:text-h1 2xl:text-h1-2xl;
 }
 
 h2,
 .h2 {
-  @apply text-h2-sm md:text-h2;
+  @apply text-h2-sm md:text-h2-md lg:text-h2;
 }
 
 h3,
 .h3 {
-  @apply text-h3-sm md:text-h3;
+  @apply text-h3-sm md:text-h3-md lg:text-h3;
 }
 
 h4,
@@ -45,4 +45,8 @@ h5,
 h6,
 .h6 {
   @apply text-h6;
+}
+
+p {
+  @apply text-text;
 }

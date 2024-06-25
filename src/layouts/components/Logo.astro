@@ -28,9 +28,22 @@ const {
         class="h-7 w-auto md:h-[36px] md:w-[257px]"
       />
     ) : logo_text ? (
-      logo_text
+      <span class="font-semibold">{logo_text}</span>
     ) : (
-      title
+      <span class="font-semibold">{title}</span>
     )
   }
 </a>
+
+<style>
+  .navbar-brand {
+    @apply text-xl font-semibold text-dark;
+    img {
+      @apply h-[1.8rem] max-h-full max-w-full md:h-auto;
+    }
+
+    span {
+      @apply inline-block hover:text-primary hover:scale-105 transition-all;
+    }
+  }
+</style>

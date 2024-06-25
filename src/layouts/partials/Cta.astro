@@ -19,11 +19,15 @@ const {
           <div class="row">
             <div class="lg:col-12">
               <div class="relative z-30 py-20 text-center">
-                <div class="section-title" data-aos="fade-up">
+                <div
+                  class="section-title"
+                  data-aos="fade-up"
+                  data-aos-once="true"
+                >
                   <h2 set:html={markdownify(title)} class="mb-3" />
                   <p
                     set:html={markdownify(content)}
-                    class="text-base 2xl:text-lg text-text max-w-3xl mx-auto"
+                    class="text-text max-w-3xl mx-auto"
                   />
                 </div>
 
@@ -31,7 +35,11 @@ const {
                   {label}
                 </a>
               </div>
-              <div class="has-circle has-bg-animate h-full" data-aos="fade-in">
+              <div
+                class="has-circle has-bg-animate h-full"
+                data-aos="fade-in"
+                data-aos-once="true"
+              >
                 <svg
                   class="text-primary"
                   style="opacity:.12"

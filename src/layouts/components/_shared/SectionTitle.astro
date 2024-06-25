@@ -17,23 +17,32 @@ const {
 ---
 
 <div class:list={["section-heading", left ? "text-left" : "text-center"]}>
-  {
+  <!-- {
     subtitle && (
       <p
         set:html={markdownify(subtitle)}
         class="mb-4 text-[0.9rem] uppercase"
       />
     )
-  }
+  } -->
   <h2
     set:html={markdownify(title)}
     class:list={[left ? "heading-left" : "heading"]}
+    data-aos="fade-up"
+    data-aos-easing="ease-in-out"
+    data-aos-duration="1000"
+    data-aos-once="true"
   />
   {
     description && (
       <p
         set:html={markdownify(description)}
-        class="text-sm lg:text-base 2xl:text-lg text-text max-w-3xl mx-auto leading-normal"
+        class=" mx-auto max-w-3xl leading-normal text-text"
+        data-aos="fade-up"
+        data-aos-easing="ease-in-out"
+        data-aos-duration="1000"
+        data-aos-once="true"
+        data-aos-delay="100"
       />
     )
   }
@@ -44,7 +53,7 @@ const {
     @apply mb-10;
 
     .heading {
-      @apply relative mb-10  font-bold capitalize;
+      @apply relative mb-10 capitalize;
 
       &::after {
         @apply absolute -bottom-5 left-[50%] h-[5px] w-[4.3rem] -translate-x-[50%] rounded-[1.8rem] bg-primary content-[""];
@@ -52,7 +61,7 @@ const {
     }
 
     .heading-left {
-      @apply relative mb-10 font-bold capitalize;
+      @apply relative mb-10 capitalize;
 
       &::after {
         @apply absolute -bottom-5 left-0 h-[5px] w-[4.3rem] -translate-x-0 rounded-[1.8rem] bg-primary content-[""];

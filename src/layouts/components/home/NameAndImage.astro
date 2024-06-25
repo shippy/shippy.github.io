@@ -30,10 +30,19 @@ const {
           src={image}
           alt={title}
           class="inline h-[370px] w-[800px] rounded-2xl object-cover"
+          data-aos="fade-up"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="1000"
+          data-aos-once="true"
+          data-aos-delay="100"
         />
       </div>
     </div>
-    <div class="has-circle has-bg-animate h-full" data-aos="fade-in">
+    <div
+      class="has-circle has-bg-animate h-full"
+      data-aos="fade-in"
+      data-aos-once="true"
+    >
       <Circle classes={"top-[50px] left-[11%] ratio-32 "} />
       <Circle classes={"top-[29%] left-[3%]ratio-85 fill "} />
       <Circle classes={"top-[45%] left-[22%] ratio-20 fill"} />

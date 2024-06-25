@@ -1,4 +1,5 @@
 ---
+import CustomLink from "@/components/CustomLink.astro";
 import Logo from "@/components/Logo.astro";
 import menu from "@/config/menu.json";
 export interface ChildNavigationLink {
@@ -16,7 +17,7 @@ const { pathname } = Astro.url;
 const { main }: { main: NavigationLink[] } = menu;
 ---
 
-<header class="header" id="header">
+<header class="header" id="header" data-aos="fade-down" data-aos-once="true">
   <nav class="navbar container">
     <!-- logo -->
     <div class="order-0">
@@ -48,75 +49,126 @@ const { main }: { main: NavigationLink[] } = menu;
     </label>
     <!-- /navbar toggler -->
 
+    <!--  -->
     <ul
       id="nav-menu"
-      class="navbar-nav order-3 hidden w-full flex-col pt-10 text-center lg:order-1 lg:flex lg:w-auto lg:flex-row lg:space-x-2 lg:pt-0 lg:text-left"
+      class="bg-orange fixed left-0 top-16 z-50 flex h-full w-full translate-x-full flex-col items-center gap-8 border-t border-gray-400/20 bg-body py-8 text-center opacity-0 transition-all lg:order-1 lg:static lg:top-0 lg:flex lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:gap-8 lg:space-x-2 lg:border-none lg:py-0 lg:pt-0 lg:text-left lg:opacity-100"
     >
       {
-        main.map((menu) => (
-          <>
-            {menu.hasChildren ? (
-              <li
-                class="nav-item nav-dropdown group relative cursor-pointer "
-                id="dropdown-button"
+        main.map((menu) =>
+          menu.hasChildren ? (
+            <li
+              class="nav-item nav-dropdown group relative cursor-pointer "
+              id="dropdown-button"
+            >
+              <span
+                class={`nav-link relative inline-flex items-center gap-1 ${
+                  menu.children?.map(({ url }) => url).includes(pathname) ||
+                  menu.children?.map(({ url }) => `${url}/`).includes(pathname)
+                    ? "active"
+                    : ""
+                }`}
               >
-                <span
-                  class={`nav-link inline-flex items-center lg:px-[0.625rem] lg:py-[0.9rem] xl:px-[1.06rem] ${
-                    menu.children?.map(({ url }) => url).includes(pathname) ||
-                    menu.children
-                      ?.map(({ url }) => `${url}/`)
-                      .includes(pathname)
-                      ? "active"
-                      : ""
-                  }`}
-                >
-                  {menu.name}
-                  <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <span>{menu.name}</span>
+                <span class="absolute left-[105%] top-1/2 -translate-y-1/2 lg:static lg:left-0 lg:top-0 lg:translate-y-0">
+                  <svg class="h-6 w-6 fill-current" viewBox="0 0 20 20">
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                   </svg>
                 </span>
-                <ul
-                  id="dropdown"
-                  class="nav-dropdown-list hidden duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-[13.5rem] lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100"
-                >
-                  {menu.children?.map((child) => (
-                    <li
-                      class={`nav-dropdown-item rounded-md hover:bg-primary/10`}
+              </span>
+              <ul
+                id="dropdown"
+                class="nav-dropdown-list hidden duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-[13.5rem] lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100"
+              >
+                {menu.children?.map((child) => (
+                  <li
+                    class={`nav-dropdown-item rounded-md hover:bg-primary/10`}
+                  >
+                    <a
+                      href={child.url}
+                      class={`nav-dropdown-link block px-[0.9rem] py-2 ${
+                        (pathname === `${child.url}/` ||
+                          pathname === child.url) &&
+                        "active"
+                      }`}
+                      aria-label={child.name}
                     >
-                      <a
-                        href={child.url}
-                        class={`nav-dropdown-link block px-[0.9rem] py-2 ${
-                          (pathname === `${child.url}/` ||
-                            pathname === child.url) &&
-                          "active"
-                        }`}
-                        aria-label={child.name}
-                      >
-                        {child.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ) : (
-              <li class="nav-item">
-                <a
-                  href={menu.url}
-                  class={`nav-link block py-2 lg:px-[0.625rem] lg:py-[0.9rem] xl:px-[1.06rem] ${
-                    (pathname === `${menu.url}/` || pathname === menu.url) &&
-                    "active"
-                  }`}
-                >
-                  {menu.name}
-                </a>
-              </li>
-            )}
-          </>
-        ))
+                      {child.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ) : (
+            <li class="nav-item">
+              <CustomLink
+                href={menu.url}
+                classes={` text-xl lg:text-base font-medium text-dark transition hover:text-primary block ${
+                  (pathname === `${menu.url}/` || pathname === menu.url) &&
+                  "text-primary"
+                }`}
+              >
+                {menu.name}
+              </CustomLink>
+            </li>
+          )
+        )
       }
     </ul>
   </nav>
 </header>
+
+<style>
+  .header {
+    @apply top-0 z-50 flex h-16 items-center bg-body transition-all  duration-150 ease-in-out lg:my-4 lg:border-none;
+  }
+  .header-sticky-top {
+    @apply sticky shadow-sm;
+  }
+  /* // navbar toggler */
+  input#nav-toggle:checked ~ label#show-button {
+    @apply hidden;
+  }
+
+  input#nav-toggle:checked ~ label#hide-button {
+    @apply flex lg:hidden;
+  }
+
+  input#nav-toggle:checked ~ #nav-menu {
+    @apply flex translate-x-0 opacity-100 lg:flex;
+  }
+
+  /* // navbar items */
+  .navbar {
+    @apply relative flex h-full flex-wrap items-center justify-between;
+  }
+
+  .nav-link {
+    @apply text-xl font-medium text-dark transition hover:text-primary lg:text-base;
+    &.active {
+      @apply text-primary;
+    }
+  }
+
+  .nav-dropdown {
+    @apply mr-0;
+  }
+
+  .nav-dropdown-list {
+    @apply z-50 mx-auto mt-4 max-w-[300px] rounded-lg border-0 border-solid  border-primary/25 bg-primary/5  px-[10px] py-3  shadow-sm duration-300  lg:mt-2 lg:border lg:bg-white lg:shadow-[0_0.9rem_1.56rem_rgb(0,0,0,0.1)];
+  }
+
+  .nav-dropdown-item {
+    @apply mb-1;
+  }
+
+  .nav-dropdown-link {
+    @apply min-w-[150px] py-1 text-sm font-medium text-dark transition hover:text-primary;
+    &.active {
+      @apply text-primary;
+    }
+  }
+</style>
 
 <script is:inline>
   const button = document.getElementById("dropdown-button");

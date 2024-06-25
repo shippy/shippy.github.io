@@ -1,10 +1,24 @@
 ---
 import FeatureSlider from "@/layouts/jsx-components/FeatureSlider";
-import { markdownify } from "@/lib/utils/textConverter";
+import { humanize, markdownify } from "@/lib/utils/textConverter";
 import SectionTitle from "../_shared/SectionTitle.astro";
+import * as Icon from "react-feather";
+
+interface Props {
+  data: {
+    title: string;
+    subtitle: string;
+    description: string;
+    list: {
+      icon?: string;
+      title: string;
+      content: string;
+    }[];
+  };
+}
 const { data } = Astro.props;
 
-const { subtitle, title, description } = data;
+const { subtitle, title, description, list } = data;
 ---
 
 <section class="section">
@@ -12,7 +26,32 @@ const { subtitle, title, description } = data;
     <div class="row">
       <div class="col-md-12 text-center" data-aos="fed-up">
         <SectionTitle data={{ title, subtitle, description }} />
-        <FeatureSlider features={data} client:load />
+        <div class="grid md:grid-cols-2 lg:grid-cols-3">
+          {
+            list.map((feature) => {
+              // @ts-ignore
+              const FeatherIcon = Icon[humanize(feature.icon)];
+              return (
+                <div
+                  data-aos="fade-up"
+                  data-aos-easing="ease-in-out"
+                  data-aos-duration="1000"
+                  data-aos-once="true"
+                >
+                  <div class="features-card group z-30 cursor-pointer">
+                    <div>
+                      <div class="icon flex items-center justify-center text-primary group-hover:bottom-0 group-hover:top-auto  group-hover:duration-100 group-hover:ease-in group-hover:after:h-full">
+                        <FeatherIcon />
+                      </div>
+                      <h3 class="h5 mb-5 mt-6">{feature.title}</h3>
+                      <p>{feature.content}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })
+          }
+        </div>
       </div>
     </div>
   </div>
