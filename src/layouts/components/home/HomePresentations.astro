@@ -9,13 +9,14 @@ const {
 } = Astro.props;
 ---
 
-<section>
+<section class="pb-16">
   <div class="container">
     <div class="row mb-6 items-center justify-center">
       <div
         class="mt-4 lg:col-6 lg:mt-0"
         data-aos="fade-up"
         data-aos-delay="100"
+        data-aos-once="true"
       >
         <div
           class="relative"
@@ -23,6 +24,7 @@ const {
           data-aos-anchor-placement="top-bottom"
           data-aos-easing="ease-in-out"
           data-aos-duration="1000"
+          data-aos-once="true"
         >
           <div class="relative z-10 p-14">
             <Image
@@ -64,6 +66,7 @@ const {
           data-aos-anchor-placement="top-bottom"
           data-aos-easing="ease-in-out"
           data-aos-duration="1000"
+          data-aos-once="true"
         >
           {link.label}
         </a>

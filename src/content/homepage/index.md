@@ -26,17 +26,17 @@ thingsIDo:
     - icon: "wind"
       title: Data Engineering
       content: "Performant, semantically rich, reproducible: my pipelines are all of the above."
-    - icon: "shield"
+    - icon: "database"
       title: Data Science and Data Analytics
       content: It's more than just averages and sums across the right groups.
-    - icon: "link"
+    - icon: "code"
       title: Full stack, all the way to deployment.
       content: Does the project need a frontend to interact with and a cloud infrastructure to host itself in? I'm on it.
-    - icon: "lock"
+    - icon: "speaker"
       title: Communication and Public Speaking.
       content: >
         I've spoken at local meetups, online events, and big conferences. Hit me up to speak at any of the above!
-    - icon: "wind"
+    - icon: "command"
       title: I'm a Generalist.
       content: ...which just means that I don't stop at a problem's boundary; I see it through wherever it
 

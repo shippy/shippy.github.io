@@ -1,52 +1,57 @@
 ---
-import { getImage, Image } from "astro:assets";
+import { Image } from "astro:assets";
 import config from "@/config/config.json";
-import dateFormat from "@/lib/utils/dateFormat";
-import readingTime from "@/lib/utils/readingTime";
-import { plainify, slugify } from "@/lib/utils/textConverter";
 import defaultHeroImage from "@/assets/default_blog_hero_image.png";
 
 const { post } = Astro.props;
-const { summary_length } = config.settings;
 
 const {
-  data: { title, description, image, author, date },
+  data: { title, description, image, author, date, categories },
   slug,
   body,
 } = post;
 ---
 
 <article
-  class="mt-7 rounded-2xl border-0 bg-body shadow"
+  class="group mt-7 rounded-2xl border-0 bg-body shadow"
   data-aos="fade-up"
   data-aos-easing="ease-in-out"
   data-aos-duration="1000"
   data-aos-once="true"
 >
   <a href={`/blog/${slug}/`}>
-    {
-      image ? (
-        <Image
-          src={image}
-          alt={title}
-          class="h-[200px] max-w-full rounded-t-[18px] object-cover"
-          width={570}
-          height={335}
-        />
-      ) : (
-        <Image
-          src={defaultHeroImage}
-          alt={title}
-          class="h-[200px] max-w-full rounded-t-[18px] object-cover"
-          width={570}
-          height={335}
-        />
-      )
-    }</a
+    <div class="relative">
+      {
+        image ? (
+          <Image
+            src={image}
+            alt={title}
+            class="h-[200px] max-w-full rounded-t-[18px] object-cover"
+            width={570}
+            height={335}
+          />
+        ) : (
+          <Image
+            src={defaultHeroImage}
+            alt={title}
+            class="h-[200px] max-w-full rounded-t-[18px] object-cover"
+            width={570}
+            height={335}
+          />
+        )
+      }
+      <span
+        class="absolute right-5 top-5 rounded-lg bg-primary p-2 text-sm font-semibold capitalize text-white"
+      >
+        {categories[0]}
+      </span>
+    </div>
+  </a>
+  <div
+    class="px-[1.875rem] pb-[0.625rem] pt-[2.1rem] transition-colors group-hover:bg-primary/5"
   >
-  <div class="px-[1.875rem] pb-[0.625rem] pt-[2.1rem]">
     <h3
-      class="card-title mb-4 text-h5 font-semibold transition-colors hover:text-primary"
+      class="card-title mb-4 text-h5 font-semibold transition-colors group-hover:text-primary"
     >
       <a href={`/blog/${slug}/`}>{title}</a>
     </h3>

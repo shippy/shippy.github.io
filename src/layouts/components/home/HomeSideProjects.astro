@@ -2,9 +2,11 @@
 import type { CollectionEntry } from "astro:content";
 import ProjectCard from "@/components/_shared/ProjectCard.astro";
 import SectionTitle from "../_shared/SectionTitle.astro";
+import Image from "astro/components/Image.astro";
+import Circle from "../Circle.astro";
 
 interface Props {
-  projects: CollectionEntry<"side_projects">[];
+  project: CollectionEntry<"side_projects">;
   data: {
     title: string;
     subtitle: string;
@@ -16,29 +18,59 @@ interface Props {
 }
 
 const {
-  projects,
+  project,
   data: { title, subtitle, link },
 } = Astro.props;
 ---
 
-<section class="section">
-  <div class="container">
+<section>
+  <div class="container relative text-center">
     <div class="row justify-center">
-      <div class="col-12">
-        <SectionTitle data={{ title, subtitle }} />
-      </div>
-      {
-        projects.map((project, i) => (
-          <div class="col-12 mb-8 md:col-6 lg:col-4">
-            <ProjectCard project={project} />
-          </div>
-        ))
-      }
+      <div class="relative z-30 py-20">
+        <SectionTitle
+          data={{
+            title: project.data.title,
+            subtitle,
+            description: project.data.description,
+          }}
+        />
+        <!-- @ts-ignore -->
+        <Image
+          src={project.data.heroImage}
+          height={1000}
+          width={1000}
+          alt={title}
+          class="mx-auto inline h-[370px] w-[800px] rounded-2xl object-cover"
+          data-aos="fade-up"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="1000"
+          data-aos-once="true"
+        />
 
-      <div class="text-center mt-4">
-        <a href={link.href} class="btn btn-primary">
-          {link.label}
-        </a>
+        <div class="mt-12 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href={`/side_projects/${project.slug}`}
+            class="btn btn-primary"
+            href="#"
+            data-aos="fade-up"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          >
+            View Project
+          </a>
+          <a
+            href={link.href}
+            class="btn btn-outline-primary"
+            href="#"
+            data-aos="fade-up"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          >
+            {link.label}
+          </a>
+        </div>
       </div>
     </div>
   </div>

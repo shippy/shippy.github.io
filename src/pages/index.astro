@@ -23,17 +23,15 @@ const {
 const posts = await getCollection("blog");
 const projects = await getCollection("side_projects");
 const formattedPosts = formatCollection(posts, { limit: 3 });
-const formattedProjects = formatCollection(projects, { limit: 3 });
+const latestProject = formatCollection(projects, { limit: 1 })[0];
 ---
 
-<div class="!font-primary">
-  <Base>
-    <HomeIntro data={homeIntro} />
-    <ThingsIDo data={thingsIDo} />
-    <HomePresentations data={presentations} />
-    <HomeSideProjects data={sideProjects} projects={formattedProjects} />
-    <NameAndImage data={nameImage} />
-    <HomeArticles data={articles} posts={formattedPosts} />
-    <Cta />
-  </Base>
-</div>
+<Base>
+  <HomeIntro data={homeIntro} />
+  <ThingsIDo data={thingsIDo} />
+  <HomePresentations data={presentations} />
+  <HomeSideProjects data={sideProjects} project={latestProject} />
+  <NameAndImage data={nameImage} />
+  <HomeArticles data={articles} posts={formattedPosts} />
+  <Cta />
+</Base>

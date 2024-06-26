@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  @apply overflow-x-hidden  bg-body text-sm font-normal leading-[1.5] text-text xl:text-base 2xl:text-lg;
+  @apply overflow-x-hidden font-primary bg-body text-sm font-normal leading-[1.5] text-text xl:text-base 2xl:text-lg;
 }
 ::selection {
   @apply bg-primary text-white;
@@ -14,7 +14,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-semibold leading-tight text-dark;
+  @apply font-primary font-semibold leading-tight text-dark;
 }
 
 h1,
