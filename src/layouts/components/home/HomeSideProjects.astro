@@ -1,9 +1,8 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import ProjectCard from "@/components/_shared/ProjectCard.astro";
 import SectionTitle from "../_shared/SectionTitle.astro";
 import Image from "astro/components/Image.astro";
-import Circle from "../Circle.astro";
+import defaultHeroImage from "@/assets/default_blog_hero_image.png";
 
 interface Props {
   project: CollectionEntry<"side_projects">;
@@ -34,18 +33,32 @@ const {
             description: project.data.description,
           }}
         />
-        <!-- @ts-ignore -->
-        <Image
-          src={project.data.heroImage}
-          height={1000}
-          width={1000}
-          alt={title}
-          class="mx-auto inline h-[370px] w-[800px] rounded-2xl object-cover"
+        <div
           data-aos="fade-up"
           data-aos-easing="ease-in-out"
           data-aos-duration="1000"
           data-aos-once="true"
-        />
+        >
+          {
+            project.data.heroImage ? (
+              <Image
+                src={project.data.heroImage}
+                height={1000}
+                width={1000}
+                alt={title}
+                class="mx-auto inline h-[370px] w-[800px] rounded-2xl object-cover"
+              />
+            ) : (
+              <Image
+                src={defaultHeroImage}
+                height={1000}
+                width={1000}
+                alt={title}
+                class="mx-auto inline h-[370px] w-[800px] rounded-2xl object-cover"
+              />
+            )
+          }
+        </div>
 
         <div class="mt-12 flex flex-wrap items-center justify-center gap-3">
           <a

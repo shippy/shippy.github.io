@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  @apply overflow-x-hidden font-primary bg-body text-sm font-normal leading-[1.5] text-text xl:text-base 2xl:text-lg;
+  @apply overflow-x-hidden bg-body font-primary text-sm font-normal leading-relaxed text-text xl:text-base 2xl:text-lg;
 }
 ::selection {
   @apply bg-primary text-white;
@@ -48,5 +48,5 @@ h6,
 }
 
 p {
-  @apply text-text;
+  @apply leading-relaxed text-text;
 }

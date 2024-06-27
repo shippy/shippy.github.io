@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import PostCard from "@/components/_shared/PostCard.astro";
-import { markdownify } from "@/lib/utils/textConverter";
 import SectionTitle from "../_shared/SectionTitle.astro";
 
 interface Props {
@@ -36,7 +35,7 @@ const {
         ))
       }
 
-      <div class="text-center mt-4">
+      <div class="mt-4 text-center">
         <a href={link.href} class="btn btn-primary">
           {link.label}
         </a>

@@ -1,6 +1,6 @@
 ---
 import config from "@/config/config.json";
-import Circle from "@/layouts/components/Circle.astro";
+import Circle from "@/components/_shared/Circle.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const {
@@ -27,7 +27,7 @@ const {
                   <h2 set:html={markdownify(title)} class="mb-3" />
                   <p
                     set:html={markdownify(content)}
-                    class="text-text max-w-3xl mx-auto"
+                    class="mx-auto max-w-3xl text-text"
                   />
                 </div>
 
