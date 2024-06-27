@@ -6,7 +6,7 @@ import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import { sortByDate } from "@/lib/utils/sortFunctions";
-import Cta from "@/partials/Cta.astro";
+import Cta from "@/components/_partials/Cta.astro";
 import type { CollectionKey } from "astro:content";
 
 export async function getStaticPaths() {
@@ -29,7 +29,7 @@ const blogs = await getSinglePage("blog");
 const authors = await getSinglePage("authors");
 const addAuthors = blogs.map((blog: any) => {
   const author: any = authors.find(
-    (author: any) => author.data.title === blog.data.author,
+    (author: any) => author.data.title === blog.data.author
   );
   return {
     ...blog,
