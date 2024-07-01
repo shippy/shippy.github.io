@@ -8,7 +8,8 @@ interface Props {
   project: CollectionEntry<"side_projects">;
   data: {
     title: string;
-    subtitle: string;
+    subtitle?: string;
+    description: string;
     link: {
       label: string;
       href: string;
@@ -18,7 +19,7 @@ interface Props {
 
 const {
   project,
-  data: { title, subtitle, link },
+  data: { title, subtitle, description, link },
 } = Astro.props;
 ---
 
@@ -28,9 +29,9 @@ const {
       <div class="relative z-30 py-20">
         <SectionTitle
           data={{
-            title: project.data.title,
+            title,
             subtitle,
-            description: project.data.description,
+            description,
           }}
         />
         <div
@@ -39,25 +40,27 @@ const {
           data-aos-duration="1000"
           data-aos-once="true"
         >
-          {
-            project.data.heroImage ? (
-              <Image
-                src={project.data.heroImage}
-                height={1000}
-                width={1000}
-                alt={title}
-                class="mx-auto inline h-[370px] w-[800px] rounded-2xl object-cover"
-              />
-            ) : (
-              <Image
-                src={defaultHeroImage}
-                height={1000}
-                width={1000}
-                alt={title}
-                class="mx-auto inline h-[370px] w-[800px] rounded-2xl object-cover"
-              />
-            )
-          }
+          <a href={`/side_projects/${project.slug}`} title={project.data.title}>
+            {
+              project.data.heroImage ? (
+                <Image
+                  src={project.data.heroImage}
+                  height={1000}
+                  width={1000}
+                  alt={title}
+                  class="mx-auto inline h-[370px] w-[800px] rounded-2xl object-cover"
+                />
+              ) : (
+                <Image
+                  src={defaultHeroImage}
+                  height={1000}
+                  width={1000}
+                  alt={title}
+                  class="mx-auto inline h-[370px] w-[800px] rounded-2xl object-cover"
+                />
+              )
+            }
+          </a>
         </div>
 
         <div class="mt-12 flex flex-wrap items-center justify-center gap-3">
@@ -70,7 +73,7 @@ const {
             data-aos-duration="1000"
             data-aos-once="true"
           >
-            View Project
+            View Latest Project
           </a>
           <a
             href={link.href}

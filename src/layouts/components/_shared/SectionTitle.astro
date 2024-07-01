@@ -17,18 +17,7 @@ const {
 ---
 
 <div class:list={["section-heading", left ? "text-left" : "text-center"]}>
-  {
-    subtitle && (
-      <p
-        set:html={markdownify(subtitle)}
-        class="mb-4 text-[0.9rem] uppercase"
-        data-aos="fade-in"
-        data-aos-easing="ease-in-out"
-        data-aos-duration="1000"
-        data-aos-once="true"
-      />
-    )
-  }
+ 
   <h2
     set:html={markdownify(title)}
     class:list={[left ? "heading-left" : "heading"]}

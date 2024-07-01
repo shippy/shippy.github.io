@@ -8,7 +8,8 @@ interface Props {
   article: CollectionEntry<"blog">;
   data: {
     title: string;
-    subtitle: string;
+    subtitle?: string;
+    description: string;
     link: {
       label: string;
       href: string;
@@ -18,7 +19,7 @@ interface Props {
 
 const {
   article,
-  data: { title, subtitle, link },
+  data: { title, subtitle, description, link },
 } = Astro.props;
 ---
 
@@ -28,33 +29,35 @@ const {
       class="flex flex-col gap-8 lg:flex-row-reverse lg:items-center lg:gap-12 lg:px-14"
     >
       <div class="relative z-10 lg:w-1/2">
-        {
-          article.data.image ? (
-            <Image
-              src={article.data.image}
-              height={1000}
-              width={1000}
-              alt={title}
-              class="w-full max-w-full rounded-2xl lg:h-[500px] lg:object-cover"
-            />
-          ) : (
-            <Image
-              src={defaultHeroImage}
-              height={1000}
-              width={1000}
-              alt={title}
-              class="w-full max-w-full rounded-2xl lg:h-[500px] lg:object-cover"
-            />
-          )
-        }
+        <a href={`/blog/${article.slug}`} title={article.data.title}>
+          {
+            article.data.image ? (
+              <Image
+                src={article.data.image}
+                height={1000}
+                width={1000}
+                alt={title}
+                class="w-full max-w-full rounded-2xl lg:h-[500px] lg:object-cover"
+              />
+            ) : (
+              <Image
+                src={defaultHeroImage}
+                height={1000}
+                width={1000}
+                alt={title}
+                class="w-full max-w-full rounded-2xl lg:h-[500px] lg:object-cover"
+              />
+            )
+          }
+        </a>
       </div>
 
       <div class="lg:w-1/2" data-aos="fade-up">
         <SectionTitle
           data={{
-            title: article.data.title,
+            title,
             subtitle,
-            description: article.data.description,
+            description,
           }}
           left
         />
@@ -68,7 +71,7 @@ const {
             data-aos-duration="1000"
             data-aos-once="true"
           >
-            View Article
+            View Latest Article
           </a>
           <a
             href={link.href}

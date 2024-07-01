@@ -17,7 +17,7 @@ homeIntro:
 ## THINGS I DO
 thingsIDo:
   subtitle: SPECIAL SKILLS
-  title: Things I Can Do
+  title: Some Things I Can Do
   description: My LinkedIn bio used to say I'm a "Data Everything". That wasn't too far off.
   list:
     - icon: "lock"
@@ -44,6 +44,7 @@ thingsIDo:
 sideProjects:
   subtitle: Side Projects
   title: Sometimes, I... <br> work on side projects
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
   link:
     label: Explore Side Projects
     href: "/side_projects/"
@@ -68,7 +69,8 @@ nameImage:
 articles:
   subtitle: Articles
   title: Sometimes, I... <br> write technical articles
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
   link:
-    label: View More Articles
+    label: View All Articles
     href: "/blog/"
 ---
