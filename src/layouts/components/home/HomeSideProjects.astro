@@ -23,7 +23,7 @@ const {
 } = Astro.props;
 ---
 
-<section>
+<section class="pb-10 lg:pb-20">
   <div class="container relative text-center">
     <div class="row justify-center">
       <div class="relative z-30 py-20">
@@ -40,7 +40,38 @@ const {
           data-aos-duration="1000"
           data-aos-once="true"
         >
-          <a href={`/side_projects/${project.slug}`} title={project.data.title}>
+          <div class="relative mx-auto max-w-[800px]">
+            <div
+              class="absolute left-0 top-0 flex h-full w-full items-end overflow-hidden rounded-2xl bg-gradient-to-b from-transparent to-black/80 p-4 text-white lg:p-8"
+            >
+              <div class="flex w-full items-center justify-between gap-4">
+                <a
+                  href={`/side_projects/${project.slug}`}
+                  title={project.data.title}
+                >
+                  <h3
+                    class="text-white"
+                    data-aos="fade-up"
+                    data-aos-easing="ease-in-out"
+                    data-aos-duration="1000"
+                    data-aos-once="true"
+                  >
+                    {project.data.title}
+                  </h3>
+                </a>
+                <a
+                  href={`/side_projects/${project.slug}`}
+                  class="btn btn-primary border-none"
+                  data-aos="fade-up"
+                  data-aos-easing="ease-in-out"
+                  data-aos-duration="1000"
+                  data-aos-once="true"
+                >
+                  View Project
+                </a>
+              </div>
+            </div>
+
             {
               project.data.heroImage ? (
                 <Image
@@ -48,7 +79,7 @@ const {
                   height={1000}
                   width={1000}
                   alt={title}
-                  class="mx-auto inline h-[370px] w-[800px] rounded-2xl object-cover"
+                  class="mx-auto inline h-[370px]  rounded-2xl object-cover"
                 />
               ) : (
                 <Image
@@ -60,21 +91,10 @@ const {
                 />
               )
             }
-          </a>
+          </div>
         </div>
 
         <div class="mt-12 flex flex-wrap items-center justify-center gap-3">
-          <a
-            href={`/side_projects/${project.slug}`}
-            class="btn btn-primary"
-            href="#"
-            data-aos="fade-up"
-            data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
-            data-aos-once="true"
-          >
-            View Latest Project
-          </a>
           <a
             href={link.href}
             class="btn btn-outline-primary"

@@ -23,7 +23,6 @@ const {
 
 const posts = await getCollection("blog");
 const projects = await getCollection("side_projects");
-// const formattedPosts = formatCollection(posts, { limit: 3 });
 const latestArticle = formatCollection(posts, { limit: 1 })[0];
 const latestProject = formatCollection(projects, { limit: 1 })[0];
 ---
@@ -35,6 +34,5 @@ const latestProject = formatCollection(projects, { limit: 1 })[0];
   <HomeSideProjects data={sideProjects} project={latestProject} />
   <NameAndImage data={nameImage} />
   <HomeArticle data={articles} article={latestArticle} />
-  <!-- <HomeArticles data={articles} posts={formattedPosts} /> -->
   <Cta />
 </Base>
