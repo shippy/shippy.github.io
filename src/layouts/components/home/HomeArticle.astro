@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import SectionTitle from "../_shared/SectionTitle.astro";
 import type { CollectionEntry } from "astro:content";
-import defaultHeroImage from "@/assets/default_blog_hero_image.png";
+import placeholder from "@/assets/placeholder.jpg";
 
 interface Props {
   article: CollectionEntry<"blog">;
@@ -58,7 +58,7 @@ const {
         </div>
 
         <Image
-          src={article.data.image ?? defaultHeroImage}
+          src={article.data.image ?? placeholder}
           height={1000}
           width={1000}
           alt={title}

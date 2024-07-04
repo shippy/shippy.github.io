@@ -10,7 +10,7 @@ import type { CollectionEntry } from "astro:content";
 
 interface Props {
   page: {
-    data: CollectionEntry<"side_projects">[];
+    data: CollectionEntry<"presentations">[];
     start: number;
     end: number;
     size: 4;
@@ -25,7 +25,7 @@ interface Props {
   };
 }
 
-const collection = "side_projects";
+const collection = "presentations";
 
 // Replace `collection` underscores etc. with spaces and capitalize first letter of each word
 const collectionTitle = collection
@@ -34,13 +34,13 @@ const collectionTitle = collection
 
 //@ts-ignore
 export async function getStaticPaths({ paginate }) {
-  const allSideProjects = await getCollection("side_projects");
-  const formattedProjects: CollectionEntry<"side_projects">[] =
-    formatCollection(allSideProjects, {
+  const allPresentations = await getCollection("presentations");
+  const formattedPresentations: CollectionEntry<"presentations">[] =
+    formatCollection(allPresentations, {
       sortParams: "pubDate",
     });
 
-  return paginate(formattedProjects, {
+  return paginate(formattedPresentations, {
     pageSize: config.settings.pagination,
   });
 }
@@ -54,9 +54,9 @@ const { page } = Astro.props;
     <div class="container">
       <div class="row justify-center">
         {
-          page.data.map((project) => (
+          page.data.map((presentation) => (
             <div class="col-12 mb-8 md:col-6 lg:col-5">
-              <ContentCard content={project} collection={collection} />
+              <ContentCard content={presentation} collection={collection} />
             </div>
           ))
         }
