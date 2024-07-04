@@ -17,41 +17,33 @@ const {
 ---
 
 <article
-  class="mt-7 rounded-2xl border-0 bg-body shadow"
+  class="mt-7 h-full rounded-2xl border-0 bg-body shadow"
   data-aos="fade-up"
   data-aos-easing="ease-in-out"
   data-aos-duration="1000"
   data-aos-once="true"
 >
   <a href={`/blog/${slug}/`}>
-    {
-      heroImage ? (
-        <Image
-          src={heroImage}
-          alt={title}
-          class="h-[200px] max-w-full rounded-t-[18px] object-cover"
-          width={570}
-          height={335}
-        />
-      ) : (
-        <Image
-          src={defaultHeroImage}
-          alt={title}
-          class="h-[200px] max-w-full rounded-t-[18px] object-cover"
-          width={570}
-          height={335}
-        />
-      )
-    }</a
-  >
-  <div class="px-[1.875rem] pb-[0.625rem] pt-[2.1rem]">
+    <Image
+      src={heroImage ?? defaultHeroImage}
+      alt={title}
+      class="h-[200px] max-w-full rounded-t-[18px] object-cover lg:h-[300px]"
+      width={570}
+      height={335}
+    />
+  </a>
+  <div class="px-6 pb-1 pt-8">
     <h3
       class="card-title mb-4 text-h5 font-semibold transition-colors hover:text-primary"
     >
       <a href={`/blog/${slug}/`}>{title}</a>
     </h3>
-    <p class="mb-4 break-words text-text">
-      {description || plainify(body?.slice(0, Number(summary_length)))}...
+    <p class="mb-0 break-words text-text">
+      {
+        description
+          ? description
+          : `${plainify(body?.slice(0, Number(summary_length)))}...`
+      }
     </p>
   </div>
 </article>

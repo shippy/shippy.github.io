@@ -56,25 +56,14 @@ const {
             </a>
           </div>
         </div>
-        {
-          article.data.image ? (
-            <Image
-              src={article.data.image}
-              height={1000}
-              width={1000}
-              alt={title}
-              class="w-full max-w-full rounded-2xl lg:h-[500px] lg:object-cover"
-            />
-          ) : (
-            <Image
-              src={defaultHeroImage}
-              height={1000}
-              width={1000}
-              alt={title}
-              class="w-full max-w-full rounded-2xl lg:h-[500px] lg:object-cover"
-            />
-          )
-        }
+
+        <Image
+          src={article.data.image ?? defaultHeroImage}
+          height={1000}
+          width={1000}
+          alt={title}
+          class="w-full max-w-full rounded-2xl lg:h-[500px] lg:object-cover"
+        />
       </div>
 
       <div class="lg:w-1/2" data-aos="fade-up">

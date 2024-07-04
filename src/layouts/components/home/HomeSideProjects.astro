@@ -73,26 +73,13 @@ const {
                 </a>
               </div>
             </div>
-
-            {
-              project.data.heroImage ? (
-                <Image
-                  src={project.data.heroImage}
-                  height={1000}
-                  width={1000}
-                  alt={title}
-                  class="mx-auto inline h-[370px]  rounded-2xl object-cover"
-                />
-              ) : (
-                <Image
-                  src={defaultHeroImage}
-                  height={1000}
-                  width={1000}
-                  alt={title}
-                  class="mx-auto inline h-[370px] w-[800px] rounded-2xl object-cover"
-                />
-              )
-            }
+            <Image
+              src={project.data.heroImage ?? defaultHeroImage}
+              height={1000}
+              width={1000}
+              alt={title}
+              class="mx-auto inline h-[370px] rounded-2xl object-cover"
+            />
           </div>
         </div>
 
