@@ -8,7 +8,7 @@ import Cta from "@/components/_partials/Cta.astro";
 import HomeIntro from "@/components/home/HomeIntro.astro";
 import HomeSideProjects from "@/components/home/HomeSideProjects.astro";
 import HomePresentations from "@/components/home/HomePresentations.astro";
-import HomeArticle from "@/components/home/HomeArticle.astro";
+import HomeArticles from "@/components/home/HomeArticles.astro";
 
 const homepage = await getEntry("homepage", "index");
 const {
@@ -37,6 +37,6 @@ const latestProject = formatCollection(projects, {
   <NameAndImage data={nameImage} />
   <HomePresentations data={presentations} />
   <HomeSideProjects data={sideProjects} project={latestProject} />
-  <HomeArticle data={articles} article={latestArticle} />
+  <HomeArticles data={articles} article={latestArticle} />
   <Cta />
 </Base>

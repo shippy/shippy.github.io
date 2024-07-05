@@ -46,7 +46,9 @@ const {
             <div
               class="absolute left-0 top-0 flex h-full w-full items-end overflow-hidden rounded-2xl bg-gradient-to-b from-transparent to-black/80 p-4 text-white lg:p-8"
             >
-              <div class="flex w-full items-center justify-between gap-4">
+              <div
+                class="flex w-full flex-col items-start justify-start gap-4 lg:flex-row lg:items-center lg:justify-between"
+              >
                 <a
                   href={`/side_projects/${project.slug}`}
                   title={project.data.title}
@@ -78,7 +80,7 @@ const {
               height={1000}
               width={1000}
               alt={title}
-              class="mx-auto inline h-[370px] rounded-2xl object-cover"
+              class="mx-auto inline h-[250px] rounded-2xl object-cover lg:h-auto"
             />
           </div>
         </div>

@@ -36,6 +36,28 @@
       "url": "/contact"
     }
   ],
+  "mobile": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Blog",
+      "url": "/blog"
+    },
+    {
+      "name": "Side Projects",
+      "url": "/side_projects"
+    },
+    {
+      "name": "Presentations",
+      "url": "/presentations"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    }
+  ],
   "footer": [
     {
       "name": "Home",

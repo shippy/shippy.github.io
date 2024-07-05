@@ -142,12 +142,12 @@
   @apply flex flex-col justify-start  rounded-md border border-solid border-primary/15 px-[1.875rem] py-[2rem] text-center duration-300 ease-[ease] hover:-translate-y-[2px] hover:border-primary/20 hover:shadow-none;
 }
 .icon {
-  @apply relative z-10 m-auto block h-20 w-20 overflow-hidden rounded-[0.9rem] border border-solid border-primary/10 text-h2 leading-[5rem] duration-150;
+  @apply relative z-10 m-auto block h-12 w-12 overflow-hidden rounded-[0.9rem] border border-solid border-primary/10 text-h2 leading-[5rem] duration-150 lg:h-20 lg:w-20;
   &::after {
     @apply absolute left-0 top-0 -z-10 block h-0 w-full rounded-[0.9rem] bg-primary/5 duration-300 ease-[ease] content-[""];
   }
   svg {
-    @apply h-9 w-9;
+    @apply h-6 w-6 lg:h-9 lg:w-9;
   }
 }
 .pagination {
@@ -403,4 +403,5 @@
   @apply prose-td:px-3 prose-td:py-4;
   @apply marker:text-primary;
   @apply prose-img:rounded-md;
+  @apply prose-video:max-w-full;
 }

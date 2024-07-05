@@ -8,10 +8,10 @@ const { title } = Astro.props;
   <div class="container relative overflow-hidden">
     <div class="row text-center">
       <div class="lg:col-12">
-        <div class="py-28">
+        <div class="py-16 lg:py-28">
           <h1
             set:text={markdownify(title)}
-            class="mb-12 text-center text-h1-sm font-semibold capitalize md:text-h1-md lg:text-h1"
+            class="mb-6 text-center text-h1-sm font-semibold capitalize md:text-h1-md lg:text-h1"
             data-aos="fade-up"
             data-aos-delay="100"
           />

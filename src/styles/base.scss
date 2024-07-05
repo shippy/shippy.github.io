@@ -50,3 +50,7 @@ h6,
 p {
   @apply leading-relaxed text-text;
 }
+
+iframe {
+  @apply max-w-full rounded-2xl;
+}

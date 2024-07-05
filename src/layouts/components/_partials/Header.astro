@@ -15,7 +15,8 @@ export interface NavigationLink {
 }
 const { pathname } = Astro.url;
 
-const { main }: { main: NavigationLink[] } = menu;
+const { main, mobile }: { main: NavigationLink[]; mobile: NavigationLink[] } =
+  menu;
 ---
 
 <header class="header" id="header" data-aos="fade-down" data-aos-once="true">
@@ -50,10 +51,10 @@ const { main }: { main: NavigationLink[] } = menu;
     </label>
     <!-- /navbar toggler -->
 
-    <!--  -->
+    <!--  Desktop-->
     <ul
       id="nav-menu"
-      class="bg-orange fixed left-0 top-16 z-50 flex h-full w-full translate-x-full flex-col items-center gap-8 border-t border-gray-400/20 bg-body py-8 text-center opacity-0 transition-all lg:order-1 lg:static lg:top-0 lg:flex lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:gap-8 lg:space-x-2 lg:border-none lg:py-0 lg:pt-0 lg:text-left lg:opacity-100"
+      class="bg-orange fixed left-0 top-16 z-50 hidden h-full w-full translate-x-full flex-col items-center gap-8 border-t border-gray-400/20 bg-body py-8 text-center opacity-0 transition-all lg:order-1 lg:static lg:top-0 lg:flex lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:gap-8 lg:space-x-2 lg:border-none lg:py-0 lg:pt-0 lg:text-left lg:opacity-100"
     >
       {
         main.map((menu) =>
@@ -114,6 +115,28 @@ const { main }: { main: NavigationLink[] } = menu;
             </li>
           )
         )
+      }
+    </ul>
+
+    <!--  Mobile-->
+    <ul
+      id="nav-menu"
+      class="bg-orange fixed left-0 top-16 z-50 flex h-full w-full translate-x-full flex-col items-center gap-8 border-t border-gray-400/20 bg-body py-8 text-center opacity-0 transition-all lg:order-1 lg:static lg:top-0 lg:hidden lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:gap-8 lg:space-x-2 lg:border-none lg:py-0 lg:pt-0 lg:text-left lg:opacity-100"
+    >
+      {
+        mobile.map((menu) => (
+          <li class="nav-item">
+            <CustomLink
+              href={menu.url}
+              classes={` text-xl lg:text-base font-medium text-dark transition hover:text-primary block ${
+                (pathname === `${menu.url}/` || pathname === menu.url) &&
+                "text-primary"
+              }`}
+            >
+              {menu.name}
+            </CustomLink>
+          </li>
+        ))
       }
     </ul>
   </nav>
