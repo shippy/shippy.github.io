@@ -1,0 +1,34 @@
+---
+interface Props {
+  breadcrumbs: Breadcrumb[];
+}
+
+export interface Breadcrumb {
+  label: string;
+  href: string;
+  active?: boolean;
+}
+
+const { breadcrumbs } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="mx-auto mb-8 block" data-aos="fade-up">
+  <ul class="flex gap-2">
+    {
+      breadcrumbs.map(({ href, label, active }, index) => {
+        return (
+          <li aria-current={active}>
+            {!active ? (
+              <a href={href}>{label}</a>
+            ) : (
+              <p class="text-primary">{label}</p>
+            )}
+            {index < breadcrumbs.length - 1 ? (
+              <span class="mx-2 text-light">{"/"}</span>
+            ) : null}
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>

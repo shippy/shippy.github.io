@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import Disqus from "./jsx-components/Disqus";
 import SectionTitle from "@/components/_shared/SectionTitle.astro";
+import Breadcrumbs from "@/components/_shared/Breadcrumbs.astro";
+import Badge from "@/components/_shared/Badge.astro";
 import Cta from "@/components/_partials/Cta.astro";
 import SimilarPosts from "@/components/blog/SimilarPosts.astro";
 import dateFormat from "@/lib/utils/dateFormat";
@@ -22,13 +24,30 @@ const similarPosts = formatCollection(allPosts, { sortByDate: true })
   })
   .slice(0, 2);
 const { Content } = await post.render();
-const { title, image, date } = post.data;
+const { title, image, date, categories } = post.data;
 ---
 
 <section class="py-10 lg:py-20">
   <div class="container">
     <div class="row justify-center">
       <div class="col-12 mb-12 lg:col-10">
+        <!-- <Breadcrumbs
+          breadcrumbs={[
+            {
+              label: "Home",
+              href: "/",
+            },
+            {
+              label: "Blog",
+              href: "/blog",
+            },
+            {
+              label: title,
+              href: `/blog/${post.slug}`,
+              active: true,
+            },
+          ]}
+        /> -->
         <Image
           alt={title}
           src={image ?? placeholder}
@@ -42,14 +61,24 @@ const { title, image, date } = post.data;
           <h1 class="">
             {title}
           </h1>
-          <div class="mt-6 flex items-center">
+          <div class="my-6 flex items-center">
             <span>{dateFormat(date)} - {readingTime(post.body)}</span>
           </div>
+
+          <ul class="flex flex-wrap items-center gap-4">
+            {
+              categories.map((category: string) => (
+                <li>
+                  <Badge text={category} />
+                </li>
+              ))
+            }
+          </ul>
         </div>
         <div class="content">
           <Content />
         </div>
-        <Disqus client:load />
+        <!-- <Disqus client:load /> -->
       </div>
     </div>
   </div>

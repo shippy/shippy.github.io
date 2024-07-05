@@ -1,0 +1,26 @@
+---
+import Base from "@/layouts/Base.astro";
+import SideProjectSingle from "@/layouts/SideProjectSingle.astro";
+import { getCollection } from "astro:content";
+import placeholder from "@/assets/placeholder.jpg";
+
+export async function getStaticPaths() {
+  const projectEntries = await getCollection("side_projects");
+  return projectEntries.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { title, description, heroImage } = project.data;
+---
+
+<Base
+  title={title}
+  meta_title={title}
+  description={description}
+  image={heroImage ?? placeholder}
+>
+  <SideProjectSingle project={project} />
+</Base>
