@@ -5,62 +5,93 @@ import placeholder from "@/assets/placeholder.jpg";
 
 const { presentation } = Astro.props;
 const { Content } = await presentation.render();
-const {
-  title,
-  description,
-  pubDate,
-  heroImage,
-  presentationUrl,
-  videoUrl,
-  place,
-} = presentation.data;
+const { title, description, heroImage, presentationUrl, videoUrl } =
+  presentation.data;
 ---
 
 <section class="py-10 lg:py-20">
   <div class="container">
     <div class="row justify-center">
       <div class="col-12 mb-12 lg:col-10">
-        <Image
-          alt={title}
-          src={heroImage ?? placeholder}
-          width={1126}
-          height={661}
-          class="w-full max-w-full rounded-3xl"
-        />
+        {
+          videoUrl ? (
+            <>
+              <iframe
+                width="720"
+                height="500"
+                class="hidden w-full lg:block"
+                src={videoUrl}
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              />
+              <iframe
+                width="720"
+                height="300"
+                src={videoUrl}
+                class="w-full  lg:hidden"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              />
+            </>
+          ) : presentationUrl ? (
+            <>
+              <iframe
+                src={presentationUrl}
+                width="720"
+                height="500"
+                class="hidden w-full lg:block"
+                allowfullscreen="true"
+              />
+              <iframe
+                src={presentationUrl}
+                width="720"
+                height="300"
+                class="w-full lg:hidden"
+                allowfullscreen="true"
+              />
+            </>
+          ) : (
+            <Image
+              alt={title}
+              src={heroImage ?? placeholder}
+              width={1126}
+              height={661}
+              class="w-full max-w-full rounded-3xl"
+            />
+          )
+        }
       </div>
       <div class="lg:col-8">
         <div class="mb-12 flex flex-col gap-12">
-          <h1 class="">
+          <h1>
             {title}
           </h1>
           {description && <p set:html={description} />}
 
           {
-            videoUrl && (
-              <div class="video_iframe flex flex-col gap-4">
-                <h2>Recording</h2>
-                <iframe
-                  width="720"
-                  height="400"
-                  src={videoUrl}
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                />
-              </div>
-            )
-          }
-          {
-            presentationUrl && (
-              <div class="presentation_iframe flex flex-col gap-4">
-                <h2>Slides</h2>
-                <iframe
-                  src={presentationUrl}
-                  width="720"
-                  height="400"
-                  allowfullscreen="true"
-                />
+            videoUrl && presentationUrl && (
+              <div class="flex flex-col gap-4">
+                <h2 class="h3">Slides</h2>
+                <>
+                  <iframe
+                    src={presentationUrl}
+                    width="720"
+                    height="500"
+                    class="hidden w-full lg:block"
+                    allowfullscreen="true"
+                  />
+                  <iframe
+                    src={presentationUrl}
+                    width="720"
+                    height="300"
+                    class="w-full lg:hidden"
+                    allowfullscreen="true"
+                  />
+                </>
               </div>
             )
           }
