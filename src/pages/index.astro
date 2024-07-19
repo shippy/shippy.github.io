@@ -1,24 +1,42 @@
 ---
-import Banner from "@/components/Banner.astro";
-import Brand from "@/components/Brand.astro";
-import Features from "@/components/Features.astro";
-import Service from "@/components/Service.astro";
-import Testimonial from "@/components/Testimonial.astro";
-import VideoSection from "@/components/VideoSection.astro";
+import { getCollection, getEntry } from "astro:content";
+import { formatCollection } from "@/lib/utils/formatCollection";
 import Base from "@/layouts/Base.astro";
-import Cta from "@/partials/Cta.astro";
-import { getEntry } from "astro:content";
+import ThingsIDo from "@/components/home/ThingsIDo.astro";
+import NameAndImage from "@/components/home/NameAndImage.astro";
+import Cta from "@/components/_partials/Cta.astro";
+import HomeIntro from "@/components/home/HomeIntro.astro";
+import HomeSideProjects from "@/components/home/HomeSideProjects.astro";
+import HomePresentations from "@/components/home/HomePresentations.astro";
+import HomeArticles from "@/components/home/HomeArticles.astro";
 
 const homepage = await getEntry("homepage", "index");
-const { banner, brands, features, intro, service, testimonial } = homepage.data;
+const {
+  homeIntro,
+  thingsIDo,
+  sideProjects,
+  presentations,
+  articles,
+  nameImage,
+} = homepage.data;
+
+const posts = await getCollection("blog");
+const projects = await getCollection("side_projects");
+const latestArticle = formatCollection(posts, {
+  limit: 1,
+})[0];
+const latestProject = formatCollection(projects, {
+  sortParams: "pubDate",
+  limit: 1,
+})[0];
 ---
 
 <Base>
-  <Banner banner={banner} />
-  <Brand brands={brands} />
-  <Features features={features} />
-  <VideoSection intro={intro} />
-  <Service service={service} />
-  <Testimonial testimonial={testimonial} />
+  <HomeIntro data={homeIntro} />
+  <ThingsIDo data={thingsIDo} />
+  <NameAndImage data={nameImage} />
+  <HomePresentations data={presentations} />
+  <HomeSideProjects data={sideProjects} project={latestProject} />
+  <HomeArticles data={articles} article={latestArticle} />
   <Cta />
 </Base>

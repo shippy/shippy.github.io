@@ -1,5 +1,5 @@
 ---
-import Circle from "@/layouts/components/Circle.astro";
+import Circle from "@/components/_shared/Circle.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 const { banner } = Astro.props;
 const { title, link, image } = banner;
@@ -20,7 +20,7 @@ const { title, link, image } = banner;
             >
               <h1
                 set:text={markdownify(title)}
-                class="md:text-h2-md mb-12 text-center text-h2-sm font-semibold lg:text-h2"
+                class="mb-12 text-center text-h2-sm font-semibold md:text-h2-md lg:text-h2"
                 data-aos="fade-up"
               />
               <a

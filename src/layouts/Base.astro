@@ -3,10 +3,11 @@ import TwSizeIndicator from "@/components/TwSizeIndicator.astro";
 import config from "@/config/config.json";
 import theme from "@/config/theme.json";
 import { plainify } from "@/lib/utils/textConverter";
-import Footer from "@/partials/Footer.astro";
-import Header from "@/partials/Header.astro";
+import Footer from "@/components/_partials/Footer.astro";
+import Header from "@/components/_partials/Header.astro";
 import "@/styles/style.scss";
 import { AstroFont } from "astro-font";
+import { ViewTransitions } from "astro:transitions";
 
 // font families
 const pf = theme.fonts.font_family.primary;
@@ -29,7 +30,7 @@ export interface Props {
   title?: string;
   meta_title?: string;
   description?: string;
-  image?: string;
+  image?: string | ImageMetadata;
   noindex?: boolean;
   canonical?: string;
   landingPage?: boolean;
@@ -53,7 +54,6 @@ const {
     <!-- favicon -->
     <link rel="shortcut icon" href={config.site.favicon} />
     <!-- theme meta -->
-    <meta name="theme-name" content="andromeda-astro" />
     <meta name="msapplication-TileColor" content="#000000" />
     <meta
       name="theme-color"
@@ -105,6 +105,7 @@ const {
       content="width=device-width, initial-scale=1, maximum-scale=5"
     />
 
+    <ViewTransitions />
     <!-- title -->
     <title>
       {plainify(meta_title ? meta_title : title ? title : config.site.title)}
@@ -120,7 +121,7 @@ const {
     <meta
       name="description"
       content={plainify(
-        description ? description : config.metadata.meta_description,
+        description ? description : config.metadata.meta_description
       )}
     />
 
@@ -131,7 +132,7 @@ const {
     <meta
       property="og:title"
       content={plainify(
-        meta_title ? meta_title : title ? title : config.site.title,
+        meta_title ? meta_title : title ? title : config.site.title
       )}
     />
 
@@ -139,7 +140,7 @@ const {
     <meta
       property="og:description"
       content={plainify(
-        description ? description : config.metadata.meta_description,
+        description ? description : config.metadata.meta_description
       )}
     />
     <meta property="og:type" content="website" />
@@ -152,7 +153,7 @@ const {
     <meta
       name="twitter:title"
       content={plainify(
-        meta_title ? meta_title : title ? title : config.site.title,
+        meta_title ? meta_title : title ? title : config.site.title
       )}
     />
 
@@ -160,7 +161,7 @@ const {
     <meta
       name="twitter:description"
       content={plainify(
-        description ? description : config.metadata.meta_description,
+        description ? description : config.metadata.meta_description
       )}
     />
 

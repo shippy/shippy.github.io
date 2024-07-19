@@ -4,6 +4,7 @@ import config from "@/config/config.json";
 import dateFormat from "@/lib/utils/dateFormat";
 import readingTime from "@/lib/utils/readingTime";
 import { plainify, slugify } from "@/lib/utils/textConverter";
+import placeholder from "@/assets/placeholder.jpg";
 
 const { blog } = Astro.props;
 const { summary_length } = config.settings;
@@ -18,7 +19,7 @@ const {
 <article class="mt-7 rounded-2xl border-0 shadow">
   <a href={`/blog/${slug}/`}>
     <Image
-      src={image}
+      src={image ?? placeholder}
       alt={title}
       class="h-auto max-w-full rounded-t-[18px]"
       width={570}

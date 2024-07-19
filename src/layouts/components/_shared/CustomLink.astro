@@ -1,0 +1,27 @@
+---
+interface Props {
+  href: string;
+  classes?: string;
+}
+
+const { href, classes } = Astro.props;
+---
+
+<a class:list={["custom-link", classes ? classes : ""]} href={href}>
+  <slot />
+</a>
+
+<style>
+  .custom-link {
+    @apply relative inline-block hover:text-primary;
+  }
+
+  .custom-link::before {
+    @apply absolute -bottom-[5%] left-0 h-[0.5px] w-0 origin-left  transition-all bg-primary;
+    content: "";
+  }
+
+  .custom-link:hover::before {
+    @apply w-full;
+  }
+</style>

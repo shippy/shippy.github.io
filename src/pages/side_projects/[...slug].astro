@@ -1,20 +1,26 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import SideProject from '../../layouts/SideProject.astro';
+import Base from "@/layouts/Base.astro";
+import SideProjectSingle from "@/layouts/SideProjectSingle.astro";
+import { getCollection } from "astro:content";
+import placeholder from "@/assets/placeholder.jpg";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('side_projects');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
+  const projectEntries = await getCollection("side_projects");
+  return projectEntries.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
 }
-type Props = CollectionEntry<'side_projects'>;
 
-const post = Astro.props;
-const { Content } = await post.render();
+const { project } = Astro.props;
+const { title, description, heroImage } = project.data;
 ---
 
-<SideProject {...post.data}>
-	<Content />
-</SideProject>
+<Base
+  title={title}
+  meta_title={title}
+  description={description}
+  image={heroImage ?? placeholder}
+>
+  <SideProjectSingle project={project} />
+</Base>

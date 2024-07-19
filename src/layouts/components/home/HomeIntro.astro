@@ -1,0 +1,156 @@
+---
+import { Image } from "astro:assets";
+import { markdownify } from "@/lib/utils/textConverter";
+import Circle from "../_shared/Circle.astro";
+
+interface Props {
+  data: {
+    title: string;
+    rolling_texts: string[];
+    subtitle: string;
+    image: string;
+    description: string;
+    link: { label: string; href: string };
+  };
+}
+
+const {
+  data: { title, rolling_texts, subtitle, image, description, link },
+} = Astro.props;
+---
+
+<section class="pt-16 lg:py-0">
+  <div class="container">
+    <div class="row mb-6 items-center justify-center">
+      <div class="order-0 lg:col-5" data-aos="fade-up">
+        <div class="mb-0">
+          <div class="section-title text-left">
+            <h1
+              class="flex flex-wrap gap-2 leading-none"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="1000"
+            >
+              {title.split(" ").map((text) => <span>{text}</span>)}
+              <ul class="dynamic-texts">
+                {
+                  rolling_texts.map((text) => (
+                    <li>
+                      <span>{text}</span>
+                    </li>
+                  ))
+                }
+              </ul>
+            </h1>
+            <p
+              set:html={markdownify(description)}
+              class="mb-8 mt-2 text-base text-text 2xl:text-lg"
+              data-aos="fade-down"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-easing="ease-in-out"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+            />
+            <a
+              href={link.href}
+              class="btn btn-primary"
+              href="#"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+            >
+              {link.label}
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="order-1 mt-4 lg:col-6 lg:mt-0"
+        data-aos="fade-up"
+        data-aos-delay="100"
+        data-aos-once="true"
+      >
+        <div
+          class="relative"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="1000"
+          data-aos-once="true"
+        >
+          <div class="relative z-10 lg:p-14">
+            <Image
+              src={image}
+              height={1000}
+              width={1000}
+              alt={title}
+              class="h-[250px] w-full max-w-full rounded-2xl object-cover object-right-top md:h-[500px] lg:h-[550px]"
+            />
+            <div class="has-circle z-30 hidden h-full w-full lg:block">
+              <Circle classes={"bottom-[50%] left-[2.5rem] ratio-20 fill"} />
+              <Circle
+                classes={"bottom-[4.93rem] left-[1.5rem] ratio-47 bg-primary/5 "}
+              />
+            </div>
+          </div>
+          <div class="has-circle h-full w-full">
+            <Circle classes={"top-[0.875rem] left-[0.75rem] ratio-85 fill"} />
+            <Circle classes={"top-[5rem] right-[41px] ratio-37"} />
+            <Circle classes={"bottom-[45%] right-[3.25rem] ratio-20 fill"} />
+            <Circle classes={"bottom-[1.5rem] right-[1.5rem] ratio-85 fill"} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .dynamic-texts {
+    @apply inline h-[60px]  overflow-hidden md:h-[70px];
+  }
+
+  .dynamic-texts li {
+    @apply relative top-0 h-[60px] list-none text-primary md:h-[70px];
+    animation: slideMobile 6s steps(4) infinite;
+
+    @media screen and (min-width: 768px) {
+      animation: slide 6s steps(4) infinite;
+    }
+  }
+
+  @keyframes slide {
+    100% {
+      top: -280px;
+    }
+  }
+
+  @keyframes slideMobile {
+    100% {
+      top: -240px;
+    }
+  }
+
+  .dynamic-texts li span {
+    @apply relative my-[5px];
+  }
+
+  .dynamic-texts li span::after {
+    @apply absolute   left-0 h-[60px] w-full bg-body md:h-[70px];
+    content: "";
+    animation: typing 1.5s steps(10) infinite;
+  }
+
+  @keyframes typing {
+    40%,
+    60% {
+      left: calc(100% + 30px);
+    }
+    100% {
+      left: 0;
+    }
+  }
+</style>

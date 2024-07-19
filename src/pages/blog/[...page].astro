@@ -1,0 +1,68 @@
+---
+import { getCollection } from "astro:content";
+import config from "@/config/config.json";
+import { formatCollection } from "@/lib/utils/formatCollection";
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/components/_shared/PageHeader.astro";
+import PostCard from "@/components/_shared/PostCard.astro";
+import Pagination from "@/components/_shared/Pagination.astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  page: {
+    data: CollectionEntry<"blog">[];
+    start: number;
+    end: number;
+    size: 4;
+    total: number;
+    currentPage: number;
+    lastPage: number;
+    url: {
+      current: string;
+      next?: string;
+      prev?: string;
+    };
+  };
+}
+
+const collection = "blog";
+
+// Replace `collection` underscores etc. with spaces and capitalize first letter of each word
+const collectionTitle = collection
+  .replace(/[_-]+/g, " ")
+  .replace(/\b\w/g, (char) => char.toUpperCase());
+
+//@ts-ignore
+export async function getStaticPaths({ paginate }) {
+  const allBlog = await getCollection("blog");
+  const formattedBlog: CollectionEntry<"blog">[] = formatCollection(allBlog);
+
+  return paginate(formattedBlog, {
+    pageSize: config.settings.pagination,
+  });
+}
+
+const { page } = Astro.props;
+---
+
+<Base title={`Šimon Podhajský's ${collectionTitle}`}>
+  <PageHeader title={collectionTitle} />
+  <section class="pb-5 pt-10 lg:pt-20">
+    <div class="container">
+      <div class="row justify-center">
+        {
+          page.data.map((post) => (
+            <div class="col-12 mb-8 md:col-6 lg:col-5">
+              <PostCard content={post} collection={collection} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <Pagination
+    currentPage={page.currentPage}
+    totalPages={page.lastPage}
+    section={collection}
+  />
+</Base>

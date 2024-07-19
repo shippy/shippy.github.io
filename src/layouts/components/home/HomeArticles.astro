@@ -1,0 +1,90 @@
+---
+import { Image } from "astro:assets";
+import SectionTitle from "../_shared/SectionTitle.astro";
+import type { CollectionEntry } from "astro:content";
+import placeholder from "@/assets/placeholder.jpg";
+
+interface Props {
+  article: CollectionEntry<"blog">;
+  data: {
+    title: string;
+    subtitle?: string;
+    description: string;
+    link: {
+      label: string;
+      href: string;
+    };
+  };
+}
+
+const {
+  article,
+  data: { title, subtitle, description, link },
+} = Astro.props;
+---
+
+<section class="section">
+  <div class="container">
+    <div class="flex flex-col lg:flex-row lg:items-center lg:gap-12 lg:px-14">
+      <div class="lg:w-1/2" data-aos="fade-up">
+        <SectionTitle
+          data={{
+            title,
+            subtitle,
+            description,
+          }}
+          left
+        />
+        <a
+          href={link.href}
+          class="btn btn-outline-primary hidden lg:inline-block"
+          href="#"
+          data-aos="fade-up"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="1000"
+          data-aos-once="true"
+        >
+          {link.label}
+        </a>
+      </div>
+
+      <div class="relative z-10 lg:w-1/2">
+        <div
+          class="absolute left-0 top-0 flex h-full w-full items-end overflow-hidden rounded-2xl bg-gradient-to-b from-transparent to-black/80 p-4 text-white lg:p-8"
+        >
+          <div class="flex w-full flex-col items-start gap-4">
+            <a href={`/blog/${article.slug}`} title={article.data.title}>
+              <h3
+                class="text-white"
+                data-aos="fade-up"
+                data-aos-easing="ease-in-out"
+                data-aos-duration="1000"
+                data-aos-once="true"
+              >
+                {article.data.title}
+              </h3>
+            </a>
+            <a
+              href={`/blog/${article.slug}`}
+              class="btn btn-primary border-none"
+              data-aos="fade-up"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="1000"
+              data-aos-once="true"
+            >
+              View Article
+            </a>
+          </div>
+        </div>
+
+        <Image
+          src={article.data.image ?? placeholder}
+          height={1000}
+          width={1000}
+          alt={title}
+          class="h-[250px] w-full max-w-full rounded-2xl object-cover lg:h-[500px]"
+        />
+      </div>
+    </div>
+  </div>
+</section>

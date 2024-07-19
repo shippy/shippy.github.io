@@ -1,0 +1,228 @@
+---
+import CustomLink from "@/components/_shared/CustomLink.astro";
+import Logo from "@/components/_shared/Logo.astro";
+import menu from "@/config/menu.json";
+
+export interface ChildNavigationLink {
+  name: string;
+  url: string;
+}
+export interface NavigationLink {
+  name: string;
+  url: string;
+  hasChildren?: boolean;
+  children?: ChildNavigationLink[];
+}
+const { pathname } = Astro.url;
+
+const { main, mobile }: { main: NavigationLink[]; mobile: NavigationLink[] } =
+  menu;
+---
+
+<header class="header" id="header" data-aos="fade-down" data-aos-once="true">
+  <nav class="navbar container">
+    <!-- logo -->
+    <div class="order-0">
+      <Logo />
+    </div>
+    <!-- navbar toggler -->
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      id="show-button"
+      for="nav-toggle"
+      class="order-2 flex cursor-pointer items-center lg:order-1 lg:hidden"
+    >
+      <svg class="h-6 fill-current" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+    </label>
+    <label
+      id="hide-button"
+      for="nav-toggle"
+      class="order-2 hidden cursor-pointer items-center lg:order-1"
+    >
+      <svg class="h-6 fill-current" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    <!-- /navbar toggler -->
+
+    <!--  Desktop-->
+    <ul
+      id="nav-menu"
+      class="bg-orange fixed left-0 top-16 z-50 hidden h-full w-full translate-x-full flex-col items-center gap-8 border-t border-gray-400/20 bg-body py-8 text-center opacity-0 transition-all lg:order-1 lg:static lg:top-0 lg:flex lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:gap-8 lg:space-x-2 lg:border-none lg:py-0 lg:pt-0 lg:text-left lg:opacity-100"
+    >
+      {
+        main.map((menu) =>
+          menu.hasChildren ? (
+            <li
+              class="nav-item nav-dropdown group relative cursor-pointer "
+              id="dropdown-button"
+            >
+              <span
+                class={`nav-link relative inline-flex items-center gap-1 ${
+                  menu.children?.map(({ url }) => url).includes(pathname) ||
+                  menu.children?.map(({ url }) => `${url}/`).includes(pathname)
+                    ? "active"
+                    : ""
+                }`}
+              >
+                <span>{menu.name}</span>
+                <span class="absolute left-[105%] top-1/2 -translate-y-1/2 lg:static lg:left-0 lg:top-0 lg:translate-y-0">
+                  <svg class="h-6 w-6 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                  </svg>
+                </span>
+              </span>
+              <ul
+                id="dropdown"
+                class="nav-dropdown-list hidden duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-[13.5rem] lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100"
+              >
+                {menu.children?.map((child) => (
+                  <li
+                    class={`nav-dropdown-item rounded-md hover:bg-primary/10`}
+                  >
+                    <a
+                      href={child.url}
+                      class={`nav-dropdown-link block px-[0.9rem] py-2 ${
+                        (pathname === `${child.url}/` ||
+                          pathname === child.url) &&
+                        "active"
+                      }`}
+                      aria-label={child.name}
+                    >
+                      {child.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ) : (
+            <li class="nav-item">
+              <CustomLink
+                href={menu.url}
+                classes={` text-xl lg:text-base font-medium text-dark transition hover:text-primary block ${
+                  (pathname === `${menu.url}/` || pathname === menu.url) &&
+                  "text-primary"
+                }`}
+              >
+                {menu.name}
+              </CustomLink>
+            </li>
+          )
+        )
+      }
+    </ul>
+
+    <!--  Mobile-->
+    <ul
+      id="nav-menu"
+      class="bg-orange fixed left-0 top-16 z-50 flex h-full w-full translate-x-full flex-col items-center gap-8 border-t border-gray-400/20 bg-body py-8 text-center opacity-0 transition-all lg:order-1 lg:static lg:top-0 lg:hidden lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:gap-8 lg:space-x-2 lg:border-none lg:py-0 lg:pt-0 lg:text-left lg:opacity-100"
+    >
+      {
+        mobile.map((menu) => (
+          <li class="nav-item">
+            <CustomLink
+              href={menu.url}
+              classes={` text-xl lg:text-base font-medium text-dark transition hover:text-primary block ${
+                (pathname === `${menu.url}/` || pathname === menu.url) &&
+                "text-primary"
+              }`}
+            >
+              {menu.name}
+            </CustomLink>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .header {
+    @apply top-0 z-50 flex h-16 items-center bg-body transition-all  duration-150 ease-in-out lg:my-4 lg:border-none;
+  }
+  .header-sticky-top {
+    @apply sticky shadow-sm;
+  }
+  /* // navbar toggler */
+  input#nav-toggle:checked ~ label#show-button {
+    @apply hidden;
+  }
+
+  input#nav-toggle:checked ~ label#hide-button {
+    @apply flex lg:hidden;
+  }
+
+  input#nav-toggle:checked ~ #nav-menu {
+    @apply flex translate-x-0 opacity-100 lg:flex;
+  }
+
+  /* // navbar items */
+  .navbar {
+    @apply relative flex h-full flex-wrap items-center justify-between;
+  }
+
+  .nav-link {
+    @apply text-xl font-medium text-dark transition hover:text-primary lg:text-base;
+    &.active {
+      @apply text-primary;
+    }
+  }
+
+  .nav-dropdown {
+    @apply mr-0;
+  }
+
+  .nav-dropdown-list {
+    @apply z-50 mx-auto mt-4 max-w-[300px] rounded-lg border-0 border-solid  border-primary/25 bg-primary/5  px-[10px] py-3  shadow-sm duration-300  lg:mt-2 lg:border lg:bg-white lg:shadow-[0_0.9rem_1.56rem_rgb(0,0,0,0.1)];
+  }
+
+  .nav-dropdown-item {
+    @apply mb-1;
+  }
+
+  .nav-dropdown-link {
+    @apply min-w-[150px] py-1 text-sm font-medium text-dark transition hover:text-primary;
+    &.active {
+      @apply text-primary;
+    }
+  }
+</style>
+
+<script is:inline>
+  const button = document.getElementById("dropdown-button");
+  button.addEventListener("click", () => {
+    const dropdown = document.getElementById("dropdown");
+    dropdown.classList.toggle(dropdown.style === "hidden" ? "block" : "hidden");
+  });
+
+  var lastScroll = 0;
+  const changeNavbarBackground = () => {
+    const header = document.getElementById("header");
+    const headerHeight = header.clientHeight + 200;
+    const scrollY = window.scrollY;
+
+    window.onscroll = () => {
+      // header-sticky-top
+      if (scrollY > 0) {
+        header.classList.add("header-sticky-top");
+      } else {
+        header.classList.remove("header-sticky-top");
+      }
+      if (scrollY > headerHeight) {
+        if (lastScroll > scrollY) {
+          header.classList.remove("-translate-y-full");
+        } else {
+          header.classList.add("-translate-y-full");
+        }
+        lastScroll = scrollY;
+      }
+    };
+  };
+  window.addEventListener("scroll", changeNavbarBackground);
+</script>

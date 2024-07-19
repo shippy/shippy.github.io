@@ -1,20 +1,26 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import Presentation from '../../layouts/Presentation.astro';
+import Base from "@/layouts/Base.astro";
+import PresentationSingle from "@/layouts/PresentationSingle.astro";
+import { getCollection } from "astro:content";
+import placeholder from "@/assets/placeholder.jpg";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('presentations');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
+  const presentationEntries = await getCollection("presentations");
+  return presentationEntries.map((presentation) => ({
+    params: { slug: presentation.slug },
+    props: { presentation },
+  }));
 }
-type Props = CollectionEntry<'presentations'>;
 
-const post = Astro.props;
-const { Content } = await post.render();
+const { presentation } = Astro.props;
+const { title, description, heroImage } = presentation.data;
 ---
 
-<Presentation {...post.data}>
-	<Content />
-</Presentation>
+<Base
+  title={title}
+  meta_title={title}
+  description={description}
+  image={heroImage ?? placeholder}
+>
+  <PresentationSingle presentation={presentation} />
+</Base>

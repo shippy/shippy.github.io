@@ -1,11 +1,12 @@
 {
   "site": {
     "title": "Šimon Podhajský",
+    "description": "A personal site for Šimon Podhajský.",
     "base_url": "https://simon.podhajsky.net",
     "base_path": "/",
-    "trailing_slash": true,
+    "trailing_slash": false,
     "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
+    "logo": "",
     "logo_width": "257",
     "logo_height": "36",
     "logo_text": "Šimon Podhajský"
@@ -13,13 +14,13 @@
 
   "settings": {
     "pagination": 4,
-    "summary_length": 150
+    "summary_length": 100
   },
 
   "params": {
     "contact_form_action": "#",
     "career_form_action": "#",
-    "copyright": "Designed & Developed By [Themefisher](https://themefisher.com)"
+    "copyright": "© Šimon Podhajský"
   },
 
   "footer_data": {
@@ -30,12 +31,12 @@
   },
 
   "call_to_action": {
-    "enable": false,
-    "title": "Helping Teams In The World With Focus",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas <br/> Werat viverra id et aliquet. vulputate egestas sollicitudin.",
+    "enable": true,
+    "title": "Feel free to contact me",
+    "content": "If you're looking for a skilled data engineer passionate about transforming data into actionable insights or simply want to have a chat.",
     "button": {
-      "label": "Download Now",
-      "link": "#"
+      "label": "Contact Me",
+      "link": "/contact"
     }
   },
 
