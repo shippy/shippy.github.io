@@ -6,6 +6,7 @@ description: >
     website. 
 date: 2024-06-02
 draft: true
+image: './images/redesign.png'
 ---
 
 The headings are the primary list, the examples underneath them should just clarify what I mean.
