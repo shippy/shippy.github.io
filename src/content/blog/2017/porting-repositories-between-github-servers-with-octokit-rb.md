@@ -3,7 +3,7 @@ title: "Porting repositories between GitHub servers with octokit.rb"
 date: 2017-06-19
 categories:
   - "code"
-image: "/public/blog-placeholder-3.jpg"
+image: "./images/porting-repositories.png"
 ---
 
 The project I'm working on, [PsychTaskFramework](https://github.com/YaleDecisionNeuro/PsychTaskFramework), was initially developed on Yale's private `git` instance. This made perfect sense at the time: the project had no non-Yale collaborators and `git.yale.edu` is easily accessible to anyone with a Yale ID. And if we need to move later, no big deal, right? GitHub has to have a simple mechanism of porting repositories.
