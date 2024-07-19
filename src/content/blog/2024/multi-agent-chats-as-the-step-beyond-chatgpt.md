@@ -8,13 +8,25 @@ image: ./images/agents_interacting.png
 author: "Simon Podhajsky"
 ---
 
-This Easter weekend, I forbade myself from working. I half-succeeded: although I made two [AutoGen](https://github.com/microsoft/autogen) projects, none were for my day job! #soproud Here goes: [a cover letter generator](https://github.com/shippy/cover_letter_automation) and a multi-provider therapy session. (A friend needed both and I thought it would be a good distraction for us to convert a human problem into a technical problem. Because that's healthy.)
+This Easter weekend, I forbade myself from working. I half-succeeded: although I made two [AutoGen](https://github.com/microsoft/autogen) projects, none were for my day job! **#soproud** Here goes: [a cover letter generator](https://github.com/shippy/cover_letter_automation) and a multi-provider therapy session. (A friend needed both and I thought it would be a good distraction for us to convert a human problem into a technical problem. Because that's healthy.)
 
-The concept behind each is simple:
+But first, what is AutoGen?
+
+## A quick introduction to AutoGen
+
+AutoGen lets you write **agents**, which is a fancy word for "LLM prompts with tool access and execution environment". Furthermore, it lets you compose said agents into **multi-agent workflows**, which allow the agents to respond to each other based on the conversation history and each agent's prompt.
+
+This is useful to you if you often go back-and-forth with ChatGPT to iterate towards a final result in a way that could be taught to a set of interns. This is basically a way to let the machine take your turn in the conversation and "steer the ship" towards a goal you've set out for it.
+
+AutoGen does this programmatically in Python, but the maintainers also released [a GUI named "Autogen Studio"](https://autogen-studio.com), which is a little more user-friendly. The remainder of this article will focus on the Python side of things, though.
+
+## Back to the projects
+
+The concept behind each project was simple:
 
 1. Set up a Poetry environment (ideally from a [Copier template](https://github.com/lukin0110/poetry-copier/) that makes the environment immediately pip-installable) and install `pyautogen`.
-2. Create a `UserProxyAgent` as a stand-in for the user. _While by default, the UserProxyAgent prompts for human input every time it's invoked, it does not **need** to, and you can use it just to simulate the opening of the conversation._
-3. Break down the big task into subtask, ideally with a clear input, output, and instruction set.
+2. Create a `UserProxyAgent` as a stand-in for the user. _While by default, the `UserProxyAgent` prompts for human input every time it's invoked, it does not **need** to, and you can use it just to simulate the opening of the conversation._
+3. Break down the big task into subtasks, ideally with a clear input, output, and instruction set.
 4. Create one agent per subtask, with a clear set of instructions, output requirements, _and_ who to pass the baton to under what circumstances.
 5. **If applicable:** Create a set of "allowable speaker transitions", i.e. which agent can speak after this agent is done, and set up the `GroupChat`.
 6. Create a CLI script that will invoke the setup with the right environment variables and flexible input parameters.
@@ -63,6 +75,6 @@ By default, there isn't much - on a run that completes gracefully, you get an ob
 
 Each run cost between $0.05 and $0.50, depending on the length of the conversation, using `gpt-4-turbo-preview`. This is a _little_ expensive - I still wouldn't hesitate to use it for a personal use case, but would likely balk at providing it as a free service to the general public. (Unless it's "bring your own API key", I suppose.)
 
-### Conclusion
+## Conclusion
 
 Multi-agent workflows impress me. In specific use cases, they're a clear step above bare GPT-4 prompting - and even though they're not a panacea, the list of shortcomings is highly tractable. I'm looking forward to shortening it.
