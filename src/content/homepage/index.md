@@ -2,13 +2,15 @@
 #HOME INTRO
 homeIntro:
   subtitle: Hello
-  title: Šimon Podhajský is the resident data
+  title: Šimon Podhajský is Prague's No. 1
   rolling_texts:
-    - Everything
-    - Something
-    - Anything
-    - Engineer
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+    - Data Everything
+    - LLM Whisperer
+    - Presenter
+    - Generalist
+  description: >
+    There are many things I do. These are some of them. If you want to talk to me, work with me,
+    or just say hi, I'm always open to a chat.
   image: "/images/home/simon-1.webp"
   link:
     label: Contact me
@@ -44,19 +46,22 @@ thingsIDo:
 sideProjects:
   subtitle: Side Projects
   title: Sometimes, I... <br> work on side projects
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+  description: >
+    I often work on side projects - some of them useful, some just interesting. View the most
+    recent one, or explore all of them.
   link:
-    label: Explore Side Projects
+    label: Explore My Side Projects
     href: "/side_projects/"
 
 # PRESENTATIONS
 presentations:
   subtitle: Presentations
   title: Sometimes, I...<br> host talks and presentations
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+  description: >
+    I can speak to a wide variety of topics - data & Python & LLMs & debate & education & more.
   image: "/images/home/simon-5.webp"
   link:
-    label: Explore Presentations
+    label: Explore My Presentations
     href: "/presentations/"
 
 # NAME IMAGE
@@ -69,7 +74,9 @@ nameImage:
 articles:
   subtitle: Articles
   title: Sometimes, I... <br> write technical articles
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+  description: >
+    I write about the things I do, learn, and think about. Read my latest article, or
+    peruse them all.
   link:
     label: View All Articles
     href: "/blog/"
