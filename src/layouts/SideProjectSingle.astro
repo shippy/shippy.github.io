@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { getEntries } from 'astro:content';
 import Cta from "@/components/_partials/Cta.astro";
 import Badge from "@/components/_shared/Badge.astro";
 import placeholder from "@/assets/placeholder.jpg";
@@ -17,6 +18,8 @@ const {
   technologies,
   screenshots,
 } = project.data;
+const blogs = blogRef ? await getEntries(blogRef) : undefined;
+
 ---
 
 <section class="py-10 lg:py-20">
@@ -102,13 +105,13 @@ const {
           </div>
           <div>
             {
-              blogRef && blogRef.length > 0 && (
+              blogs && blogs.length > 0 && (
                 <h2>Related articles</h2>
                 <ul>
-                  {blogRef.map((slug: String) => (
-                    <li>
-                      <a href={`/blog/${slug}/`} class="text-blue-500">
-                        Article
+                  {blogs.map((blog) => (
+                    <li class="list-disc">
+                      <a href={`/blog/${blog.slug}/`} class="text-blue-500">
+                        {blog.data.title}
                       </a>
                     </li>
                   ))}
