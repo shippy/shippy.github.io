@@ -1,8 +1,11 @@
 ---
 title: "The Hidden Curriculum"
-pubDate: "2015-06-28"
+date: 2015-06-28
+description: >
+  On a friend's suicide and dealing with it.
 categories:
   - "study-abroad"
+image: "./images/hidden-curriculum.png"
 ---
 
 This winter was longer than it had any right to be.

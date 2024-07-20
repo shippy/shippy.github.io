@@ -1,0 +1,130 @@
+---
+import { Image } from "astro:assets";
+import { getEntries } from 'astro:content';
+import Cta from "@/components/_partials/Cta.astro";
+import Badge from "@/components/_shared/Badge.astro";
+import placeholder from "@/assets/placeholder.jpg";
+
+const { project } = Astro.props;
+
+const { Content } = await project.render();
+const {
+  title,
+  heroImage,
+  description,
+  githubUrl,
+  projectUrl,
+  blogRef,
+  technologies,
+  screenshots,
+} = project.data;
+const blogs = blogRef ? await getEntries(blogRef) : undefined;
+
+---
+
+<section class="py-10 lg:py-20">
+  <div class="container">
+    <div class="row justify-center">
+      <div class="col-12 mb-12 lg:col-10">
+        <Image
+          alt={title}
+          src={heroImage ?? placeholder}
+          width={1126}
+          height={661}
+          class="w-full max-w-full rounded-3xl"
+        />
+      </div>
+      <div class="lg:col-8">
+        <div class="mb-12 flex flex-col gap-12">
+          <div>
+            <h1 class="mb-4">
+              {title}
+            </h1>
+            {description && <p set:html={description} />}
+          </div>
+
+          {
+            technologies && (
+              <div class="flex flex-col gap-4">
+                <h2>Technologies Used</h2>
+                <ul class="flex flex-wrap items-center gap-4">
+                  {technologies.map((tech: string) => (
+                    <li>
+                      <Badge text={tech} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )
+          }
+          {
+            screenshots && screenshots.length > 0 && (
+              <div class="flex flex-col gap-4">
+                <h2>Screenshots</h2>
+                {screenshots.map(
+                  (screenshot: string | ImageMetadata, index: number) => (
+                    //@ts-ignore
+                    <Image
+                      width={1020}
+                      height={510}
+                      src={screenshot}
+                      alt={`${title} - ${index}`}
+                      class="rounded-3xl"
+                    />
+                  )
+                )}
+              </div>
+            )
+          }
+
+          <div>
+            <ul class="flex flex-wrap items-center gap-4">
+              {
+                githubUrl && (
+                  <li>
+                    <a href={githubUrl} class="btn btn-primary" target="_blank">
+                      Github
+                    </a>
+                  </li>
+                )
+              }
+              {
+                projectUrl && (
+                  <li>
+                    <a
+                      href={projectUrl}
+                      class="btn btn-primary"
+                      target="_blank"
+                    >
+                      Demo
+                    </a>
+                  </li>
+                )
+              }
+            </ul>
+          </div>
+          <div>
+            {
+              blogs && blogs.length > 0 && (
+                <h2>Related articles</h2>
+                <ul>
+                  {blogs.map((blog) => (
+                    <li class="list-disc">
+                      <a href={`/blog/${blog.slug}/`} class="text-blue-500">
+                        {blog.data.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )
+            }
+          </div>
+        </div>
+        <div class="content">
+          <Content />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<Cta />

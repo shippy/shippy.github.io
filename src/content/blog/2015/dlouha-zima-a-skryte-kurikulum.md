@@ -1,8 +1,10 @@
 ---
 title: "Dlouhá zima a skryté kurikulum"
-pubDate: "2015-06-28"
+date: 2015-06-28
+description: "O sebevraždě kamarádky a o tom, jak se s ní vyrovnat."
 categories:
   - "studium-v-zahranici"
+image: "./images/skryte-kurikulum.png"
 ---
 
 Tato zima byla delší, než měla sebemenší právo být.

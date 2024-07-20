@@ -1,9 +1,10 @@
 ---
 title: "Dejte mi pokoj se “zajímavým bodem do životopisu”!"
-pubDate: "2013-03-12"
+date: 2013-03-12
 description: "CV není všechno. A ani hlavní."
 categories:
   - "uncategorized-cs-2"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 Nebudu lhát: sám jsem vinen. Když jsem se v minulosti snažil lidi navnadit na tu či onu aktivitu, také jsem mluvil o tom, jak dobře by se dotyčným vyjímala v jejich nablyštěném CV. Takový apel je pragmatický: využívá nejistoty ohledně budoucnosti, kterou většina studentů sdílí. V poslední době se ale “zajímavý bod do životopisu” začíná stávat hlavním lákadlem. Jsem přesvědčen, že to je špatně. Životopisný fetišismus totiž odvádí pozornost od věcí, na nichž záleží mnohem více.

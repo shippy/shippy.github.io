@@ -1,22 +1,60 @@
-import { defineCollection, reference, z } from "astro:content";
+import { defineCollection, reference, z, type ImageFunction } from "astro:content";
 
-const blog = defineCollection({
+// Blog collection schema
+const blogsCollection = defineCollection({
   type: "content",
-  schema: ({ image }) =>
+  schema: ({ image }: { image: ImageFunction }) =>
     z.object({
+      id: z.string().optional(),
       title: z.string(),
+      meta_title: z.string().optional(),
       description: z.string().optional(),
-      pubDate: z.coerce.date(),
-      updatedDate: z.coerce.date().optional(),
-      heroImage: image().optional(), // default is defined in the layout + index files
-      categories: z.array(z.string()).optional(),
+      date: z.date(),  // TODO: Change blogposts
+      image: image().optional(),  // TODO: Change blogposts
+      heroImage: image().optional(),  // TODO: Change blogposts
+      author: z.string().optional().default("Simon Podhajsky"),
       language: z.enum(["en", "cs"]).optional().default("en"),
+      categories: z.array(z.string()).default(["others"]),
+      draft: z.boolean().optional(),
     }),
 });
 
-const presentations = defineCollection({
+// Author collection schema
+const authorsCollection = defineCollection({
+  schema: z.object({
+    id: z.string().optional(),
+    title: z.string(),
+    meta_title: z.string().optional(),
+    email: z.string().optional(),
+    image: z.string().optional(),
+    description: z.string().optional(),
+    social: z
+      .object({
+        facebook: z.string().optional(),
+        twitter: z.string().optional(),
+        instagram: z.string().optional(),
+      })
+      .optional(),
+    draft: z.boolean().optional(),
+  }),
+});
+
+// Pages collection schema
+const pagesCollection = defineCollection({
+  schema: z.object({
+    id: z.string().optional(),
+    title: z.string().optional(),
+    meta_title: z.string().optional(),
+    description: z.string().optional(),
+    image: z.string().optional(),
+    layout: z.string().optional(),
+    draft: z.boolean().optional(),
+  }),
+});
+
+const presentationCollection = defineCollection({
   type: "content",
-  schema: ({ image }) =>
+  schema: ({ image }: { image: ImageFunction }) =>
     z.object({
       title: z.string(),
       description: z.string(),
@@ -28,9 +66,9 @@ const presentations = defineCollection({
     }),
 });
 
-const side_projects = defineCollection({
+const sideProjectCollection = defineCollection({
   type: "content",
-  schema: ({ image }) =>
+  schema: ({ image }: { image: ImageFunction }) =>
     z.object({
       title: z.string(),
       description: z.string(),
@@ -44,7 +82,7 @@ const side_projects = defineCollection({
     }),
 });
 
-const now = defineCollection({
+const nowCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
@@ -56,4 +94,13 @@ const now = defineCollection({
   }),
 });
 
-export const collections = { blog, presentations, side_projects, now };
+
+// Export collections
+export const collections = {
+  blog: blogsCollection,
+  authors: authorsCollection,
+  pages: pagesCollection,
+  now: nowCollection,
+  presentations: presentationCollection,
+  side_projects: sideProjectCollection,
+};

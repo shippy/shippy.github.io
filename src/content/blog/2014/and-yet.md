@@ -1,8 +1,10 @@
 ---
 title: "And yet"
-pubDate: "2014-07-25"
+description: "A creative-writing assignment in the first week of ENGL S247: Travel Writing."
+date: 2014-07-25
 categories:
   - "travel-writing"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 _This essay was a creative-writing assignment in the first week of ENGL S247: Travel Writing._

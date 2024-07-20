@@ -1,11 +1,13 @@
 ---
 title: "Feedback k esejům, beze mě"
-pubDate: "2015-09-26"
+date: 2015-09-26
+description: "Nabídka na feedback k esejům obnovena!"
 categories:
   - "studium-v-zahranici"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
-Nabídka na feedback k esejům obnovena!
+~~Nabídka na feedback k esejům obnovena!~~ Edit: Systém přestal fungovat, omlouvám se.
 
 Včera mi to nedalo a nakonec jsem napsal Google Apps Script, který automatizuje dělbu práce mezi dobrovolníky, kteří studují v zahraničí a vědí, jak na psaní esejů. Pokud chcete, abychom vám opravili esej, musíte podniknout následující kroky:
 

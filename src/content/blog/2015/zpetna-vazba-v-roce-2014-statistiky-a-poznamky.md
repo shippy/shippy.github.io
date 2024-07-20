@@ -1,8 +1,11 @@
 ---
 title: "Zpětná vazba v roce 2014: statistiky a poznámky"
-pubDate: "2015-01-23"
+date: 2015-01-23
+description: >
+  Necestujte do minulosti, abyste sledovali pád berlínské zdi. Anebo ano?
 categories:
   - "studium-v-zahranici"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 Přijímací řízení na anglicky mluvící univerzity je za námi. (Až na výjimky, mezi které patří např. Nizozemsko - pokud jste zaváhali, pořád ještě máte šanci!) Je tedy čas bilancovat; dojde na slova i na data. Začnu daty.

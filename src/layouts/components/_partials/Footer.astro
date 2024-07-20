@@ -1,0 +1,83 @@
+---
+import Logo from "@/components/_shared/Logo.astro";
+import Social from "@/components/Social.astro";
+import CustomLink from "@/components/_shared/CustomLink.astro";
+import config from "@/config/config.json";
+import menu from "@/config/menu.json";
+import social from "@/config/social.json";
+import { markdownify } from "@/lib/utils/textConverter";
+
+const { footer, footerOther } = menu;
+const { copyright } = config.params;
+const { email, description } = config.footer_data;
+---
+
+<footer class="mt-24">
+  <div class="container">
+    <div class="row justify-center pb-12">
+      <div class="col-12">
+        <div class="border-t pb-12"></div>
+      </div>
+      <div class="sm:col-6 md:col-6 lg:col-4">
+        <div class="pr-6">
+          <div class="order-0 mb-6">
+            <Logo />
+          </div>
+          <p class="mb-0">
+            {description}
+          </p>
+        </div>
+      </div><div class="mt-12 sm:col-6 md:col-6 lg:col-3 sm:mt-0">
+        <div class="footer-widget">
+          <h4 class="h5 mb-6 font-semibold">Socials</h4><ul
+            class="footer-links list-unstyled mb-6"
+          >
+            <li>
+              <CustomLink href={`mailto:${email}`}>
+                {email}
+              </CustomLink>
+            </li>
+          </ul>
+          {/* social icons */}
+          <Social source={social} className="social-icons mb-8" />
+        </div>
+      </div>
+      <div class="mt-12 sm:col-6 md:col-6 lg:col-2 lg:mt-0">
+        <div class="footer-widget">
+          <h4 class="h5 mb-6 font-semibold">Quick Links</h4>
+          <ul class="footer-links list-unstyled">
+            {
+              footer.map((item, i) => (
+                <li class={footer.length - 1 === i ? "mb-0" : "mb-4"}>
+                  <CustomLink href={item.url}>{item.name}</CustomLink>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 sm:col-6 md:col-6 lg:col-3 lg:mt-0">
+        <div class="footer-widget">
+          <h4 class="h5 mb-6 font-semibold">Other Links</h4>
+          <ul class="footer-links list-unstyled">
+            {
+              footerOther.map((item, i) => (
+                <li class={footer.length - 1 === i ? "mb-0" : "mb-4"}>
+                  <CustomLink href={item.url}>{item.name}</CustomLink>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-center border-t border-border py-6">
+      <div class="col-12 text-center">
+        <p class="content text-text">
+          <span set:html={markdownify(copyright)} />
+          {new Date().getFullYear()}
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

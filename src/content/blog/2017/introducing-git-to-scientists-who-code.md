@@ -1,9 +1,12 @@
 ---
 title: "Introducing git to scientists who code"
-pubDate: "2017-02-15"
+date: 2017-02-15
+description: >
+  An introduction to programmatic version control in a scientific context.
 categories:
   - "code"
   - "science"
+image: "./images/git-scientist.png"
 ---
 
 Many scientists treat coding -- tasks, analysis, you name it -- as a necessary evil we have to do in order to get to the science. You might know the result from your own scientific practice: subtle changes to the code strewn across many folders, days spent getting into the mind of the postdoc author five years gone, and a general unwillingness to touch the code unless it's time to re-use it.

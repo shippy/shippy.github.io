@@ -1,0 +1,98 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import Disqus from "./jsx-components/Disqus";
+import SectionTitle from "@/components/_shared/SectionTitle.astro";
+import Breadcrumbs from "@/components/_shared/Breadcrumbs.astro";
+import Badge from "@/components/_shared/Badge.astro";
+import Cta from "@/components/_partials/Cta.astro";
+import SimilarPosts from "@/components/blog/SimilarPosts.astro";
+import dateFormat from "@/lib/utils/dateFormat";
+import readingTime from "@/lib/utils/readingTime";
+import { formatCollection } from "@/lib/utils/formatCollection";
+import placeholder from "@/assets/placeholder.jpg";
+
+const { post } = Astro.props;
+
+const allPosts = await getCollection("blog");
+const similarPosts = formatCollection(allPosts, { sortByDate: true })
+  .filter((p) => {
+    return (
+      p.slug !== post.slug &&
+      p.data.categories.includes(post.data.categories[0])
+    );
+  })
+  .slice(0, 2);
+const { Content } = await post.render();
+const { title, image, date, categories } = post.data;
+---
+
+<section class="py-10 lg:py-20">
+  <div class="container">
+    <div class="row justify-center">
+      <div class="col-12 mb-12 lg:col-10">
+        <!-- <Breadcrumbs
+          breadcrumbs={[
+            {
+              label: "Home",
+              href: "/",
+            },
+            {
+              label: "Blog",
+              href: "/blog",
+            },
+            {
+              label: title,
+              href: `/blog/${post.slug}`,
+              active: true,
+            },
+          ]}
+        /> -->
+        <Image
+          alt={title}
+          src={image ?? placeholder}
+          width={1126}
+          height={661}
+          class="w-full max-w-full rounded-3xl"
+        />
+      </div>
+      <div class="lg:col-8">
+        <div class="mb-12">
+          <h1 class="">
+            {title}
+          </h1>
+          <div class="my-6 flex items-center">
+            <span>{dateFormat(date)} - {readingTime(post.body)}</span>
+          </div>
+
+          <ul class="flex flex-wrap items-center gap-4">
+            {
+              categories.map((category: string) => (
+                <li>
+                  <Badge text={category} />
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="content">
+          <Content />
+        </div>
+        <!-- <Disqus client:load /> -->
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    {
+      similarPosts.length > 0 && (
+        <div>
+          <SectionTitle data={{ title: "Related Articles" }} />
+          <SimilarPosts posts={similarPosts} />
+        </div>
+      )
+    }
+  </div>
+</section>
+<Cta />

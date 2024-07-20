@@ -1,8 +1,10 @@
 ---
 title: "No David Sedaris"
-pubDate: "2014-08-14"
+date: 2014-08-14
+description: "A creative-writing assignment in the last week of ENGL S247: Travel Writing."
 categories:
   - "travel-writing"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 _This essay was a creative-writing assignment in the last week of ENGL S247: Travel Writing._

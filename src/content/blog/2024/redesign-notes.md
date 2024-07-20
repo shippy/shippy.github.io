@@ -4,8 +4,9 @@ description: >
     For my benefit and the benefit of freelancers I'm talking to, I'm writing
     down some notes + examples on what I want (and don't want) in a personal 
     website. 
-pubDate: 2024-06-02
+date: 2024-06-02
 draft: true
+image: './images/redesign.png'
 ---
 
 The headings are the primary list, the examples underneath them should just clarify what I mean.

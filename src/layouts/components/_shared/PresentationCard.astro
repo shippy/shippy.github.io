@@ -1,0 +1,94 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import config from "@/config/config.json";
+import dateFormat from "@/lib/utils/dateFormat";
+import { plainify } from "@/lib/utils/textConverter";
+import placeholder from "@/assets/placeholder.jpg";
+
+interface Props {
+  content: {
+    data: {
+      title: string;
+      description?: string;
+      heroImage?: ImageMetadata;
+      videoUrl?: string;
+      author?: string;
+      pubDate: Date;
+    };
+    slug: string;
+    body?: string;
+  };
+  collection: string;
+}
+
+const { content, collection } = Astro.props;
+const { summary_length } = config.settings;
+
+const {
+  data: { title, description, heroImage, videoUrl, pubDate },
+  slug,
+  body,
+} = content;
+---
+
+<article
+  class="group mt-7 h-full rounded-2xl border-0 bg-body shadow transition-all hover:bg-primary/10"
+  data-aos="fade-up"
+  data-aos-easing="ease-in-out"
+  data-aos-duration="1000"
+  data-aos-once="true"
+>
+  <a href={`/${collection}/${slug}/`}>
+    <div class="relative">
+      <span
+        class="absolute left-5 top-5 z-[5] rounded-lg bg-primary p-2 text-sm font-semibold capitalize text-white"
+      >
+        {dateFormat(pubDate)}
+      </span>
+
+      <div
+        class="flex h-[200px] items-center justify-center overflow-hidden rounded-t-[18px] object-cover lg:h-[300px]"
+      >
+        {
+          videoUrl ? (
+            <div class="relative">
+              <iframe
+                width="720"
+                height="400"
+                src={videoUrl}
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              />
+              <div class="absolute left-0 top-0  h-full w-full bg-black/10" />
+            </div>
+          ) : (
+            <Image
+              src={heroImage ?? placeholder}
+              alt={title}
+              class="  h-full w-full object-cover "
+              width={570}
+              height={335}
+            />
+          )
+        }
+      </div>
+    </div>
+  </a>
+  <div class="px-6 pb-1 pt-6 lg:px-8 lg:pt-8">
+    <h2
+      class="card-title mb-4 text-h4 font-semibold transition-colors group-hover:text-primary"
+    >
+      <a href={`/${collection}/${slug}/`}>{title}</a>
+    </h2>
+    <p class="mb-0 break-words text-text">
+      {
+        description
+          ? description
+          : body && `${plainify(body?.slice(0, Number(summary_length)))}...`
+      }
+    </p>
+  </div>
+</article>

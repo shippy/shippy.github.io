@@ -1,10 +1,11 @@
 ---
 title: "Multi-agent chats as the Step Beyond ChatGPT"
 description: "A reflection on the process of creating multi-agent workflows with Autogen."
-pubDate: 2024-04-15
+date: 2024-04-15
 categories:
   - "llms"
-heroImage: ./images/agents_interacting.png
+image: ./images/agents_interacting.png
+author: "Simon Podhajsky"
 ---
 
 This Easter weekend, I forbade myself from working. I half-succeeded: although I made two [AutoGen](https://github.com/microsoft/autogen) projects, none were for my day job! **#soproud** Here goes: [a cover letter generator](https://github.com/shippy/cover_letter_automation) and a multi-provider therapy session. (A friend needed both and I thought it would be a good distraction for us to convert a human problem into a technical problem. Because that's healthy.)

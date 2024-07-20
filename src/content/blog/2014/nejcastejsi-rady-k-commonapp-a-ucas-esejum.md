@@ -1,8 +1,10 @@
 ---
 title: "Nejčastější rady k CommonApp a UCAS esejům"
-pubDate: "2014-09-27"
+date: 2014-09-27
+description: "Cut, simplify, be specific, show, don't tell, hit the target, make your structure meaningful."
 categories:
   - "studium-v-zahranici"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 Za poslední měsíc, [během kterého dávám zpětnou vazbu k esejům žadatelů o studium v zahraničí](http://simon.podhajsky.net/blog/feedback-k-esejum/), jsem zjistil, že některé rady dávám častěji než jiné. Některé jsou konkrétní k britským UCAS personal statements, jiné k americkým CommonApp esejům; většina z nich se dá uplatnit obecně.

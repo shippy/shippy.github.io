@@ -1,9 +1,10 @@
 ---
 title: "Americké volby vyhrála datová věda (iHNed.cz)"
 description: "Výhra Baracka Obamy podtrhuje širší trend: sběr a analýza kvantitativních dat hrají stále větší roli nejen ve vyhodnocování voleb, nýbrž i ve vedení kampaní."
-pubDate: 2012-11-12
+date: 2012-11-12
 categories:
   - "psani-jinde"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 **Výhra Baracka Obamy podtrhuje širší trend: sběr a analýza kvantitativních dat hrají stále větší roli nejen ve vyhodnocování voleb, nýbrž i ve vedení kampaní.**

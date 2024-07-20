@@ -1,9 +1,13 @@
 ---
 title: "Executing nested rules with dragonfly"
-pubDate: "2017-05-10"
+date: 2017-05-10
+description: >
+  Rule nesting with a voice-programming library named dragonfly for
+  the win.
 categories:
   - "code"
   - "voice-programming"
+image: ./images/cyber_dragonfly.png
 ---
 
 Rule nesting makes context-free grammars very powerful. It allows for brevity while preserving complexity — and [dragonfly](https://github.com/t4ngo/dragonfly), the unofficial Python extension to Dragon Professional Individual, seems to promise that functionality with `RuleRef`, which ["allows a rule to include (i.e. reference) another rule"](https://dragonfly.readthedocs.io/en/latest/elements.html).

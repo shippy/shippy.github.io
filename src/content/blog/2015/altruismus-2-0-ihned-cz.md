@@ -1,8 +1,10 @@
 ---
 title: "Altruismus 2.0 (iHNed.cz)"
-pubDate: "2015-01-28"
+date: 2015-01-28
+description: "Pokud chcete činit dobro, stojí za to přemýšlet, jak jej můžete udělat co nejvíce. To je heslo efektivního altruismu."
 categories:
   - "psani-jinde"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 (Článek, jehož spoluautorem je Aleš Flídr, původně vyšel [v blogu na iHNed.cz](http://blog.ihned.cz/c3-63443760-06b000_d-63443760-06b000_d-63443760-altruismus-2-0).)

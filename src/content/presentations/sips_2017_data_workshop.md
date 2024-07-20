@@ -4,4 +4,5 @@ description: "A half-day workshop at the Society for the Improvement of Psycholo
 place: Charlottesville, VA, USA
 pubDate: 2017-08-03
 presentationUrl: http://simon.podhajsky.net/sips-2017-curation/
+heroImage: ../blog/2017/images/improving_psych.png
 ---

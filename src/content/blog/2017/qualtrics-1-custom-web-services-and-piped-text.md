@@ -1,10 +1,12 @@
 ---
 title: "Adventures with Qualtrics, part 1: Custom Web Services and Piped Text"
-pubDate: "2017-06-02"
+description: "How to use Qualtrics' custom web services and piped text to pass data to an external web service."
+date: 2017-06-02
 categories:
   - "code"
   - "qualtrics"
   - "science"
+image: "./images/qualtrics-1.png"
 ---
 
 To create a feature in a pilot study I was running in December, I took a dive into Qualtrics API and custom web service building. In the process, I discovered a couple of workarounds and little-documented properties of both. The key to integrating them: piped text.

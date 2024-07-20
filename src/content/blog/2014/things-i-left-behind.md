@@ -1,8 +1,11 @@
 ---
 title: "Things I Left Behind"
-pubDate: "2014-07-30"
+date: 2014-07-30
+description: >
+  This essay was a creative-writing assignment in the second week of ENGL S247: Travel Writing.
 categories:
   - "travel-writing"
+image: "/public/blog-placeholder-4.jpg"
 ---
 
 _This essay was a creative-writing assignment in the second week of ENGL S247: Travel Writing._

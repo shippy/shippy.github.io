@@ -1,30 +1,43 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import IntroSection from '../components/IntroSection.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection, getEntry } from "astro:content";
+import { formatCollection } from "@/lib/utils/formatCollection";
+import Base from "@/layouts/Base.astro";
+import ThingsIDo from "@/components/home/ThingsIDo.astro";
+import NameAndImage from "@/components/home/NameAndImage.astro";
+import Cta from "@/components/_partials/Cta.astro";
+import HomeIntro from "@/components/home/HomeIntro.astro";
+import HomeSideProjects from "@/components/home/HomeSideProjects.astro";
+import HomePresentations from "@/components/home/HomePresentations.astro";
+import HomeArticles from "@/components/home/HomeArticles.astro";
+
+const homepage = await getEntry("homepage", "index");
+const {
+  homeIntro,
+  thingsIDo,
+  sideProjects,
+  presentations,
+  articles,
+  nameImage,
+} = homepage.data;
+
+const posts = await getCollection("blog");
+const noDraftPosts = posts.filter((post) => !post.data.draft);
+const projects = await getCollection("side_projects");
+const latestArticle = formatCollection(noDraftPosts, {
+  limit: 1,
+})[0];
+const latestProject = formatCollection(projects, {
+  sortParams: "pubDate",
+  limit: 1,
+})[0];
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>Hi! I'm Šimon. 👋</h1>
-			<h2>Sometimes, I...</h2>
-			<IntroSection header="...write technical articles" source_collection="blog" />
-			<!-- TODO: Should the IntroSection for presentations be separate? -->
-			<IntroSection header="...host talks and presentations" source_collection="presentations" />
-			<IntroSection header="...work on side projects" source_collection="side_projects" />
-			<p>
-				Read more <a href="/about">about me</a>, see <a href="/now">what I'm up to now</a>,
-				or <a href="/uses">the hardware and software tech stack I use on the daily.</a>
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Base>
+  <HomeIntro data={homeIntro} />
+  <ThingsIDo data={thingsIDo} />
+  <NameAndImage data={nameImage} />
+  <HomePresentations data={presentations} />
+  <HomeSideProjects data={sideProjects} project={latestProject} />
+  <HomeArticles data={articles} article={latestArticle} />
+  <Cta />
+</Base>

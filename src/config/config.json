@@ -1,0 +1,68 @@
+{
+  "site": {
+    "title": "Šimon Podhajský",
+    "description": "A personal site for Šimon Podhajský.",
+    "base_url": "https://simon.podhajsky.net",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.png",
+    "logo": "",
+    "logo_width": "257",
+    "logo_height": "36",
+    "logo_text": "Šimon Podhajský"
+  },
+
+  "analytics": {
+    "ga_tracking_id": "G-S4RFZ1N0T3"
+  },
+
+  "settings": {
+    "pagination": 4,
+    "summary_length": 100
+  },
+
+  "params": {
+    "contact_form_action": "#",
+    "career_form_action": "#",
+    "copyright": "© Šimon Podhajský"
+  },
+
+  "footer_data": {
+    "description": "Thank you for reading all the way down here!",
+    "email": "simon@podhajsky.net",
+    "location": "Prague, Czech Republic",
+    "contact": ""
+  },
+
+  "call_to_action": {
+    "enable": true,
+    "title": "Feel free to contact me",
+    "content": "If you're looking for a skilled data engineer passionate about transforming data into actionable insights or simply want to have a chat.",
+    "button": {
+      "label": "Contact Me",
+      "link": "/contact"
+    }
+  },
+
+  "disqus": {
+    "enable": true,
+    "shortname": "themefisher-template",
+    "settings": {}
+  },
+
+  "metadata": {
+    "meta_author": "Šimon Podhajský",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "This is the personal website, blog, and portfolio of Šimon Podhajský"
+  },
+
+  "email": {
+    "title": "Email Address",
+    "contact": ["simon@podhajsky.net"]
+  },
+
+  "phone": {
+    "title": "Phone",
+    "contact": []
+  }
+}

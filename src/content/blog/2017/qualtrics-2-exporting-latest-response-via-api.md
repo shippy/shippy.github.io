@@ -1,10 +1,12 @@
 ---
 title: "Adventures with Qualtrics, part 2:  exporting the latest response via API"
-pubDate: "2017-06-05"
+date: 2017-06-05
+description: "How to use Qualtrics' API to export the latest response."
 categories:
   - "code"
   - "qualtrics"
   - "science"
+image: "./images/qualtrics-2.png"
 ---
 
 _(In Part 1, [I wrote about the role of Piped Text and building a custom web service that Qualtrics will recognize](http://simon.podhajsky.net/blog/2017/qualtrics-1-custom-web-services-and-piped-text/).)_
