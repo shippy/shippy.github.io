@@ -35,7 +35,8 @@ const collectionTitle = collection
 //@ts-ignore
 export async function getStaticPaths({ paginate }) {
   const allBlog = await getCollection("blog");
-  const formattedBlog: CollectionEntry<"blog">[] = formatCollection(allBlog);
+  const noDraftBlog = allBlog.filter((blog) => !blog.data.draft);
+  const formattedBlog: CollectionEntry<"blog">[] = formatCollection(noDraftBlog);
 
   return paginate(formattedBlog, {
     pageSize: config.settings.pagination,
