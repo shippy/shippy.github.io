@@ -2,7 +2,7 @@
 #HOME INTRO
 homeIntro:
   subtitle: Hello
-  title: Šimon Podhajský is Prague's No. 1
+  title: Šimon Podhajský is Prague's favorite
   rolling_texts:
     - Data Everything
     - LLM Whisperer
