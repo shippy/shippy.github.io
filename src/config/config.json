@@ -12,6 +12,10 @@
     "logo_text": "Šimon Podhajský"
   },
 
+  "analytics": {
+    "ga_tracking_id": "G-S4RFZ1N0T3"
+  },
+
   "settings": {
     "pagination": 4,
     "summary_length": 100

@@ -8,6 +8,7 @@ import Header from "@/components/_partials/Header.astro";
 import "@/styles/style.scss";
 import { AstroFont } from "astro-font";
 import { ViewTransitions } from "astro:transitions";
+import { GoogleAnalytics } from "@astrolib/analytics"
 
 // font families
 const pf = theme.fonts.font_family.primary;
@@ -51,6 +52,7 @@ const {
 <!doctype html>
 <html lang="en">
   <head>
+    <GoogleAnalytics id={config.analytics.ga_tracking_id} />
     <!-- favicon -->
     <link rel="shortcut icon" href={config.site.favicon} />
     <!-- theme meta -->
