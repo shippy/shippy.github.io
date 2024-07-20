@@ -21,8 +21,9 @@ const {
 } = homepage.data;
 
 const posts = await getCollection("blog");
+const noDraftPosts = posts.filter((post) => !post.data.draft);
 const projects = await getCollection("side_projects");
-const latestArticle = formatCollection(posts, {
+const latestArticle = formatCollection(noDraftPosts, {
   limit: 1,
 })[0];
 const latestProject = formatCollection(projects, {
