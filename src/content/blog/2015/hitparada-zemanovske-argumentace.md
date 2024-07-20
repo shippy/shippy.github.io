@@ -3,14 +3,16 @@ title: "Hitparáda zemanovské argumentace"
 date: 2015-11-10
 categories:
   - "bez-kategorie"
-image: "/public/blog-placeholder-4.jpg"
+language: cs
+image: "./images/ovcacek-gosling.jpg"
 ---
 
 Předloňské vítězství Miloše Zemana přineslo do českých diskuzí čerstvé argumentační obraty. To, že je na nich něco v nepořádku, víte hned — ale díky kombinaci víceznačnosti a rozdílných předpokladů chvíli trvá, než přijdete na to, co. Je to lepší než sudoku.
 
 Čestné uznání za mnohé z nových figur patří Jiřímu Ovčáčkovi. Ovčáček je Nick Naylor konzervativní levice: hoďte na něj cokoliv a než se nadějete, bráníte se proti vlastnímu nařčení. Jeho výstupy jsem dlouhodobě fascinován a pevně doufám, že ho bude v jeho biografii hrát Ryan Gosling.
 
-\[caption id="attachment_268" align="aligncenter" width="660"\][![Ovčáček/Gosling, teenage heartthrobs](images/ovcacek-gosling-1024x558.jpg)](http://simon.podhajsky.net/blog/wp-content/uploads/2015/11/ovcacek-gosling.jpg) Ovčáček/Gosling, teenage heartthrobs\[/caption\]
+![Ovčáček/Gosling, teenage heartthrobs](./images/ovcacek-gosling.jpg) 
+<p style="text-align: center;"> Ovčáček/Gosling, teenage heartthrobs</p>
 
 Následuje moje osobní hitparáda argumentačních obratů od ledna 2013.
 
