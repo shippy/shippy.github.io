@@ -1,6 +1,7 @@
 ---
 title: "Feedback k esejům, beze mě"
 date: 2015-09-26
+description: "Nabídka na feedback k esejům obnovena!"
 categories:
   - "studium-v-zahranici"
 image: "/public/blog-placeholder-4.jpg"

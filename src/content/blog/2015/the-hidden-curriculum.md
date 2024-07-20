@@ -1,6 +1,8 @@
 ---
 title: "The Hidden Curriculum"
 date: 2015-06-28
+description: >
+  On a friend's suicide and dealing with it.
 categories:
   - "study-abroad"
 image: "/public/blog-placeholder-4.jpg"

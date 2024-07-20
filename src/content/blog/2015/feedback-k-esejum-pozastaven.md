@@ -1,6 +1,7 @@
 ---
 title: "Feedback k esejům pozastaven"
 date: 2015-09-26
+description: "Kvůli nabitému závěrečnému semestru přestávám stíhat poskytování zpětné vazby."
 categories:
   - "studium-v-zahranici"
 image: "/public/blog-placeholder-4.jpg"

@@ -1,5 +1,6 @@
 ---
 title: "How To Write About France: A Guide For a Rising Junior English Major from Kentucky"
+description: "A creative-writing assignment in the first week of ENGL S247: Travel Writing."
 date: 2014-07-21
 categories:
   - "travel-writing"

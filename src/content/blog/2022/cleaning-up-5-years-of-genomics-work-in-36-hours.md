@@ -1,6 +1,9 @@
 ---
 title: "Cleaning up 5 years of genomics work in 36 hours"
 date: 2022-05-02
+description: >
+  Automating an unwieldy genomics processing & analysis pipeline with
+  Snakemake and friends.
 image: ./images/untangling_dna.png
 categories:
   - "code"

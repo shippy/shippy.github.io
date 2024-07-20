@@ -1,6 +1,7 @@
 ---
 title: "Altruismus 2.0 (iHNed.cz)"
 date: 2015-01-28
+description: "Pokud chcete činit dobro, stojí za to přemýšlet, jak jej můžete udělat co nejvíce. To je heslo efektivního altruismu."
 categories:
   - "psani-jinde"
 image: "/public/blog-placeholder-4.jpg"

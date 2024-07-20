@@ -1,6 +1,8 @@
 ---
 title: "Talks from SIPS 2017"
 date: 2017-08-05
+description: >
+  The annual meeting of the Society for the Improvement of Psychological Science was amazing. Here are the talks I gave.
 categories:
   - "code"
   - "science"

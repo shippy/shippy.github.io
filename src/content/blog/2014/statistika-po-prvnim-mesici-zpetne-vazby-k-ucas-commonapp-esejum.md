@@ -4,6 +4,8 @@ date: 2014-09-27
 categories:
   - "studium-v-zahranici"
 image: "/public/blog-placeholder-4.jpg"
+description: >
+  Agregátní statistika o tom, jak studenti vyhodnotili zpětnou vazbu k esejím, kterou jsem jim poskytl.
 ---
 
 24\. srpna 2014 jsem vyvěsil odkaz na [svou nabídku poskytnutí zpětné vazby k esejům u přihlášek do UK a USA](http://simon.podhajsky.net/blog/feedback-k-esejum/ "Feedback k esejům"). (Nabídka stále platí! [Tady se dozvíte, jak na to.](http://simon.podhajsky.net/blog/feedback-k-esejum/ "Feedback k esejům")) Krom FB stránek Studuj v zahraničí a Fulbright Advising Center Czech Republic ji sdílelo alespoň jedenáct dalších lidí, za což jsem velmi vděčný. V rámci transparence zveřejňuji agregátní statistiku o tom, jak mou zpětnou vazbu studenti vyhodnotili.

@@ -1,6 +1,8 @@
 ---
 title: "Introducing git to scientists who code"
 date: 2017-02-15
+description: >
+  An introduction to programmatic version control in a scientific context.
 categories:
   - "code"
   - "science"

@@ -1,6 +1,7 @@
 ---
 title: "Adventures with Qualtrics, part 2:  exporting the latest response via API"
 date: 2017-06-05
+description: "How to use Qualtrics' API to export the latest response."
 categories:
   - "code"
   - "qualtrics"

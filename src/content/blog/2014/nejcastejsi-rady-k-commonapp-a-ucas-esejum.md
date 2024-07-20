@@ -1,6 +1,7 @@
 ---
 title: "Nejčastější rady k CommonApp a UCAS esejům"
 date: 2014-09-27
+description: "Cut, simplify, be specific, show, don't tell, hit the target, make your structure meaningful."
 categories:
   - "studium-v-zahranici"
 image: "/public/blog-placeholder-4.jpg"

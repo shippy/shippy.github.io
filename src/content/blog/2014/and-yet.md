@@ -1,5 +1,6 @@
 ---
 title: "And yet"
+description: "A creative-writing assignment in the first week of ENGL S247: Travel Writing."
 date: 2014-07-25
 categories:
   - "travel-writing"

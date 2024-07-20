@@ -1,6 +1,9 @@
 ---
 title: "Hitparáda zemanovské argumentace"
 date: 2015-11-10
+description: >
+  Zemanovská argumentace mne vybičovala k sestavení hitparády nejlepších
+  obratů.
 categories:
   - "bez-kategorie"
 language: cs

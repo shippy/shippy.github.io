@@ -1,5 +1,6 @@
 ---
 title: "Adventures with Qualtrics, part 1: Custom Web Services and Piped Text"
+description: "How to use Qualtrics' custom web services and piped text to pass data to an external web service."
 date: 2017-06-02
 categories:
   - "code"

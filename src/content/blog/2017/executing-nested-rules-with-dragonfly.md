@@ -1,6 +1,9 @@
 ---
 title: "Executing nested rules with dragonfly"
 date: 2017-05-10
+description: >
+  Rule nesting with a voice-programming library named dragonfly for
+  the win.
 categories:
   - "code"
   - "voice-programming"

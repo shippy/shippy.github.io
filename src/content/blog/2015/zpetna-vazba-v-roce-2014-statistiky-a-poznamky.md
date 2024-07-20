@@ -1,6 +1,8 @@
 ---
 title: "Zpětná vazba v roce 2014: statistiky a poznámky"
 date: 2015-01-23
+description: >
+  Necestujte do minulosti, abyste sledovali pád berlínské zdi. Anebo ano?
 categories:
   - "studium-v-zahranici"
 image: "/public/blog-placeholder-4.jpg"

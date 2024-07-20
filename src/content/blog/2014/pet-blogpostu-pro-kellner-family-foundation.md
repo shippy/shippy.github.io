@@ -1,6 +1,7 @@
 ---
 title: "Pět blogpostů pro Kellner Family Foundation"
 date: 2014-09-28
+description: "Pět článků o studiu na Yale z let 2013 a 2014."
 categories:
   - "psani-jinde"
   - "studium-v-zahranici"

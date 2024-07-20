@@ -1,6 +1,8 @@
 ---
 title: "Fotbal, efektivní altruismus a spousta psaní (KFF)"
 date: 2015-01-20
+description: >
+  Můj zimní blogový příspěvek si můžete přečíst na stránkách Kellner Family Foundation.
 categories:
   - "psani-jinde"
   - "studium-v-zahranici"

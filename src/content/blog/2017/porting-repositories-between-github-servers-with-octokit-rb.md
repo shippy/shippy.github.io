@@ -1,6 +1,8 @@
 ---
 title: "Porting repositories between GitHub servers with octokit.rb"
 date: 2017-06-19
+description: >
+  The official GitHub support response was that I should avail myself of the API. So I did.
 categories:
   - "code"
 image: "./images/porting-repositories.png"
