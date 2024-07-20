@@ -1,14 +1,13 @@
 ---
 title: "Langfuse, Instructor & FastAPI: Prompt Management Workflow"
 description: "Quick practitioner's notes on actual usage."
-pubDate: 2024-07-19
+date: 2024-07-20
 categories:
   - "llms"
-heroImage: ./images/three-sources-interacting.png
-draft: true
+image: ./images/three-sources-interacting.png
 ---
 
-A recent LLM project required a locally-hosted solution for tracing and prompt management. I've been eyeing [Langfuse](https://langfuse.com/), which integrates low-level tracing (á la [LangSmith](https://docs.smith.langchain.com/tracing/faq/logging_and_viewing), [Logfire](https://logfire.pydantic.dev) or [LangTail](https://langtail.com)) with prompt management and a usage dashboard (as well as other features) - but you can deploy it on your own infrastructure without paying up the wazoo.
+A recent LLM project required a locally-hosted solution for tracing and prompt management. I've been eyeing [Langfuse](https://langfuse.com/), which integrates low-level tracing (á la [LangSmith](https://docs.smith.langchain.com/), [Logfire](https://logfire.pydantic.dev) or [LangTail](https://langtail.com)) with prompt management and a usage dashboard (as well as other features) - but you can deploy it on your own infrastructure without paying up the wazoo.
 
 Two straightforward usage issues came up in the process: how to patch OpenAI Chat Completions endpoint with multiple OpenAI-patching libraries, and how to set up a prompt management workflow. Since I couldn't find any write-up online or related messages on the many associated Discord servers, I'm noting my solution here.
 
@@ -40,7 +39,7 @@ If setting up Langfuse isn't the first thing you've done in your LLM project, yo
 
 The solution I came to uses a Python workflow: assume the prompt exists in Langflow and if not, create its first version. Afterwards, continue iterating on the prompt in the Langflow UI.
 
-The following excerpt loads - and, upon failure, defines - an `chat-extract-feedback` chat prompt. After the load/create step, everything proceeds normally.
+The following excerpt loads - and, upon failure, defines - a `chat-extract-feedback` chat prompt. After the load/create step, everything proceeds normally.
 
 (In this case, this is part of a fictional application named Weathervane, which defines Pydantic models of input and output in `weathervane.models`. [See here for an introduction to Pydantic/Instructor.](https://github.com/jxnl/instructor))
 
@@ -112,4 +111,4 @@ Neither order breaks FastAPI, but the latter breaks Langfuse.
 
 ## Conclusion
 
-Self-hosted Langfuse is still not the elusive all-in-one solution
+I'm still finding my way around some of Langfuse's more advanced features, and figuring out whether they can form the foundations of an AI engineering flywheel - [the sort that Shreya Shankar writes about](https://www.sh-reya.com/blog/ai-engineering-flywheel/). I do think it's a good observability platform that will allow for a measure of debugging and explainability of some of the more complex prompt chains, and possibly some amount of evaluation. That's a good start.
