@@ -5,7 +5,7 @@ description: >
   On a friend's suicide and dealing with it.
 categories:
   - "study-abroad"
-image: "/public/blog-placeholder-4.jpg"
+image: "./images/hidden-curriculum.png"
 ---
 
 This winter was longer than it had any right to be.
