@@ -13,7 +13,7 @@ const {
   description,
   githubUrl,
   projectUrl,
-  blogs,
+  blogRef,
   technologies,
   screenshots,
 } = project.data;
@@ -99,6 +99,22 @@ const {
                 )
               }
             </ul>
+          </div>
+          <div>
+            {
+              blogRef && blogRef.length > 0 && (
+                <h2>Related articles</h2>
+                <ul>
+                  {blogRef.map((slug: String) => (
+                    <li>
+                      <a href={`/blog/${slug}/`} class="text-blue-500">
+                        Article
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )
+            }
           </div>
         </div>
         <div class="content">
