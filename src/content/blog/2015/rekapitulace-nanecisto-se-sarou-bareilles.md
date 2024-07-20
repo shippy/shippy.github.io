@@ -6,4 +6,4 @@ categories:
 image: "/public/blog-placeholder-4.jpg"
 ---
 
-[Můj červnový čánek vyšel na stránkách Kellner Family Foundation](http://www.kellnerfoundation.cz/univerzity/nasi-stipendiste/simon-podhajsky/detail/rekapitulace-nanecisto-se-sarou-bareilles).
+[Můj červnový čánek vyšel na stránkách Kellner Family Foundation](https://www.kellnerfoundation.cz/univerzity/aktuality/rekapitulace-nanecisto-se-sarou-bareilles).
