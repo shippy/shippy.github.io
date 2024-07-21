@@ -40,7 +40,7 @@ thingsIDo:
         I've spoken at local meetups, online events, and big conferences. Hit me up to speak at any of the above!
     - icon: "command"
       title: I'm a Generalist.
-      content: ...which just means that I don't stop at a problem's boundary; I see it through wherever it
+      content: ...which just means that I don't stop at a problem's boundary; I see it through wherever it leads.
 
 # SIDE PROJECTS
 sideProjects:
