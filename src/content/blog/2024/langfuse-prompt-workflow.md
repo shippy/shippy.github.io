@@ -48,7 +48,7 @@ from instructor import AsyncInstructor
 from langfuse import Langfuse
 from langfuse.api.resources.commons.errors.not_found_error import NotFoundError
 
-from weathervane.models.email import IncomingChat
+from weathervane.models.chat import IncomingChat
 from weathervane.models.output import ExtractedFeedback
 
 async def llm_extract_feedback_from_chat(client: AsyncInstructor, chat: IncomingChat) -> ExtractedFeedback:
