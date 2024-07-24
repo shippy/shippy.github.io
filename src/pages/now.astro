@@ -2,6 +2,8 @@
 import { getCollection } from "astro:content";
 import Base from "@/layouts/Base.astro";
 import DefaultItem from "@/layouts/DefaultItem.astro";
+import PageHeader from "@/components/_shared/PageHeader.astro";
+import { markdownify } from "@/lib/utils/textConverter";
 
 const posts = (
   await getCollection("now", (post) => {
@@ -41,26 +43,30 @@ const all_posts = await renderPosts();
 ---
 
 <Base
- title="Now"
- description="This page contains my activities added or updated in the past year"
- >
+  title="Now"
+  description="This page contains my activities added or updated in the past year"
+>
   <main class="container">
-    <section class="introduction section content">
-      <h1>What Am I Up To?</h1>
-      <p>
-        This page contains my activities added or updated in the past year.
-        Come talk to me about it!
-      </p>
-      <p>
-        This is part of the <a href="https://nownownow.com/about">/now</a> movement.
-      </p>
-    </section>
-    <section class="content">
-    {
-      all_posts.map((rendered_post) => (
-        <DefaultItem data={rendered_post.post} />
-      ))
-    }
+    <PageHeader title="What Am I Up To?" />
+    <section class="mx-auto py-16 lg:col-8">
+      <div class="content">
+        <p>
+          This page contains my activities added or updated in the past year.
+          Come talk to me about it!
+        </p>
+        <p>
+          This is part of the <a
+            class="text-primary"
+            href="https://nownownow.com/about">/now</a
+          > movement.
+        </p>
+
+        {
+          all_posts.map((rendered_post) => (
+            <DefaultItem data={rendered_post.post} />
+          ))
+        }
+      </div>
     </section>
   </main>
 </Base>
