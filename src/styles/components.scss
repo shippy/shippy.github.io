@@ -394,7 +394,7 @@
   @apply prose-li:text-base prose-li:leading-loose prose-li:text-text lg:prose-li:text-base 2xl:prose-li:text-lg;
   @apply prose-blockquote:px-4 prose-blockquote:py-1 prose-blockquote:text-dark;
   @apply prose-code:px-1 prose-code:text-primary;
-  @apply prose-pre:rounded-md;
+  @apply prose-pre:rounded-md prose-pre:-indent-1;
   @apply prose-strong:text-dark;
   @apply prose-a:text-primary prose-a:no-underline hover:prose-a:underline;
   @apply prose-li:text-text;
