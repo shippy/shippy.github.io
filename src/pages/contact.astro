@@ -43,7 +43,8 @@ const { title, description, meta_title, image } = entry.data;
             <div class="mb-6">
               <h3 class="h5 font-semibold">Send A Message</h3>
             </div>
-            <form action={contact_form_action} method="post">
+
+            <form id="my-form" action={contact_form_action} method="POST">
               <div class="mb-6">
                 <label
                   class="mb-2 block font-medium text-theme-dark/80"
@@ -55,7 +56,7 @@ const { title, description, meta_title, image } = entry.data;
                   name="Full Name"
                   type="text"
                   placeholder="Full Name"
-                  required=""
+                  required
                 />
               </div>
               <div class="mb-6">
@@ -69,7 +70,7 @@ const { title, description, meta_title, image } = entry.data;
                   name="Email Address"
                   type="email"
                   placeholder="Email Address"
-                  required=""
+                  required
                 />
               </div>
               <div class="mb-6">
@@ -80,7 +81,7 @@ const { title, description, meta_title, image } = entry.data;
                 <textarea
                   class="form-control h-auto shadow-none"
                   id="message"
-                  name="Comment"
+                  name="Message"
                   rows="4"
                   required=""></textarea>
               </div>
@@ -88,9 +89,12 @@ const { title, description, meta_title, image } = entry.data;
                 class="btn btn-primary mt-6 w-full"
                 type="submit"
                 aria-label="Send Message"
+                id="my-form-button"
               >
                 Send Message
               </button>
+              <p id="my-form-status" class="mt-4 text-sm italic text-primary">
+              </p>
             </form>
           </div>
         </div>
@@ -165,3 +169,42 @@ const { title, description, meta_title, image } = entry.data;
 
   <Cta />
 </Base>
+
+<script>
+  var form = document.getElementById("my-form") as HTMLFormElement;
+
+  async function handleSubmit(event: any) {
+    event.preventDefault();
+    var status = document.getElementById("my-form-status") as HTMLElement;
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          status.innerHTML = "Thanks for your submission!";
+          form.reset();
+        } else {
+          response.json().then((data) => {
+            if (Object.hasOwn(data, "errors")) {
+              console.log(data);
+              status.innerHTML = data["errors"]
+                .map((error: any) => error["message"])
+                .join(", ");
+            } else {
+              status.innerHTML =
+                "Oops! There was a problem submitting your form";
+            }
+          });
+        }
+      })
+      .catch((error) => {
+        status.innerHTML = "Oops! There was a problem submitting your form";
+      });
+  }
+  form.addEventListener("submit", handleSubmit);
+</script>
