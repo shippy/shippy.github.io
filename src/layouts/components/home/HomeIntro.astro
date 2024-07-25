@@ -19,30 +19,33 @@ const {
 } = Astro.props;
 ---
 
-<section class="pt-16 lg:py-0">
+<section
+  id="hero"
+  class="pt-16 lg:py-0"
+  data-rollingtexts={JSON.stringify(rolling_texts)}
+>
   <div class="container">
     <div class="row mb-6 items-center justify-center">
       <div class="order-0 lg:col-5" data-aos="fade-up">
         <div class="mb-0">
           <div class="section-title text-left">
             <h1
-              class="flex flex-wrap gap-2 leading-none"
+              class="flex flex-col gap-2 leading-none"
               data-aos="fade-up"
               data-aos-anchor-placement="top-bottom"
               data-aos-easing="ease-in-out"
               data-aos-duration="1000"
             >
-              {title.split(" ").map((text) => <span>{text}</span>)}
-              <ul class="dynamic-texts">
-                {
-                  rolling_texts.map((text) => (
-                    <li>
-                      <span>{text}</span>
-                    </li>
-                  ))
-                }
-              </ul>
+              <div class="flex flex-wrap gap-2">
+                {title.split(" ").map((text) => <span>{text}</span>)}
+              </div>
+              <p
+                id="dynamic-texts"
+                class="flex h-[50px] items-center text-primary md:h-[70px]"
+              >
+              </p>
             </h1>
+
             <p
               set:html={markdownify(description)}
               class="mb-8 mt-2 text-base text-text 2xl:text-lg"
@@ -108,49 +111,35 @@ const {
   </div>
 </section>
 
-<style>
-  .dynamic-texts {
-    @apply inline h-[60px]  overflow-hidden md:h-[70px];
-  }
+<script is:inline>
+  var i = 0;
+  var j = 0;
+  const INITIAL = "";
+  var txt = "";
+  const section = document.getElementById("hero");
+  const rollingTexts = JSON.parse(section.dataset.rollingtexts);
+  var speed = 50;
 
-  .dynamic-texts li {
-    @apply relative top-0 h-[60px] list-none text-primary md:h-[70px];
-    animation: slideMobile 6s steps(4) infinite;
-
-    @media screen and (min-width: 768px) {
-      animation: slide 6s steps(4) infinite;
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("dynamic-texts").innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
     }
   }
 
-  @keyframes slide {
-    100% {
-      top: -280px;
-    }
+  function main() {
+    typeWriter();
+    setInterval(rotate, 1500);
   }
+  main();
 
-  @keyframes slideMobile {
-    100% {
-      top: -240px;
-    }
+  function rotate() {
+    let dynamicTexts = document.getElementById("dynamic-texts");
+    dynamicTexts.innerHTML = INITIAL;
+    i = INITIAL.length;
+    txt = INITIAL + rollingTexts[j];
+    typeWriter();
+    j = (j + 1) % rollingTexts.length;
   }
-
-  .dynamic-texts li span {
-    @apply relative my-[5px];
-  }
-
-  .dynamic-texts li span::after {
-    @apply absolute   left-0 h-[60px] w-full bg-body md:h-[70px];
-    content: "";
-    animation: typing 1.5s steps(10) infinite;
-  }
-
-  @keyframes typing {
-    40%,
-    60% {
-      left: calc(100% + 30px);
-    }
-    100% {
-      left: 0;
-    }
-  }
-</style>
+</script>
