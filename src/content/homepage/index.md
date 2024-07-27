@@ -6,14 +6,21 @@ homeIntro:
   rolling_texts:
     - Data Everything
     - LLM Whisperer
-    - Presenter
-    - Generalist
+    - Debater Emeritus
+    - Inventor of Words
+    - Anti-Descriptivist
+    - Neuroskeptic
     - Crier at Musicals
     - SCOTUS Enjoyer
-    - Debater Emeritus
+    - Terrible Yogi
+    - Recovering Pedant
+    - Generalist
+    - Presenter
+    - Scrabble Player
+    - Accidental Foodie
   description: >
-    There are many things I do. These are some of them. If you want to talk to me, work with me,
-    or just say hi, I'm always open to a chat.
+    If any of the above interests you, I'd be excited to get to know you! Find me on social media,
+    shoot me an e-mail, dispatch a carrier pigeon - I'll be happy to hear from you 👋
   image: "/images/home/simon-1.webp"
   link:
     label: Contact me
