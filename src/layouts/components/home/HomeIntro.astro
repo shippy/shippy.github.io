@@ -120,29 +120,33 @@ const {
 <script>
   import gsap from "gsap";
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const words = document.querySelectorAll(".word");
-    const stagger = 3;
-    const timeline = gsap.timeline({ repeat: -1, repeatDelay: 0 });
+  document.addEventListener(
+    "astro:page-load",
+    () => {
+      const words = document.querySelectorAll(".word");
+      const stagger = 3;
+      const timeline = gsap.timeline({ repeat: -1, repeatDelay: 0 });
 
-    timeline.from(words, {
-      yPercent: -100,
-      opacity: 0,
-      duration: 1,
-      stagger: stagger,
-      ease: "power2.inOut",
-    });
-
-    timeline.to(
-      words,
-      {
-        yPercent: 100,
-        opacity: 1,
+      timeline.from(words, {
+        yPercent: -100,
+        opacity: 0,
         duration: 1,
         stagger: stagger,
         ease: "power2.inOut",
-      },
-      stagger
-    );
-  });
+      });
+
+      timeline.to(
+        words,
+        {
+          yPercent: 100,
+          opacity: 1,
+          duration: 1,
+          stagger: stagger,
+          ease: "power2.inOut",
+        },
+        stagger
+      );
+    },
+    { once: false }
+  );
 </script>

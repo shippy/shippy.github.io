@@ -8,7 +8,7 @@ import Header from "@/components/_partials/Header.astro";
 import "@/styles/style.scss";
 import { AstroFont } from "astro-font";
 import { ViewTransitions } from "astro:transitions";
-import { GoogleAnalytics } from "@astrolib/analytics"
+import { GoogleAnalytics } from "@astrolib/analytics";
 
 // font families
 const pf = theme.fonts.font_family.primary;
@@ -200,6 +200,19 @@ const {
     <script is:inline>
       AOS.init();
       const rellax = new Rellax(".rellax");
+    </script>
+
+    <script>
+      import gsap from "gsap";
+      import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+      document.addEventListener(
+        "astro:page-load",
+        () => {
+          gsap.registerPlugin(ScrollTrigger);
+        },
+        { once: false }
+      );
     </script>
   </body>
 </html>

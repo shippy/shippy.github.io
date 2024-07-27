@@ -171,40 +171,46 @@ const { title, description, meta_title, image } = entry.data;
 </Base>
 
 <script>
-  var form = document.getElementById("my-form") as HTMLFormElement;
+  document.addEventListener(
+    "astro:page-load",
+    () => {
+      var form = document.getElementById("my-form") as HTMLFormElement;
 
-  async function handleSubmit(event: any) {
-    event.preventDefault();
-    var status = document.getElementById("my-form-status") as HTMLElement;
-    var data = new FormData(event.target);
-    fetch(event.target.action, {
-      method: form.method,
-      body: data,
-      headers: {
-        Accept: "application/json",
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          status.innerHTML = "Thanks for your submission!";
-          form.reset();
-        } else {
-          response.json().then((data) => {
-            if (Object.hasOwn(data, "errors")) {
-              console.log(data);
-              status.innerHTML = data["errors"]
-                .map((error: any) => error["message"])
-                .join(", ");
+      async function handleSubmit(event: any) {
+        event.preventDefault();
+        var status = document.getElementById("my-form-status") as HTMLElement;
+        var data = new FormData(event.target);
+        fetch(event.target.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            Accept: "application/json",
+          },
+        })
+          .then((response) => {
+            if (response.ok) {
+              status.innerHTML = "Thanks for your submission!";
+              form.reset();
             } else {
-              status.innerHTML =
-                "Oops! There was a problem submitting your form";
+              response.json().then((data) => {
+                if (Object.hasOwn(data, "errors")) {
+                  console.log(data);
+                  status.innerHTML = data["errors"]
+                    .map((error: any) => error["message"])
+                    .join(", ");
+                } else {
+                  status.innerHTML =
+                    "Oops! There was a problem submitting your form";
+                }
+              });
             }
+          })
+          .catch((error) => {
+            status.innerHTML = "Oops! There was a problem submitting your form";
           });
-        }
-      })
-      .catch((error) => {
-        status.innerHTML = "Oops! There was a problem submitting your form";
-      });
-  }
-  form.addEventListener("submit", handleSubmit);
+      }
+      form.addEventListener("submit", handleSubmit);
+    },
+    { once: false }
+  );
 </script>

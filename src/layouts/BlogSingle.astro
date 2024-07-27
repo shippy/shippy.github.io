@@ -23,31 +23,15 @@ const similarPosts = formatCollection(allPosts, { sortByDate: true })
     );
   })
   .slice(0, 2);
-const { Content } = await post.render();
+
+const { Content, headings } = await post.render();
 const { title, image, date, categories } = post.data;
 ---
 
-<section class="py-10 lg:py-20">
+<section class="py-10">
   <div class="container">
     <div class="row justify-center">
-      <div class="col-12 mb-12 lg:col-10">
-        <!-- <Breadcrumbs
-          breadcrumbs={[
-            {
-              label: "Home",
-              href: "/",
-            },
-            {
-              label: "Blog",
-              href: "/blog",
-            },
-            {
-              label: title,
-              href: `/blog/${post.slug}`,
-              active: true,
-            },
-          ]}
-        /> -->
+      <div class="col-12 lg:col-12 xl:col-11">
         <Image
           alt={title}
           src={image ?? placeholder}
@@ -56,29 +40,72 @@ const { title, image, date, categories } = post.data;
           class="w-full max-w-full rounded-3xl"
         />
       </div>
-      <div class="lg:col-8">
-        <div class="mb-12">
-          <h1 class="">
-            {title}
-          </h1>
-          <div class="my-6 flex items-center">
-            <span>{dateFormat(date)} - {readingTime(post.body)}</span>
+      <div
+        class="content-container relative flex flex-col-reverse gap-8 pt-10 lg:col-12 xl:col-11 lg:flex-row lg:items-start lg:gap-16 lg:pt-20"
+      >
+        <div class="lg:w-3/4">
+          <div class="mb-12 hidden lg:block">
+            <h1 class="lg:block">
+              {title}
+            </h1>
+            <div class="my-6 flex items-center">
+              <span>{dateFormat(date)} - {readingTime(post.body)}</span>
+            </div>
+            <ul class="flex flex-wrap items-center gap-4">
+              {
+                categories.map((category: string) => (
+                  <li>
+                    <Badge text={category} />
+                  </li>
+                ))
+              }
+            </ul>
           </div>
+          <div class="content">
+            <Content />
+          </div>
+        </div>
 
-          <ul class="flex flex-wrap items-center gap-4">
-            {
-              categories.map((category: string) => (
-                <li>
-                  <Badge text={category} />
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-        <div class="content">
-          <Content />
-        </div>
-        <!-- <Disqus client:load /> -->
+        <!-- Table of Content -->
+        {
+          headings.length > 0 && (
+            <div class="lg:sticky lg:top-24 lg:mt-4 lg:w-1/4">
+              <div class="mb-12 lg:hidden">
+                <h1 class="lg:block">{title}</h1>
+                <div class="my-6 flex items-center">
+                  <span>
+                    {dateFormat(date)} - {readingTime(post.body)}
+                  </span>
+                </div>
+                <ul class="flex flex-wrap items-center gap-4">
+                  {categories.map((category: string) => (
+                    <li>
+                      <Badge text={category} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <h4 class="mb-6 text-primary">Table of Contents</h4>
+              <ul class="toc-items flex flex-col ">
+                {headings.map((link: any) => (
+                  <li
+                    class:list={[
+                      "border-l-4 border-transparent pt-4 first-of-type:pt-0",
+                      link.slug,
+                    ]}
+                  >
+                    <a
+                      href={`#${link.slug}`}
+                      class=" toc-link  text-sm leading-none transition-colors hover:text-primary lg:text-base"
+                    >
+                      {link.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
       </div>
     </div>
   </div>
@@ -96,3 +123,67 @@ const { title, image, date, categories } = post.data;
   </div>
 </section>
 <Cta />
+
+<script>
+  import gsap from "gsap";
+
+  document.addEventListener(
+    "astro:page-load",
+    () => {
+      const header = document.querySelector("header") as HTMLElement;
+      const tocLinks = document.querySelectorAll(".toc-link");
+      const contentContainer = document.querySelector(
+        ".content-container"
+      ) as HTMLElement;
+      const contentH1s = document.querySelectorAll(".content h1");
+      const contentH2s = document.querySelectorAll(".content h2");
+      const contentH3s = document.querySelectorAll(".content h3");
+      const contentH4s = document.querySelectorAll(".content h4");
+      const contentH5s = document.querySelectorAll(".content h5");
+      const contentH6s = document.querySelectorAll(".content h6");
+
+      const allContentHeadings = [
+        ...contentH1s,
+        ...contentH2s,
+        ...contentH3s,
+        ...contentH4s,
+        ...contentH5s,
+        ...contentH6s,
+      ];
+
+      // ScrollTo Implementation
+      tocLinks.forEach((link) => {
+        link.addEventListener("click", (e: any) => {
+          // prevent default
+          e.preventDefault();
+          // navigate to specific spot
+          const id = e.currentTarget.getAttribute("href").slice(1);
+          const element = document.getElementById(id) as HTMLElement;
+          const headerHeight = header.getBoundingClientRect().height;
+          let position =
+            element.offsetTop + contentContainer.offsetTop - headerHeight * 1.5;
+
+          window.scrollTo({
+            left: 0,
+            top: position,
+          });
+        });
+      });
+
+      allContentHeadings.forEach((heading: any) => {
+        const linkClass = `.toc-items .${heading.getAttribute("id")}`;
+        gsap.to(linkClass, {
+          paddingLeft: 15,
+          ease: "power4.inOut",
+          borderLeftColor: "#fe6019",
+          scrollTrigger: {
+            trigger: heading,
+            start: "top bottom",
+            toggleActions: "play none none reverse",
+          },
+        });
+      });
+    },
+    { once: false }
+  );
+</script>
