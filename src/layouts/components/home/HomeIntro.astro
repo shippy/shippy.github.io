@@ -39,7 +39,9 @@ const {
               <div class="flex flex-wrap gap-2">
                 {title.split(" ").map((text) => <span>{text}</span>)}
               </div>
-              <div class="relative h-[50px] overflow-hidden md:h-[60px]">
+              <div
+                class="relative h-[50px] overflow-hidden md:h-[60px] lg:h-[70px]"
+              >
                 {
                   rolling_texts.map((text) => (
                     <div class="word absolute h-full w-full text-primary">
@@ -121,7 +123,7 @@ const {
   document.addEventListener("DOMContentLoaded", function () {
     const words = document.querySelectorAll(".word");
     const stagger = 3;
-    const timeline = gsap.timeline({ repeat: -1 });
+    const timeline = gsap.timeline({ repeat: -1, repeatDelay: 0 });
 
     timeline.from(words, {
       yPercent: -100,
