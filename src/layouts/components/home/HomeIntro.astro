@@ -39,11 +39,15 @@ const {
               <div class="flex flex-wrap gap-2">
                 {title.split(" ").map((text) => <span>{text}</span>)}
               </div>
-              <p
-                id="dynamic-texts"
-                class="flex h-[50px] items-center text-primary md:h-[70px]"
-              >
-              </p>
+              <div class="relative h-[50px] overflow-hidden md:h-[60px]">
+                {
+                  rolling_texts.map((text) => (
+                    <div class="word absolute h-full w-full text-primary">
+                      {text}
+                    </div>
+                  ))
+                }
+              </div>
             </h1>
 
             <p
@@ -111,35 +115,32 @@ const {
   </div>
 </section>
 
-<script is:inline>
-  var i = 0;
-  var j = 0;
-  const INITIAL = "";
-  var txt = "";
-  const section = document.getElementById("hero");
-  const rollingTexts = JSON.parse(section.dataset.rollingtexts);
-  var speed = 50;
+<script>
+  import gsap from "gsap";
 
-  function typeWriter() {
-    if (i < txt.length) {
-      document.getElementById("dynamic-texts").innerHTML += txt.charAt(i);
-      i++;
-      setTimeout(typeWriter, speed);
-    }
-  }
+  document.addEventListener("DOMContentLoaded", function () {
+    const words = document.querySelectorAll(".word");
+    const stagger = 3;
+    const timeline = gsap.timeline({ repeat: -1 });
 
-  function main() {
-    typeWriter();
-    setInterval(rotate, 1500);
-  }
-  main();
+    timeline.from(words, {
+      yPercent: -100,
+      opacity: 0,
+      duration: 1,
+      stagger: stagger,
+      ease: "power2.inOut",
+    });
 
-  function rotate() {
-    let dynamicTexts = document.getElementById("dynamic-texts");
-    dynamicTexts.innerHTML = INITIAL;
-    i = INITIAL.length;
-    txt = INITIAL + rollingTexts[j];
-    typeWriter();
-    j = (j + 1) % rollingTexts.length;
-  }
+    timeline.to(
+      words,
+      {
+        yPercent: 100,
+        opacity: 1,
+        duration: 1,
+        stagger: stagger,
+        ease: "power2.inOut",
+      },
+      stagger
+    );
+  });
 </script>

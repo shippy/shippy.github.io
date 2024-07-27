@@ -8,6 +8,9 @@ homeIntro:
     - LLM Whisperer
     - Presenter
     - Generalist
+    - Crier at Musicals
+    - SCOTUS Enjoyer
+    - Debater Emeritus
   description: >
     There are many things I do. These are some of them. If you want to talk to me, work with me,
     or just say hi, I'm always open to a chat.
