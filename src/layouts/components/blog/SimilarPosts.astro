@@ -1,11 +1,11 @@
 ---
 import PostCard from "@/layouts/components/_shared/PostCard.astro";
-const { posts } = Astro.props;
+const { posts, left } = Astro.props;
 ---
 
 <section>
-  <div class="container">
-    <div class="row justify-center">
+  <div>
+    <div class:list={["row", left ? "justify-start" : "justify-center"]}>
       {
         posts.map((post: any) => (
           <div class="col-12 mb-8 md:col-6 lg:col-5">
