@@ -26,6 +26,8 @@ const similarPosts = formatCollection(allPosts, { sortByDate: true })
 
 const { Content, headings } = await post.render();
 const { title, image, date, categories } = post.data;
+
+console.log(headings);
 ---
 
 <section class="py-10">
@@ -85,24 +87,27 @@ const { title, image, date, categories } = post.data;
                   ))}
                 </ul>
               </div>
-              <h4 class="mb-6 text-primary">Table of Contents</h4>
-              <ul class="toc-items flex flex-col ">
-                {headings.map((link: any) => (
-                  <li
-                    class:list={[
-                      "border-l-2 border-transparent pt-4 first-of-type:pt-0",
-                      link.slug,
-                    ]}
-                  >
-                    <a
-                      href={`#${link.slug}`}
-                      class=" toc-link  text-sm leading-none transition-colors hover:text-primary lg:text-base"
+              <div class="rounded-md bg-primary/5 px-6 py-8 lg:bg-transparent lg:p-0">
+                <h4 class="mb-6">Table of Contents</h4>
+                <ul class="toc-items flex flex-col gap-4">
+                  {headings.map((link: any) => (
+                    <li
+                      class={link.slug}
+                      style={{
+                        paddingLeft:
+                          link.depth > 2 ? `${link.depth * 7}px` : "",
+                      }}
                     >
-                      {link.text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+                      <a
+                        href={`#${link.slug}`}
+                        class="toc-link inline-block border-l-2 border-transparent  text-sm leading-snug transition-colors hover:text-primary lg:text-base"
+                      >
+                        {link.text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           )
         }
@@ -171,15 +176,17 @@ const { title, image, date, categories } = post.data;
       });
 
       allContentHeadings.forEach((heading: any) => {
-        const linkClass = `.toc-items .${heading.getAttribute("id")}`;
+        const linkClass = `.toc-items .${heading.getAttribute("id")} .toc-link`;
         gsap.to(linkClass, {
           paddingLeft: 15,
-          ease: "power4.inOut",
+          ease: "power2.inOut",
           borderLeftColor: "#fe6019",
+          color: "#fe6019",
           scrollTrigger: {
             trigger: heading,
-            start: "top bottom",
-            toggleActions: "play none none reverse",
+            start: "top 95%",
+            end: "bottom 10%",
+            toggleActions: "play reverse play reverse",
           },
         });
       });
