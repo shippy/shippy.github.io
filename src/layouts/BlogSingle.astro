@@ -175,6 +175,21 @@ console.log(headings);
         });
       });
 
+      // Linkable Headings Implementation
+      allContentHeadings.forEach((heading: any) => {
+        heading.addEventListener("click", (e: any) => {
+          // navigate to specific spot
+          const headerHeight = header.getBoundingClientRect().height;
+          let position =
+            heading.offsetTop + contentContainer.offsetTop - headerHeight * 1.5;
+
+          window.scrollTo({
+            left: 0,
+            top: position,
+          });
+        });
+      });
+
       allContentHeadings.forEach((heading: any) => {
         const linkClass = `.toc-items .${heading.getAttribute("id")} .toc-link`;
         gsap.to(linkClass, {
@@ -194,3 +209,15 @@ console.log(headings);
     { once: false }
   );
 </script>
+
+<style>
+  .content {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply cursor-pointer transition-colors hover:text-primary;
+    }
+  }
+</style>
