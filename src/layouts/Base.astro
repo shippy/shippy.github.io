@@ -35,6 +35,7 @@ export interface Props {
   noindex?: boolean;
   canonical?: string;
   landingPage?: boolean;
+  sticky?: "false";
 }
 
 // distructure frontmatters
@@ -46,6 +47,7 @@ const {
   noindex,
   canonical,
   landingPage,
+  sticky
 } = Astro.props;
 ---
 
@@ -186,7 +188,7 @@ const {
   </head>
   <body>
     <TwSizeIndicator />
-    {!landingPage && <Header />}
+    {!landingPage && <Header sticky={sticky} />}
     <main id="main-content">
       <slot />
     </main>

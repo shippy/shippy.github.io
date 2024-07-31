@@ -14,12 +14,19 @@ export interface NavigationLink {
   children?: ChildNavigationLink[];
 }
 const { pathname } = Astro.url;
+const { sticky } = Astro.props;
 
 const { main, mobile }: { main: NavigationLink[]; mobile: NavigationLink[] } =
   menu;
 ---
 
-<header class="header" id="header" data-aos="fade-down" data-aos-once="true">
+<header
+  data-sticky={sticky}
+  class="header"
+  id="header"
+  data-aos="fade-down"
+  data-aos-once="true"
+>
   <nav class="navbar container">
     <!-- logo -->
     <div class="order-0">
@@ -204,23 +211,26 @@ const { main, mobile }: { main: NavigationLink[]; mobile: NavigationLink[] } =
   var lastScroll = 0;
   const changeNavbarBackground = () => {
     const header = document.getElementById("header");
+    const stickyFalse = header.dataset.sticky;
     const headerHeight = header.clientHeight + 200;
     const scrollY = window.scrollY;
 
     window.onscroll = () => {
       // header-sticky-top
-      if (scrollY > 0) {
-        header.classList.add("header-sticky-top");
-      } else {
-        header.classList.remove("header-sticky-top");
-      }
-      if (scrollY > headerHeight) {
-        if (lastScroll > scrollY) {
-          header.classList.remove("-translate-y-full");
+      if (!stickyFalse) {
+        if (scrollY > 0) {
+          header.classList.add("header-sticky-top");
         } else {
-          header.classList.add("-translate-y-full");
+          header.classList.remove("header-sticky-top");
         }
-        lastScroll = scrollY;
+        if (scrollY > headerHeight) {
+          if (lastScroll > scrollY) {
+            header.classList.remove("-translate-y-full");
+          } else {
+            header.classList.add("-translate-y-full");
+          }
+          lastScroll = scrollY;
+        }
       }
     };
   };

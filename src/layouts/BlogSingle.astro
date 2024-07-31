@@ -88,7 +88,7 @@ console.log(headings);
                 </ul>
               </div>
               <div class="rounded-md bg-primary/5 px-6 py-8 lg:bg-transparent lg:p-0">
-                <h4 class="mb-6">Table of Contents</h4>
+                <h4 class="mb-6 pl-4">Table of Contents</h4>
                 <ul class="toc-items flex flex-col gap-4">
                   {headings.map((link: any) => (
                     <li
@@ -100,7 +100,7 @@ console.log(headings);
                     >
                       <a
                         href={`#${link.slug}`}
-                        class="toc-link inline-block border-l-2 border-transparent  text-sm leading-snug transition-colors hover:text-primary lg:text-base"
+                        class="toc-link inline-block border-l-2 border-transparent  pl-4 text-sm leading-snug transition-colors hover:text-primary lg:text-base"
                       >
                         {link.text}
                       </a>
@@ -159,8 +159,9 @@ console.log(headings);
       // ScrollTo Implementation
       tocLinks.forEach((link) => {
         link.addEventListener("click", (e: any) => {
-          // prevent default
           e.preventDefault();
+          // prevent default
+
           // navigate to specific spot
           const id = e.currentTarget.getAttribute("href").slice(1);
           const element = document.getElementById(id) as HTMLElement;
@@ -168,6 +169,7 @@ console.log(headings);
           let position =
             element.offsetTop + contentContainer.offsetTop - headerHeight * 1.5;
 
+          window.history.pushState(window.location.pathname, "", `#${id}`);
           window.scrollTo({
             left: 0,
             top: position,
@@ -180,9 +182,11 @@ console.log(headings);
         heading.addEventListener("click", (e: any) => {
           // navigate to specific spot
           const headerHeight = header.getBoundingClientRect().height;
+          const id = e.currentTarget.getAttribute("id");
           let position =
             heading.offsetTop + contentContainer.offsetTop - headerHeight * 1.5;
 
+          window.history.pushState(window.location.pathname, "", `#${id}`);
           window.scrollTo({
             left: 0,
             top: position,
@@ -193,7 +197,6 @@ console.log(headings);
       allContentHeadings.forEach((heading: any) => {
         const linkClass = `.toc-items .${heading.getAttribute("id")} .toc-link`;
         gsap.to(linkClass, {
-          paddingLeft: 15,
           ease: "power2.inOut",
           borderLeftColor: "#fe6019",
           color: "#fe6019",
@@ -217,7 +220,7 @@ console.log(headings);
     h4,
     h5,
     h6 {
-      @apply cursor-pointer transition-colors hover:text-primary;
+      @apply relative cursor-pointer transition-all before:absolute before:-left-10 before:text-primary/60 before:opacity-0 before:transition-all before:content-['#'] hover:text-primary hover:before:opacity-70;
     }
   }
 </style>
