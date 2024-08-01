@@ -1,0 +1,25 @@
+---
+// TableOfContentsHeading.astro
+const { heading } = Astro.props;
+---
+
+<li class="grid gap-3 text-sm">
+  <a class="toc-link inline-flex items-center" href={"#" + heading.slug}>
+    {heading.text}
+  </a>
+  {
+    heading.subheadings.length > 0 && (
+      <ul class="grid gap-3 pl-8">
+        {heading.subheadings.map((subheading: any) => (
+          <Astro.self heading={subheading} />
+        ))}
+      </ul>
+    )
+  }
+</li>
+
+<style>
+  a:not(.active) {
+    @apply text-text;
+  }
+</style>
