@@ -14,12 +14,13 @@ Předloňské vítězství Miloše Zemana přineslo do českých diskuzí čerst
 
 Čestné uznání za mnohé z nových figur patří Jiřímu Ovčáčkovi. Ovčáček je Nick Naylor konzervativní levice: hoďte na něj cokoliv a než se nadějete, bráníte se proti vlastnímu nařčení. Jeho výstupy jsem dlouhodobě fascinován a pevně doufám, že ho bude v jeho biografii hrát Ryan Gosling.
 
-![Ovčáček/Gosling, teenage heartthrobs](./images/ovcacek-gosling.jpg) 
+![Ovčáček/Gosling, teenage heartthrobs](./images/ovcacek-gosling.jpg)
+
 <p style="text-align: center;"> Ovčáček/Gosling, teenage heartthrobs</p>
 
 Následuje moje osobní hitparáda argumentačních obratů od ledna 2013.
 
-### 1\. Oponovat Miloši Zemanovi, demokraticky zvolenému prezidentovi, je nedemokratické!
+## 1\. Oponovat Miloši Zemanovi, demokraticky zvolenému prezidentovi, je nedemokratické!
 
 Přestože tato figura není z nejinventivnějších, vítězí díky své vytrvalosti na body. Kdykoli si už si myslíte, že jste se jí zbavili, vrátí se jako zmatená vlaštovka.
 
@@ -33,7 +34,7 @@ Lidé, kteří se necítí být Milošem Zemanem adekvátně reprezentováni, n�
 
 Ale to už by si neříkali demokrati.
 
-### 2\. Kritika Miloše Zemana mu upírá svobodu slova!
+## 2\. Kritika Miloše Zemana mu upírá svobodu slova!
 
 22\. října poukázal komisař OSN pro lidská práva [mj. na to, že výroky Miloše Zemana jsou xenofobní a islamofobní](http://www.un.org/apps/news/story.asp?NewsID=52337). (Mohl by říci i poplašné a zavádějící.) Nechme stranou, že čeští politici kritiku zamítli standardním tu quoque (“vy zase v Jordánsku porušujete jiná práva”) -- to už je klasika. Z vyjádření Jiřího Ovčáčka se ale člověku rázem zatočí hlava.
 
@@ -43,7 +44,7 @@ Kritika Zemanova veřejného vyjádření, ať je jakákoliv, nijak neomezuje Ze
 
 Není ale elegantní, jak Jiří Ovčáček stihl ve dvou větách obrátit obvinění z porušování lidských práv proti jeho původci? A k tomu ještě lehce nadhozená analogie mezi OSN a předlistopadovou totalitou! Ten muž je génius.
 
-### 3\. Kritika Miloše Zemana narušuje státní suverenitu!
+## 3\. Kritika Miloše Zemana narušuje státní suverenitu!
 
 Kritika OSN nechala vzniknout i této perle z druhé části Ovčáčkova vyjádření:
 
@@ -53,7 +54,7 @@ Nechme stranou to, že kritika OSN nemá žádný dopad na výkon české státn
 
 Ale jako signál národovcům dobrý.
 
-### 4\. Malost není odmítnout morální závazek, malost je sklonit se před ním!
+## 4\. Malost není odmítnout morální závazek, malost je sklonit se před ním!
 
 Za tenhle Jiří Ovčáček nemůže, přestože by se za něj nemusel stydět.
 
