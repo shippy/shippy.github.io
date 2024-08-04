@@ -20,7 +20,7 @@ const { title, description, heroImage } = presentation.data;
   title={title}
   meta_title={title}
   description={description}
-  image={heroImage ?? placeholder}
+  image={heroImage && heroImage.src}
 >
   <PresentationSingle presentation={presentation} />
 </Base>

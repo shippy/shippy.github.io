@@ -20,7 +20,8 @@ const { title, description, image } = post.data;
   title={title}
   meta_title={title}
   description={description}
-  image={image ?? placeholder}
+  image={image && image.src}
+  type="article"
 >
   <BlogSingle post={post} />
 </Base>

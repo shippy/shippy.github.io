@@ -20,7 +20,7 @@ const { title, description, heroImage } = project.data;
   title={title}
   meta_title={title}
   description={description}
-  image={heroImage ?? placeholder}
+  image={heroImage && heroImage.src}
 >
   <SideProjectSingle project={project} />
 </Base>
