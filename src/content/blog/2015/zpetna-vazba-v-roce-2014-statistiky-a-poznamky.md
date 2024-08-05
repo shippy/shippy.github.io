@@ -10,7 +10,7 @@ image: "/public/blog-placeholder-4.jpg"
 
 Přijímací řízení na anglicky mluvící univerzity je za námi. (Až na výjimky, mezi které patří např. Nizozemsko - pokud jste zaváhali, pořád ještě máte šanci!) Je tedy čas bilancovat; dojde na slova i na data. Začnu daty.
 
-# Data
+## Data
 
 **68 revizí, 45 esejů, 30 esejistů a 42 hodnocení mé zpětné vazby.** Revizí mohlo být kulatých 70, ale bohužel jsem se k jedné revizi a jedné kompletní magisterské přihlášce nedostal. (Omlouvám se.)
 
@@ -18,7 +18,7 @@ Statistiky hodnocení jsou důležité hlavně pro mě, ale protože si rád hr
 
 ![](http://simon.podhajsky.net/blog/nextgen-attach_to_post/preview/id--196)
 
-# Slova
+## Slova
 
 **Stálo to za to?** Mně určitě; myslím, že i esejistům. Je sice ještě brzy, ale už teď vím, že se jeden z nich dostal na UChicago s plnou finanční pomocí, tři na Oxford a jeden na LSE. Úspěch je jen jejich, ale mám radost, že jsem je mohl trošku postrčit.
 

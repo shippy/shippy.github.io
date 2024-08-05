@@ -8,7 +8,7 @@ import Header from "@/components/_partials/Header.astro";
 import "@/styles/style.scss";
 import { AstroFont } from "astro-font";
 import { ViewTransitions } from "astro:transitions";
-import { GoogleAnalytics } from "@astrolib/analytics"
+import { GoogleAnalytics } from "@astrolib/analytics";
 
 // font families
 const pf = theme.fonts.font_family.primary;
@@ -28,13 +28,15 @@ if (theme.fonts.font_family.secondary) {
 
 // types for frontmatters
 export interface Props {
-  title?: string;
+  title: string;
   meta_title?: string;
   description?: string;
-  image?: string | ImageMetadata;
+  image?: string;
+  type?: string;
   noindex?: boolean;
   canonical?: string;
   landingPage?: boolean;
+  sticky?: "false";
 }
 
 // distructure frontmatters
@@ -43,18 +45,28 @@ const {
   meta_title,
   description,
   image,
+  type,
   noindex,
   canonical,
   landingPage,
+  sticky,
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <meta name="generator" content={Astro.generator} />
+    <!-- responsive meta -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=5"
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <GoogleAnalytics id={config.analytics.ga_tracking_id} />
     <!-- favicon -->
     <link rel="shortcut icon" href={config.site.favicon} />
+
     <!-- theme meta -->
     <meta name="msapplication-TileColor" content="#000000" />
     <meta
@@ -67,7 +79,6 @@ const {
       media="(prefers-color-scheme: dark)"
       content="#000"
     />
-    <meta name="generator" content={Astro.generator} />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <!-- google font css -->
@@ -100,11 +111,6 @@ const {
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    />
-    <!-- responsive meta -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=5"
     />
 
     <ViewTransitions />
@@ -145,7 +151,7 @@ const {
         description ? description : config.metadata.meta_description
       )}
     />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type ? type : "website"} />
     <meta
       property="og:url"
       content={`${config.site.base_url}/${Astro.url.pathname.replace("/", "")}`}
@@ -186,7 +192,7 @@ const {
   </head>
   <body>
     <TwSizeIndicator />
-    {!landingPage && <Header />}
+    {!landingPage && <Header sticky={sticky} />}
     <main id="main-content">
       <slot />
     </main>
@@ -200,6 +206,19 @@ const {
     <script is:inline>
       AOS.init();
       const rellax = new Rellax(".rellax");
+    </script>
+
+    <script>
+      import gsap from "gsap";
+      import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+      document.addEventListener(
+        "astro:page-load",
+        () => {
+          gsap.registerPlugin(ScrollTrigger);
+        },
+        { once: false }
+      );
     </script>
   </body>
 </html>

@@ -1,16 +1,19 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
+import PageHeader from "./components/_shared/PageHeader.astro";
 
 const { data } = Astro.props;
 const { title } = data.data;
 const { Content } = await data?.render();
 ---
 
-<section class="section">
+<section>
   <div class="container">
-    <h1 set:html={markdownify(title)} class="mb-8 text-center text-h2" />
-    <div class="content">
-      <Content />
+    <PageHeader title={markdownify(title)} />
+    <div class="mt-16 lg:col-8 lg:mx-auto lg:mt-20">
+      <div class="content">
+        <Content />
+      </div>
     </div>
   </div>
 </section>

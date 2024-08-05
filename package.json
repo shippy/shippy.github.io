@@ -22,6 +22,7 @@
     "disqus-react": "^1.1.5",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
+    "gsap": "^3.12.5",
     "marked": "^12.0.0",
     "react-feather": "^2.0.10",
     "react-icons": "^5.0.1",

@@ -6,8 +6,8 @@ const { title } = data.data;
 const { Content } = await data?.render();
 ---
 
-<section class="section">
-  <div class="container">
+<section>
+  <div>
     <h2 set:html={markdownify(title)} class="text-h2" />
     <div class="content">
       <Content />
