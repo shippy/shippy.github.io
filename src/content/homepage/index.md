@@ -13,7 +13,7 @@ homeIntro:
     - Crier at Musicals
     - SCOTUS Enjoyer
     - Terrible Yogi
-    - Recovering Pedant
+    - Former Pedant
     - Generalist
     - Presenter
     - Scrabble Player
