@@ -4,7 +4,8 @@ module "redirect" {
   domains = [
     "simonpodhajsky.com",
     "simonpodhajsky.net",
-    "simonpodhajsky.cz"
+    "simonpodhajsky.cz",
+    "vsedatec.cz"
   ]
   
   target = "simon.podhajsky.net"
