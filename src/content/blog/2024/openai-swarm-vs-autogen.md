@@ -78,4 +78,4 @@ Swarm is OpenAI's child [with no promises of updates or maintenance attached](ht
 
 Swarm is a great educational tool to build a multi-agent system from scratch, allowing you to understand each bit. AutoGen, however, has taken the lessons learned from that endeavor and implemented them in a way that's more flexible and more powerful. Consequently, this is not really a fair comparison.
 
-I'll be watching the development of Swarm with interest, though.
+I'll be watching the development of Swarm with interest, though. (If there is any.)
