@@ -62,17 +62,16 @@ Swarm is OpenAI's child [with no promises of updates or maintenance attached](ht
 
 ## Summary table
 
-| Feature                        | Swarm                                                                                       | AutoGen                                                                             |
+| Feature                         | Swarm                                                                                       | AutoGen                                                                             |
 |---------------------------------|---------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
-| Agents                          | Basic unit of operation; Python functions registered as tools                               | LLM prompts with tool access and execution environments                             |
-| Tools                           | Python functions registered to agents                                                      | Same                                                                                   |
-| Execution Environment           | Current environment; no executing agent concept                                             | Containerized environment; agents can be both caller and executor                   |
-| Routines                        | Natural-language routine (task list)                                                       | Same                                                                                   |
-| Handoffs                        | Agent continues until explicit handoff via tool call                                        | Managed by GroupChatManager; supports StateFlow for agent transitions               |
+| Agents                          | LLM prompts with tool access                                                                | Same                                                                                |
+| Tools                           | Python functions registered to agents                                                       | Same                                                                                |
+| Execution Environment           | Current environment; no executing agent concept                                             | Containerized environment; agents can be either caller, executor, or both           |
+| Handoffs                        | Agent continues until explicit handoff via tool call                                        | Managed by `GroupChatManager`; supports StateFlow for agent transitions             |
 | Terminating the Conversation    | No explicit termination; uses `max_turns`                                                   | `TERMINATE` message; also uses `max_rounds` and `max_consecutive_auto_reply`        |
 | Evaluations                     | Eval-aware, with a hand-rolled test framework, not very flexible                            | No built-in evaluations; flexible with pytest/DeepEval but hard to test multi-agent |
 | Observability                   | Integrated with OpenAI, works with wrappers like Langfuse                                   | SQLite or third-party solutions like AgentOps                                       |
-| Provenance, Maintenance, Community | OpenAI project with no guarantees of updates or maintenance                             | Actively developed by Microsoft with a thriving community                           |
+| Provenance, Maintenance, Community | OpenAI project with no guarantees of updates or maintenance                              | Actively developed by Microsoft with a thriving community                           |
 
 ## Conclusion
 
