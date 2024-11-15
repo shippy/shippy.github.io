@@ -6,6 +6,7 @@ homeIntro:
   rolling_texts:
     - Data Everything
     - LLM Whisperer
+    - Podcast Co-Host
     - Debater Emeritus
     - Inventor of Words
     - Anti-Descriptivist
