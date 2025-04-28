@@ -11,56 +11,49 @@
     "logo_height": "36",
     "logo_text": "Šimon Podhajský"
   },
-
   "analytics": {
     "ga_tracking_id": "G-S4RFZ1N0T3"
   },
-
   "settings": {
     "pagination": 4,
     "summary_length": 100
   },
-
   "params": {
     "contact_form_action": "https://formspree.io/f/mwkgzvge",
     "career_form_action": "#",
     "copyright": "© Šimon Podhajský"
   },
-
   "footer_data": {
     "description": "Thank you for reading all the way down here!",
     "email": "simon@podhajsky.net",
     "location": "Prague, Czech Republic",
     "contact": ""
   },
-
   "call_to_action": {
     "enable": true,
     "title": "Feel free to contact me",
-    "content": "If you're looking for a skilled data engineer passionate about transforming data into actionable insights or simply want to have a chat.",
+    "content": "If you're looking for an data-driven AI consultant or simply want to have a chat.",
     "button": {
       "label": "Contact Me",
       "link": "/contact"
     }
   },
-
   "disqus": {
     "enable": true,
     "shortname": "themefisher-template",
     "settings": {}
   },
-
   "metadata": {
     "meta_author": "Šimon Podhajský",
     "meta_image": "/images/site-preview.jpg",
-    "meta_description": "This is the personal website, blog, and portfolio of Šimon Podhajský"
+    "meta_description": "Personal website and portfolio of Šimon Podhajský, a Prague-based AI Consultant"
   },
-
   "email": {
     "title": "Email Address",
-    "contact": ["simon@podhajsky.net"]
+    "contact": [
+      "simon@podhajsky.net"
+    ]
   },
-
   "phone": {
     "title": "Phone",
     "contact": []

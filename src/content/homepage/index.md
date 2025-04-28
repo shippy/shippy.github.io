@@ -4,8 +4,9 @@ homeIntro:
   subtitle: Hello
   title: Šimon Podhajský is Prague's favorite
   rolling_texts:
-    - Data Everything
+    - AI Consultant
     - LLM Whisperer
+    - Data Everything
     - Podcast Co-Host
     - Debater Emeritus
     - Czechitas Lecturer
