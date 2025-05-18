@@ -2,13 +2,14 @@
 import { getCollection, getEntry } from "astro:content";
 import { formatCollection } from "@/lib/utils/formatCollection";
 import Base from "@/layouts/Base.astro";
-import ThingsIDo from "@/components/home/ThingsIDo.astro";
-import NameAndImage from "@/components/home/NameAndImage.astro";
-import Cta from "@/components/_partials/Cta.astro";
-import HomeIntro from "@/components/home/HomeIntro.astro";
-import HomeSideProjects from "@/components/home/HomeSideProjects.astro";
-import HomePresentations from "@/components/home/HomePresentations.astro";
-import HomeArticles from "@/components/home/HomeArticles.astro";
+import ThingsIDo from "@/layouts/components/home/ThingsIDo.astro";
+import NameAndImage from "@/layouts/components/home/NameAndImage.astro";
+import Cta from "@/layouts/components/_partials/Cta.astro";
+import HomeIntro from "@/layouts/components/home/HomeIntro.astro";
+import HomeSideProjects from "@/layouts/components/home/HomeSideProjects.astro";
+import HomePresentations from "@/layouts/components/home/HomePresentations.astro";
+import HomeArticles from "@/layouts/components/home/HomeArticles.astro";
+import HomePodcasts from "@/layouts/components/home/HomePodcasts.astro";
 
 const homepage = await getEntry("homepage", "index");
 const {
@@ -18,11 +19,13 @@ const {
   presentations,
   articles,
   nameImage,
+  podcasts,
 } = homepage.data;
 
 const posts = await getCollection("blog");
 const noDraftPosts = posts.filter((post) => !post.data.draft);
 const projects = await getCollection("side_projects");
+const podcastEpisodes = await getCollection("podcasts");
 const latestArticle = formatCollection(noDraftPosts, {
   limit: 1,
 })[0];
@@ -30,12 +33,17 @@ const latestProject = formatCollection(projects, {
   sortParams: "pubDate",
   limit: 1,
 })[0];
+const latestPodcast = formatCollection(podcastEpisodes, {
+  sortParams: "pubDate",
+  limit: 1,
+})[0];
 ---
 
-<Base>
+<Base title={homepage.data.title} description={homepage.data.description}>
   <HomeIntro data={homeIntro} />
   <ThingsIDo data={thingsIDo} />
   <NameAndImage data={nameImage} />
+  <HomePodcasts data={podcasts} podcast={latestPodcast} />
   <HomePresentations data={presentations} />
   <HomeSideProjects data={sideProjects} project={latestProject} />
   <HomeArticles data={articles} article={latestArticle} />

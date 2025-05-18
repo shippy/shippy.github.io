@@ -66,6 +66,20 @@ const presentationCollection = defineCollection({
     }),
 });
 
+const podcastCollection = defineCollection({
+  type: "content",
+  schema: ({ image }: { image: ImageFunction }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      pubDate: z.coerce.date(),
+      podcastUrl: z.string(),
+      language: z.enum(["en", "cs"]).optional().default("cs"),
+      role: z.enum(["host", "guest"]).default("guest"),
+      heroImage: image().optional(), // default is defined in the layout + index files
+    }),
+});
+
 const sideProjectCollection = defineCollection({
   type: "content",
   schema: ({ image }: { image: ImageFunction }) =>
@@ -103,4 +117,5 @@ export const collections = {
   now: nowCollection,
   presentations: presentationCollection,
   side_projects: sideProjectCollection,
+  podcasts: podcastCollection,
 };

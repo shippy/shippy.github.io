@@ -28,6 +28,10 @@
         {
           "name": "Presentations",
           "url": "/presentations"
+        },
+        {
+          "name": "Podcasts",
+          "url": "/podcasts"
         }
       ]
     },
@@ -54,6 +58,10 @@
       "url": "/presentations"
     },
     {
+      "name": "Podcasts",
+      "url": "/podcasts"
+    },
+    {
       "name": "Contact",
       "url": "/contact"
     }
@@ -70,6 +78,10 @@
     {
       "name": "Side Projects",
       "url": "/side_projects"
+    },
+    {
+      "name": "Podcasts",
+      "url": "/podcasts"
     },
     {
       "name": "Contact",

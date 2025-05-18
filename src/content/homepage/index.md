@@ -8,6 +8,7 @@ homeIntro:
     - LLM Whisperer
     - Podcast Co-Host
     - Debater Emeritus
+    - Czechitas Lecturer
     - Inventor of Words
     - Anti-Descriptivist
     - Neuroskeptic
@@ -52,6 +53,17 @@ thingsIDo:
     - icon: "command"
       title: I'm a Generalist.
       content: ...which just means that I don't stop at a problem's boundary; I see it through wherever it leads.
+
+# PODCASTS
+podcasts:
+  subtitle: Podcasts
+  title: Sometimes, I...<br> host and appear on podcasts
+  description: >
+    I love engaging in deep conversations about data, technology, and other topics that spark curiosity. Listen to my latest episode or explore all podcast appearances.
+  image: "/images/home/simon-2.webp"
+  link:
+    label: View All Podcasts
+    href: "/podcasts/"
 
 # SIDE PROJECTS
 sideProjects:

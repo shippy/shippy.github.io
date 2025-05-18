@@ -1,0 +1,114 @@
+---
+import { getCollection } from "astro:content";
+import config from "@/config/config.json";
+import { formatCollection } from "@/lib/utils/formatCollection";
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/layouts/components/_shared/PageHeader.astro";
+import Pagination from "@/layouts/components/_shared/Pagination.astro";
+import * as Icon from "react-feather";
+import { formatDate } from "@/lib/utils/formatDate";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  page: {
+    data: CollectionEntry<"podcasts">[];
+    start: number;
+    end: number;
+    size: 4;
+    total: number;
+    currentPage: number;
+    lastPage: number;
+    url: {
+      current: string;
+      next?: string;
+      prev?: string;
+    };
+  };
+}
+
+const collection = "podcasts";
+const collectionTitle = "Podcasts";
+
+type PaginateFunction = {
+  (data: any[], options: { pageSize: number }): any;
+};
+
+export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
+  const allPodcasts = await getCollection("podcasts");
+  const formattedPodcasts: CollectionEntry<"podcasts">[] =
+    formatCollection(allPodcasts, {
+      sortParams: "pubDate",
+    });
+
+  return paginate(formattedPodcasts, {
+    pageSize: config.settings.pagination,
+  });
+}
+
+const { page } = Astro.props;
+const pageTitle = "Podcasts";
+const pageDescription =
+  "Here you can find episodes of podcasts I've hosted or been a guest on.";
+---
+
+<Base title={pageTitle} description={pageDescription}>
+  <PageHeader title={pageTitle} description={pageDescription} />
+
+  <section class="section">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          {
+            page.data.length > 0 ? (
+              <div class="space-y-10">
+                {page.data.map((podcast) => (
+                  <div class="overflow-hidden rounded-xl border border-border shadow-lg transition-all duration-300 hover:shadow-xl">
+                    <div class="p-6 md:p-8">
+                      <div class="mb-4 flex items-center gap-3">
+                        <Icon.Mic className="h-6 w-6 text-primary" />
+                        <span class="font-medium text-dark">
+                          {formatDate(podcast.data.pubDate)}
+                        </span>
+                        {podcast.data.language && (
+                          <span class="rounded bg-primary/10 px-2 py-1 text-xs font-medium text-primary">
+                            {podcast.data.language === "en" ? "English" : "Czech"}
+                          </span>
+                        )}
+                        <span class="rounded bg-secondary/10 px-2 py-1 text-xs font-medium text-secondary">
+                          {podcast.data.role === "host" ? "Host" : "Guest"}
+                        </span>
+                      </div>
+                      <h3 class="mb-4 text-xl font-bold text-dark md:text-2xl">
+                        {podcast.data.title}
+                      </h3>
+                      <p class="mb-6 text-text">{podcast.data.description}</p>
+                      <a
+                        href={podcast.data.podcastUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 font-medium text-primary hover:text-primary-hover"
+                      >
+                        <span>Listen to episode</span>
+                        <Icon.ExternalLink className="h-4 w-4" />
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div class="text-center">
+                <p class="text-lg text-text">No podcasts found.</p>
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Pagination
+    currentPage={page.currentPage}
+    totalPages={page.lastPage}
+    section={collection}
+  />
+</Base> 
