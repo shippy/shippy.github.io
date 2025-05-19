@@ -1,5 +1,9 @@
 import { defineCollection, reference, z, type ImageFunction } from "astro:content";
 
+// Legacy collections
+const contactCollection = defineCollection({})
+const homepageCollection = defineCollection({})
+
 // Blog collection schema
 const blogsCollection = defineCollection({
   type: "content",
@@ -111,6 +115,8 @@ const nowCollection = defineCollection({
 
 // Export collections
 export const collections = {
+  contact: contactCollection,
+  homepage: homepageCollection,
   blog: blogsCollection,
   authors: authorsCollection,
   pages: pagesCollection,
