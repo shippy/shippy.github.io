@@ -6,7 +6,7 @@
     },
     {
       "name": "Blog",
-      "url": "/blog"
+      "url": "/blog/"
     },
     {
       "name": "Pages",
@@ -15,29 +15,29 @@
       "children": [
         {
           "name": "Now",
-          "url": "/now"
+          "url": "/now/"
         },
         {
           "name": "Tech",
-          "url": "/uses"
+          "url": "/uses/"
         },
         {
           "name": "Side Projects",
-          "url": "/side_projects"
+          "url": "/side_projects/"
         },
         {
           "name": "Presentations",
-          "url": "/presentations"
+          "url": "/presentations/"
         },
         {
           "name": "Podcasts",
-          "url": "/podcasts"
+          "url": "/podcasts/"
         }
       ]
     },
     {
       "name": "Contact",
-      "url": "/contact"
+      "url": "/contact/"
     }
   ],
   "mobile": [
@@ -47,23 +47,23 @@
     },
     {
       "name": "Blog",
-      "url": "/blog"
+      "url": "/blog/"
     },
     {
       "name": "Side Projects",
-      "url": "/side_projects"
+      "url": "/side_projects/"
     },
     {
       "name": "Presentations",
-      "url": "/presentations"
+      "url": "/presentations/"
     },
     {
       "name": "Podcasts",
-      "url": "/podcasts"
+      "url": "/podcasts/"
     },
     {
       "name": "Contact",
-      "url": "/contact"
+      "url": "/contact/"
     }
   ],
   "footer": [
@@ -73,33 +73,33 @@
     },
     {
       "name": "Blog",
-      "url": "/blog"
+      "url": "/blog/"
     },
     {
       "name": "Side Projects",
-      "url": "/side_projects"
+      "url": "/side_projects/"
     },
     {
       "name": "Podcasts",
-      "url": "/podcasts"
+      "url": "/podcasts/"
     },
     {
       "name": "Contact",
-      "url": "/contact"
+      "url": "/contact/"
     }
   ],
   "footerOther": [
     {
       "name": "Presentations",
-      "url": "/presentations"
+      "url": "/presentations/"
     },
     {
       "name": "Now",
-      "url": "/now"
+      "url": "/now/"
     },
     {
       "name": "Tech",
-      "url": "/uses"
+      "url": "/uses/"
     }
   ]
 }
