@@ -9,7 +9,7 @@ homeIntro:
     - Data Everything
     - Podcast Co-Host
     - Debater Emeritus
-    - Czechitas Lecturer
+    - Czechitas Fan
     - Inventor of Words
     - Anti-Descriptivist
     - Neuroskeptic
