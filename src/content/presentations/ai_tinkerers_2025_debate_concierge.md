@@ -1,7 +1,7 @@
 ---
 title: Debate Concierge
 pubDate: 2025-02-25
-description: >
+description: >-
   PydanticAI-based debate case-maker, presented at AI Tinkerers Prague.
 heroImage: images/2025-02_debate-concierge.png
 place: AI Tinkerers (Prague, CZ)

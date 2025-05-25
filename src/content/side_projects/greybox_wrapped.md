@@ -1,6 +1,6 @@
 ---
 title: greybox Wrapped
-description: >
+description: >-
   A full-stack data app.
 heroImage: ./images/greybox_wrapped.png
 pubDate: 2023-04-05

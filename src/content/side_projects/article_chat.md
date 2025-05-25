@@ -1,6 +1,6 @@
 ---
 title: JournalArticle.chat
-description: >
+description: >-
   A chat application that allows users to chat with their PDF.
 pubDate: 2023-08-05
 githubUrl: https://github.com/shippy/article-chat
