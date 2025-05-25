@@ -1,6 +1,6 @@
 ---
 title: Feedback on college application essays (concluded)
-description: >
+description: >-
   A service that provided feedback on college application essays.
 heroImage: ./images/essay_feedback.png
 pubDate: 2014-09-06

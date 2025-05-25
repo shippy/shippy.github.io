@@ -1,6 +1,6 @@
 ---
 title: "Deciding with Spreadsheets"
-description: >
+description: >-
     I've had some difficult choices to make lately, and I've been using a
     spreadsheet to help me make them.
 date: 2025-03-05

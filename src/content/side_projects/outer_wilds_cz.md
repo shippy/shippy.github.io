@@ -1,6 +1,6 @@
 ---
 title: Czech translation of Outer Wilds
-description: >
+description: >-
   A Czech translation of my favorite game.
 heroImage: ./images/outer_wilds_bramble_seed.png
 pubDate: 2022-04-05
