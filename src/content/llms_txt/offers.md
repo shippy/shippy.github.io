@@ -1,6 +1,8 @@
 ## Openness to offers
 
-I’m available for **one-time, short-term or weekend consulting** with high impact and learning potential.
+I'm open to speaking engagements, workshops, and other events.
+
+I'm also available for **one-time, short-term or weekend consulting** with high impact and learning potential.
 
 Typical engagements:
 
