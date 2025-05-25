@@ -34,6 +34,7 @@ export async function GET() {
     offers?.body || '',
     contact?.body || '',
     "## Latest Content (for all, see https://simon.podhajsky.net/rss.xml)",
+    "Additionally to the posts below, I publish short updates on [my LinkedIn profile](https://www.linkedin.com/in/simonpodhajsky/).",
     "### Latest Posts (for all, see https://simon.podhajsky.net/blog/)",
     ...latest(posts, 4, "date").map(post => renderSummary(post)),
     "### Latest Talks (for all, see https://simon.podhajsky.net/presentations/)",
