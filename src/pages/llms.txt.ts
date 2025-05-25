@@ -2,7 +2,6 @@ import { getEntryBySlug, getEntry, getCollection } from "astro:content";
 
 const piece = async (slug: string) => await getEntry("llms_txt", slug);
 
-// ...plus dynamic "latest 3" content from getCollection('blog') etc.
 export const prerender = true;
 
 export async function GET() {
@@ -11,7 +10,6 @@ export async function GET() {
   const significance = await piece("significance");
   const offers = await piece("offers");
   const contact = await piece("contact");
-  const licence = await piece("licence");
 
   const [posts, talks, podcasts, sideProjects] = await Promise.all([
     getCollection("blog"),
