@@ -4,6 +4,9 @@ import { defineCollection, reference, z, type ImageFunction } from "astro:conten
 const contactCollection = defineCollection({})
 const homepageCollection = defineCollection({})
 
+// LLM meta collection schema
+const llmsMetaCollection = defineCollection({})
+
 // Blog collection schema
 const blogsCollection = defineCollection({
   type: "content",
@@ -124,4 +127,5 @@ export const collections = {
   presentations: presentationCollection,
   side_projects: sideProjectCollection,
   podcasts: podcastCollection,
+  llms_txt: llmsMetaCollection,
 };
