@@ -5,7 +5,8 @@ module "redirect" {
     "simonpodhajsky.com",
     "simonpodhajsky.net",
     "simonpodhajsky.cz",
-    "vsedatec.cz"
+    "vsedatec.cz",
+    "evals.cz"
   ]
   
   target = "simon.podhajsky.net"
