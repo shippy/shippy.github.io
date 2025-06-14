@@ -48,7 +48,15 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
 const { page } = Astro.props;
 const pageTitle = "Podcasts";
 const pageDescription =
-  "Here you can find episodes of podcasts I've hosted or been a guest on.";
+  "Here are the episodes of podcasts I've hosted or been a guest on.";
+const langToLabel = {
+  "cs": "Čeština",
+  "en": "English",
+}
+const roleToLabel = { 
+  "host": "Host",
+  "guest": "Guest",
+}
 ---
 
 <Base title={pageTitle} description={pageDescription}>
@@ -71,11 +79,11 @@ const pageDescription =
                         </span>
                         {podcast.data.language && (
                           <span class="rounded bg-primary/10 px-2 py-1 text-xs font-medium text-primary">
-                            {podcast.data.language === "en" ? "English" : "Czech"}
+                            {langToLabel[podcast.data.language]}
                           </span>
                         )}
                         <span class="rounded bg-secondary/10 px-2 py-1 text-xs font-medium text-secondary">
-                          {podcast.data.role === "host" ? "Host" : "Guest"}
+                          {roleToLabel[podcast.data.role]}
                         </span>
                       </div>
                       <h3 class="mb-4 text-xl font-bold text-dark md:text-2xl">
