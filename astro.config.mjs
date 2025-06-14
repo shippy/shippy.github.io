@@ -12,7 +12,7 @@ import config from "./src/config/config.json";
 export default defineConfig({
   site: config.site.base_url ? config.site.base_url : "http://simon.podhajsky.net",
   base: config.site.base_path ? config.site.base_path : "/",
-  trailingSlash: config.site.trailing_slash ? "always" : "never",
+  trailingSlash: "ignore",  // config.site.trailing_slash ? "always" : "never",
   integrations: [
     react(),
     sitemap(),
