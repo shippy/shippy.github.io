@@ -4,9 +4,9 @@ homeIntro:
   subtitle: Hello
   title: Šimon Podhajský is Prague's favorite
   rolling_texts:
-    - AI Consultant
     - LLM Whisperer
     - Data Everything
+    - Evals Expert
     - Podcast Co-Host
     - Debater Emeritus
     - Czechitas Fan
@@ -17,6 +17,7 @@ homeIntro:
     - SCOTUS Enjoyer
     - Terrible Yogi
     - Former Pedant
+    - AI Consultant
     - Generalist
     - Presenter
     - Scrabble Player
@@ -37,7 +38,7 @@ thingsIDo:
   list:
     - icon: "lock"
       title: Evaluate & Productionize LLM-based Applications
-      content: I understand that integrating standard software engineering and ML best practices is what keeps the modern LLM-based apps from remaining merely a fancy demo.
+      content: I understand that integrating standard software-engineering and ML best practices is what keeps the modern LLM-based apps from remaining merely a fancy demo.
     - icon: "wind"
       title: Data Engineering
       content: "Performant, semantically rich, reproducible: my pipelines are all of the above."
@@ -60,7 +61,7 @@ podcasts:
   subtitle: Podcasts
   title: Sometimes, I...<br> host and appear on podcasts
   description: >
-    I love engaging in deep conversations about data, technology, and other topics that spark curiosity. Listen to my latest episode or explore all podcast appearances.
+    I love engaging in deep conversations about data, AI, and other topics that spark curiosity. Listen to my latest episode or explore all podcast appearances.
   image: "/images/home/simon-2.webp"
   link:
     label: View All Podcasts
