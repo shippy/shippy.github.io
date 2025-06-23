@@ -9,13 +9,22 @@ import remarkToc from "remark-toc";
 import config from "./src/config/config.json";
 
 // https://astro.build/config
+var base_url = config.site.base_url ? config.site.base_url : "http://simon.podhajsky.net";
+var base_path = config.site.base_path ? config.site.base_path : "/";
+var base_url_with_path = base_url + base_path;
+
 export default defineConfig({
-  site: config.site.base_url ? config.site.base_url : "http://simon.podhajsky.net",
-  base: config.site.base_path ? config.site.base_path : "/",
+  site: base_url,
+  base: base_path,
   trailingSlash: "ignore",  // config.site.trailing_slash ? "always" : "never",
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      customPages: [
+        base_url_with_path + "llms.txt",
+        // base_url_with_path + "rss.xml",
+      ],
+    }),
     tailwind({
       config: {
         applyBaseStyles: false,
